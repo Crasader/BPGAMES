@@ -69,12 +69,29 @@ function UIMiniUserData:init()
     self.ptr_label_ticket=control_tools.newLabel({fnt=g_path.."num_dt_jbyb.fnt",anchor=cc.p(0,0.5)});
     self.ptr_bg_ticket:addChild(self.ptr_label_ticket)
     self.ptr_label_ticket:setPosition(cc.p(40,13))
+    --奖券
+    self.ptr_bg_redpack=control_tools.newImg({path=g_path.."img_bg.png"});
+    self:addChild(self.ptr_bg_redpack)
+
+    local l_img_icon=control_tools.newImg({path=g_path.."img_redpacket.png"})
+    self.ptr_bg_redpack:addChild(l_img_icon)
+    l_img_icon:setPosition(cc.p(25,18))
+
+    self.ptr_label_redpack=control_tools.newLabel({fnt=g_path.."num_dt_jbyb.fnt",anchor=cc.p(0,0.5)});
+    self.ptr_bg_redpack:addChild(self.ptr_label_redpack)
+    self.ptr_label_redpack:setPosition(cc.p(40,13))
+    
 
 
     self.ptr_img_hint_gold=control_tools.newImg({path=g_path.."img_hint_gold.png"})
     self:addChild(self.ptr_img_hint_gold)
     self.ptr_img_hint_gold:setPosition(cc.p(510,30))
     self.ptr_img_hint_gold:setVisible(false)
+
+    self.ptr_btn_backpack=control_tools.newBtn({normal=g_path.."btn_backpack.png",pressed=g_path.."btn_backpack.png"})
+    self:addChild(self.ptr_btn_backpack)
+    self.ptr_btn_backpack:setVisible(false)
+    self.ptr_btn_backpack:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_backpack(param_sender,param_touchType) end)
 
     --self.
     self.ptr_rich_text=UIRichText:create(20,cc.c3b(249, 246, 222),"Arial",cc.size(240,40))
@@ -95,41 +112,74 @@ function UIMiniUserData:switch_type(param_type,param_value)
     self.ptr_bg_ingot:setVisible(false)
     self.ptr_bg_beans:setVisible(false)
     self.ptr_bg_ticket:setVisible(false)
+    self.ptr_bg_redpack:setVisible(false)
+    self.ptr_btn_backpack:setVisible(false)
 
     self.ptr_rich_text:setVisible(false)
     self.ptr_img_hint_gold:setVisible(false)
     self.ptr_btn_customer:setVisible(false)
 
-    -- self.ptr_bg_gold:setPosition(cc.p(110,30))
-    -- self.ptr_bg_ingot:setPosition(cc.p(300,30))
-    -- self.ptr_bg_beans:setPosition(cc.p(490,30))
-    -- self.ptr_bg_ticket:setPosition(cc.p(680,30))
+    -- self.ptr_bg_gold:setPosition(cc.p(100,30))
+    -- self.ptr_bg_ingot:setPosition(cc.p(290,30))
+    -- self.ptr_bg_beans:setPosition(cc.p(480,30))
+    -- self.ptr_bg_ticket:setPosition(cc.p(670,30))
 
     --1x  shop穿参数。
+    --2x  兑换
     if param_type==10 then
         self.ptr_bg_gold:setVisible(true)
-        self.ptr_bg_gold:setPosition(cc.p(110,30))
+        self.ptr_bg_gold:setPosition(cc.p(100,30))
+        self.ptr_bg_ingot:setVisible(true)
+        self.ptr_bg_ingot:setPosition(cc.p(290,30))
         self.ptr_img_hint_gold:setVisible(true)
         self.ptr_btn_customer:setVisible(true)
     elseif param_type==11 then 
+        self.ptr_bg_gold:setVisible(true)
+        self.ptr_bg_gold:setPosition(cc.p(100,30))
         self.ptr_bg_ingot:setVisible(true)
-        self.ptr_bg_ingot:setPosition(cc.p(110,30))
+        self.ptr_bg_ingot:setPosition(cc.p(290,30))
         self.ptr_btn_customer:setVisible(true)
     elseif param_type==12 then 
+        self.ptr_bg_gold:setVisible(true)
+        self.ptr_bg_gold:setPosition(cc.p(100,30))
         self.ptr_bg_beans:setVisible(true)
-        self.ptr_bg_beans:setPosition(cc.p(110,30))
+        self.ptr_bg_beans:setPosition(cc.p(290,30))
         self.ptr_btn_customer:setVisible(true)
     elseif param_type==13 then 
+        self.ptr_bg_gold:setVisible(true)
+        self.ptr_bg_gold:setPosition(cc.p(100,30))
+        self.ptr_bg_ingot:setVisible(true)
+        self.ptr_bg_ingot:setPosition(cc.p(290,30))
+        self.ptr_btn_backpack:setVisible(true)
+        self.ptr_btn_backpack:setPosition(cc.p(410,30))
+        self.ptr_btn_customer:setVisible(true)
 
     elseif param_type==14 then 
         self.ptr_bg_gold:setVisible(true)
-        self.ptr_bg_gold:setPosition(cc.p(110,30))
+        self.ptr_bg_gold:setPosition(cc.p(100,30))
         self.ptr_bg_ingot:setVisible(true)
-        self.ptr_bg_ingot:setPosition(cc.p(300,30))
+        self.ptr_bg_ingot:setPosition(cc.p(290,30))
         self.ptr_rich_text:setVisible(true)
         self.ptr_rich_text:setTextEx(param_value)
         self.ptr_btn_customer:setVisible(true)
 
+    elseif param_type==20 then 
+
+        self.ptr_bg_gold:setVisible(true)
+        self.ptr_bg_gold:setPosition(cc.p(100,30))
+        self.ptr_bg_redpack:setVisible(true)
+        self.ptr_bg_redpack:setPosition(cc.p(290,30))
+        self.ptr_rich_text:setVisible(true)
+        self.ptr_rich_text:setTextEx(param_value)
+        self.ptr_btn_customer:setVisible(true)
+    elseif param_type==21 or param_type==22 then 
+        self.ptr_bg_gold:setVisible(true)
+        self.ptr_bg_gold:setPosition(cc.p(100,30))
+        self.ptr_bg_ticket:setVisible(true)
+        self.ptr_bg_ticket:setPosition(cc.p(290,30))
+        self.ptr_rich_text:setVisible(true)
+        self.ptr_rich_text:setTextEx(param_value)
+        self.ptr_btn_customer:setVisible(true)
     end
 
 
@@ -138,21 +188,27 @@ function UIMiniUserData:on_btn_customer(param_sender,param_touchType)
     if param_touchType~=_G.TOUCH_EVENT_ENDED then
         return 
     end
+    --hjj_for_wait: 客服。
+end
+function UIMiniUserData:on_btn_backpack(param_sender,param_touchType)
+    if param_touchType~=_G.TOUCH_EVENT_ENDED then
+        return 
+    end
+    local event = cc.EventCustom:new("MSG_DO_TASK");
+    event.command = "open:3"
+    cc.Director:getInstance():getEventDispatcher():dispatchEvent(event)
+
 end
 
-
-
 function UIMiniUserData:on_update_user_data()
+    
     local l_user_data=json.decode(bp_get_self_user_data());
     self.ptr_label_gold:setString(l_user_data.gold)
     self.ptr_label_ingot:setString(l_user_data.ingot)
     self.ptr_label_beans:setString(l_user_data.bean)
-    local l_array_prop=json.decode(bp_get_self_prop_count())
-    for k,v in pairs(l_array_prop) do 
-        if v.id==1002 then  
-            self.ptr_label_ticket:setString(l_array_prop.cnt)
-        end
-    end
+    self.ptr_label_redpack:setString(l_user_data.redpacket)
+    local l_array_prop=(bp_get_self_prop_count(1002))
+    self.ptr_label_ticket:setString(l_array_prop)
 end
 
 return UIMiniUserData

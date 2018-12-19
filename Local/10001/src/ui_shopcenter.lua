@@ -37,16 +37,16 @@ function UIShopCenter:init_center()
     self.ptr_layout_shop_prop=UIShopProp:create()
     self:insert_item(3,BPRESOURCE("res/shop/title_prop_1.png"),BPRESOURCE("res/shop/title_prop_2.png"),self.ptr_layout_shop_prop,0,50)
 
-
-    self:update_layout();
-
     self.ptr_mini_user_data=UIMiniUserData:create()
     self:get_gui():addChild(self.ptr_mini_user_data);
     self.ptr_mini_user_data:switch_type(1);
     self.ptr_mini_user_data:setPosition(cc.p(10,8))
     self.ptr_mini_user_data:switch_type(10)
+
+    self:update_layout();
 end
 function UIShopCenter:on_back_switch_item(parma_id)
+
     self.ptr_mini_user_data:switch_type(10+parma_id)
 end
 
@@ -59,7 +59,7 @@ function UIShopCenter.ShowShopCenter(param_show,param_id)
     if param_show==nil then 
         param_show=true;
     end
-    if bp_have_mask_module(LC.MASK_MODULE_SHOP) ==0 then 
+    if bp_have_mask_module(LC.MASK_MODULE_SHOP) ==false then 
         return sptr_shop_center;
     end
 

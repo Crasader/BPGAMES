@@ -310,6 +310,7 @@ function UIBank:on_http_access_gold(param_identifier,param_success,param_code,pa
 
     self:refreshGold()
     self:refreshButton()
+    bp_update_user_data(1)
 end
 
 --查询金币
@@ -318,17 +319,13 @@ function UIBank:request_query_gold()
     req=bp_make_url(req)
     req=bp_string_replace_key(req,"&quot;","\"");
     req=bp_string_replace_key(req,"{RANKTYPE}",4);
-   -- print("hjjlog>>req:",req);
     bp_http_get("cyn_query_gold","",req,function(param_identifier,param_success,param_code,param_header,context) self:on_http_query_gold(param_identifier,param_success,param_code,param_header,context) end,1)
-
+    
 end
 
 function UIBank:on_http_query_gold(param_identifier,param_success,param_code,param_header,context)
-   print("cynlog>>111111111111111",context)
-
    self:clearLayout()
     if param_success~=true or param_code~=200 then 
-        print("hjjlog>>request_task_data   fail");
         bp_show_hinting("查询金币失败")
         return  ;
     end

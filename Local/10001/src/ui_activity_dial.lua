@@ -1,6 +1,6 @@
 print("=====UIActivityDial=====")
-require("src/g_tools/action_tools")
-
+require("bptools/action_tools")
+sptr_activity_dial=nil
 ---------------------------------------------------------------------------------
 -- 转盘活动界面
 ---------------------------------------------------------------------------------
@@ -640,6 +640,20 @@ end
 function UIActivityDial:destroy()
 	ccs.ArmatureDataManager:getInstance():removeArmatureFileInfo(g_path .. "zhuanpan.ExportJson")
 	-- SimpleAudioEngine:sharedEngine():stopAllEffects()
+end
+
+
+function UIActivityDial.ShowActivityDial(param_show)
+    if sptr_activity_dial==nil  then 
+        local main_layout=bp_get_main_layout();
+        sptr_activity_dial=UIActivityDial:create();
+        main_layout:addChild(sptr_activity_dial)
+    end
+    if param_show==nil then 
+        param_show=true;
+    end
+    sptr_activity_dial:showLayer();
+    return sptr_activity_dial;
 end
 
 return UIActivityDial

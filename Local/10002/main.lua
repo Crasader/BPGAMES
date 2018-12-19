@@ -3,6 +3,7 @@ cc.FileUtils:getInstance():setPopupNotify(false)
 require "cocos.init"
 require("bptools/lobby_config")
 require("bptools/class_struct")
+require("bptools/control_tools")
 local class_game_push=require("src/class_game_push")
 local UIChatCenter=require("src/ui_chatcenter")
 sptr_main_layout=nil;
@@ -13,10 +14,6 @@ end
 function bpinit(param_data)
     print("hjjlog>>bpinit---10002",param)
     sptr_main_layout=bp_get_main_layout();
-    -- if param_data=="" then 
-    --     return 
-    -- end
-    -- local l_table_data=json.decode(param_data)
     get_share_game_push();
 end
 

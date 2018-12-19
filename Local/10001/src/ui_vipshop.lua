@@ -161,6 +161,7 @@ function UIVipShop:on_btn_buy(param_sender,param_touchType)
     if param_touchType~=_G.TOUCH_EVENT_ENDED then
         return;
     end
+    
     local l_user_data=json.decode(bp_get_self_user_data())
     if l_user_data.ingot<param_sender.price then 
         bp_show_message_box("提示","你没有足够的元宝开通此会员，请先充值元宝",1,"充值","取消",
@@ -191,10 +192,8 @@ function UIVipShop:on_btn_get_ingot_ok(param_1,param_2)
 end
 
 function UIVipShop:on_http_buy_prop(param_identifier,param_success,param_code,param_header,context)
-    print("hjjlog>>on_http_exchange_data",context);
     bp_show_loading(0)
     if param_success~=true or param_code~=200 then 
-        print("hjjlog>>on_http_exchange_data   fail");
         bp_show_hinting("on_http_buy_prop")
         return  ;
     end
@@ -208,6 +207,7 @@ function UIVipShop:on_http_buy_prop(param_identifier,param_success,param_code,pa
     bp_show_hinting(l_data.resmsg)
 end
 function UIVipShop:on_update_user_data()
+    
     local l_user_data=json.decode(bp_get_self_user_data());
 
     local l_data=bp_get_self_prop_status(0)

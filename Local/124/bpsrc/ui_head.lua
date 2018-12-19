@@ -30,6 +30,8 @@ function UIHead:init(config_data)
 	self.head_back = control_tools.newImg({path = config_data.path, ctype = config_data.ctype, size = config_data.size})
     self:addChild(self.head_back)
     self.head_back:setPosition(cc.p(self:getContentSize().width/2, self:getContentSize().height/2))
+
+    
 end
 
 function UIHead:set_direction(direction)
@@ -40,9 +42,6 @@ function UIHead:touch_event(sender, eventType)
 	if eventType ~= _G.TOUCH_EVENT_ENDED then
 		return 
 	end
-	-- 点击音效
-	AudioEngine.playEffect(BPRESOURCE("bpres/sound/click.mp3"))
-	
 	if not self._extura_function then
 		return 
 	end
@@ -249,7 +248,7 @@ function UIHead:touch_voice(sender, eventType)
 end
 
 function UIHead:play_voice(voice, second, direction)
-	if not voice or voice == "" then return end
+	-- if not voice or voice == "" then return end
 
 	if direction < 0 or direction > 4 then return end
 

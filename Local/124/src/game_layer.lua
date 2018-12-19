@@ -1,12 +1,11 @@
 require "src/game_define"
 require "src/game_logic"
+local UIGrade = require("bpsrc/ui_grade")
 
 --------------------------------------------------------------------------------
 -- 单款主界面
 --------------------------------------------------------------------------------
 local game_layer = class("game_layer", function() return ccui.Layout:create() end)
-
-UserInfo = require("bpsrc/ui_gameuserinfo")
 
 --------------------------------------------------------------------------------
 -- 常量
@@ -31,11 +30,6 @@ end
 
 function game_layer:init(visibleSize)
     print("DY Log>>game_layer:init", visibleSize.width, visibleSize.height)
-    local l_lister= cc.EventListenerCustom:create("NOTICE_GAME_KICKOUT", function (eventCustom)
-        print("====================================踢人事件响应")
-        self:on_event_kickout(eventCustom)
-    end)
-    cc.Director:getInstance():getEventDispatcher():addEventListenerWithFixedPriority(l_lister, 1)
     -- 初始化场景
     self:setContentSize(visibleSize)
     -- 初始化背景
@@ -64,16 +58,12 @@ function game_layer:init(visibleSize)
     self:init_finish_layer(visibleSize)
     -- 初始化炸弹倍数
     self:init_bomb_times(visibleSize)
-    -- -- 初始化提示信息
-    -- self:init_notice_info(visibleSize)
     -- 初始化礼物发送
     self:init_gift_play_layer(visibleSize)
     -- 初始化聊天界面
     self:init_chat_layer(visibleSize)
     -- 初始化帮助界面
     self:init_help_layer(visibleSize)
-    -- -- 喇叭消息推送
-    -- self:init_bugle_info(visibleSize)
     -- 菜单
     self:init_menu_info(visibleSize)
     -- 初始化手机信息
@@ -92,13 +82,8 @@ function game_layer:set_game_main(game_main)
 end
 
 function game_layer:DY_test()
-	self.test_layer = require("bpsrc/ui_gameuserinfo").Instance()
+	-- self.test_layer = require("bpsrc/ui_gameuserinfo").Instance()
 	-- self:addChild(test_layer, 10000)
-end
-
--- 踢人事件响应
-function game_layer:on_event_kickout(eventCustom)
-    
 end
 
 function game_layer:on_start()
@@ -296,7 +281,7 @@ function game_layer:init_table_button( visibleSize )
 end
 
 function game_layer:init_game_clock( visibleSize )
-    self.player_clock = require("bpsrc/ui_clock"):create({path = "clock_bg.png", ctype = 1, scale = AUTO_SCALE, fnt = g_path .. "text_font/number_doudizhu_chupaidaojishi.fnt"})
+    self.player_clock = require("src/ui_tools/ui_clock"):create({path = "clock_bg.png", ctype = 1, scale = AUTO_SCALE, fnt = g_path .. "text_font/number_doudizhu_chupaidaojishi.fnt"})
     self:addChild(self.player_clock, ZOrder.clock)
     self.player_clock:setPosition(cc.p(visibleSize.width/2, visibleSize.height/2))
     self.player_clock:hide()
@@ -402,19 +387,6 @@ function game_layer:init_chat_mark_button( visibleSize )
     local btn_mark = self:create_btn({normal = "btn_mark.png", ctype = 1, tag = ButtonEventType.mark})
     self:addChild(btn_mark, ZOrder.button)
     btn_mark:setPosition(cc.p(btn_chat:getPositionX() - btn_chat:getContentSize().width - 10, btn_mark:getContentSize().height/2 + 1))
-end
-
-function game_layer:init_bugle_info( visibleSize )
-    -- local bugle = {}
-    -- bugle.width = visibleSize.width - 120 - 286*AUTO_WIDTH
-    -- bugle.height = 40
-    -- bugle.x = visibleSize.width * 3 / 14
-    -- bugle.y = visibleSize.height - 40
-    -- bugle.bool_touch = true
-
-    -- if set_bugle_custom then
-    --     set_bugle_custom(json.encode(bugle))
-    -- end
 end
 
 function game_layer:init_phone_info( visibleSize )
@@ -630,6 +602,7 @@ function game_layer:on_btn_ready()
 	if bind_function.get_game_status() ~= GameStatus.free then
 		return
 	end
+
 	-- 排队场 如果有人离开房间后点击准备 则进入匹配队列
     if self:bool_lineup() then
 		local is_all = true
@@ -705,12 +678,36 @@ function game_layer:on_btn_show_grade()
         tbl.grade = self.grade_list[i]
         table.insert(friend_info.grade_list, tbl)
 	end
-	-- if show_game_grade then
-	-- 	show_game_grade(json.encode(friend_info))
-	-- end
+	
+    UIGrade.ShowGradeLayer(friend_info)
 end
 
 function game_layer:on_btn_config()
+    -- 显示好友房战绩结算
+    -- UIGrade.ShowGradeLayer({})
+    -- 停止计时器 恢复计时器
+    -- if true then
+    --     self.touch_time = self.touch_time or 0
+    --     if self.touch_time == 0 then
+    --         self.player_clock:pauseTime()
+    --         self.touch_time = 1
+    --     else 
+    --         self.player_clock:resumeTime()
+    --         self.touch_time = 0
+    --     end
+    --     return 
+    -- end
+
+    -- 开启小游戏
+    -- bind_function.send_open_mini_game(1)
+    -- local UIGuess = require("bpsrc/ui_guess")
+    -- UIGuess.ShowGuessLayer({
+    --     userid=bind_function.get_self_user_data().dwUserID,
+    --     int_tax=1000,
+    --     int_count=5,
+    --     int_time=20,
+    --     long_gold=100000
+    -- })
     -- self.sound_id = self.sound_id or 1
     -- print("==========sound id = ", self.sound_id)
     -- if not (self.sound_id == 3 or self.sound_id == 5 or (self.sound_id >= 9 and self.sound_id <= 12) ) then
@@ -1010,16 +1007,19 @@ function game_layer:on_event_room_info(data)
 end
 
 function game_layer:on_event_game_sound(data)
-    -- if table_json.chair_id == -1 then
+    -- if data.chair_id == -1 then
     --     return 
     -- end
 
-    -- if table_json.chair_id == get_self_chair_id() then
-    --     audio_engine.playEffect(table_json.kind_id, table_json.chair_id)
+    -- if data.chair_id == get_self_chair_id() then
+    --     audio_engine.playEffect(data.kind_id, data.chair_id)
     -- end
 end
 
 function game_layer:on_event_chat(data)
+    if data._int_type == ChatType.notice then
+        bp_show_hinting(gbk_to_utf8(data._str_meassge))
+    end
 end
 
 function game_layer:on_event_button_power(visible, enable)
@@ -1139,7 +1139,6 @@ function game_layer:on_event_user_identify(data)
 end
 
 function game_layer:on_event_user_task(data)
-    print("==================on_event_user_task=====================")
     local string, value = nil, 0
     if game_logic.get_card_size(data.task_value) == 11 then
         value = "J"
@@ -1303,10 +1302,8 @@ end
 function game_layer:on_event_send_cards(data)
     if data.bool_ani == true then
         local value = bind_function.pause_message()
-        print("_----------暂停消息 value = ", value)
         -- 播放发牌音效
         self.send_cards_effectid = AudioEngine.playEffect(MUSIC_PATH.normal[5], true)
-        print("=================== 音效Id >> ", self.send_cards_effectid)
     end
 
     if data.cards_count == 0 then
@@ -1531,7 +1528,7 @@ function game_layer:on_game_user_enter(ptr_user_data)
     ROOM_KIND = room_json.kind
     ROOM_MODE = room_json.mode
 
-    print("=============viewid = ", viewid, "TABLE_ID = ", TABLE_ID)
+    print("=============viewid = ", viewid, "TABLE_ID = ", TABLE_ID, self:bool_guess_game())
     -- 匹配场  （tableid >= 150 换桌进入匹配队列）
     if self:bool_lineup() == true then 
         if self.btn_change and self.btn_ready then 
@@ -1665,8 +1662,8 @@ function game_layer:on_game_message(id, data)
     -- elseif id == MessageType.sound then
     --     self:on_event_game_sound(param_data)
 
-    -- elseif id == MessageType.chat then
-    --     self:on_event_chat(param_data)  
+    elseif id == MessageType.chat then
+        self:on_event_chat(param_data)  
 
     elseif id == MessageType.button_power then
         self:on_event_button_power(param_data.visible, param_data.enable)  
@@ -1830,11 +1827,11 @@ function game_layer:create_btn(config_data)
     return btn 
 end
 -- 金币不足提示
-function game_layer:show_gold_tips()
+function game_layer:show_gold_tips(str)
     if self:is_module_shop() == true then
-        -- show_simple_shop("金币不足", "确定")
+        bind_function.show_simple_shop()
     else
-        bind_function.show_hinting(tostring("金币不足，无法继续游戏"))
+        bind_function.show_hinting(str)
     end
 end
 -- 金币检查
@@ -1845,14 +1842,13 @@ function game_layer:check_gold(bool_show)
         if user_data == nil then return false end 
         if user_data.lGold == 0 then
             if bool_show then
-                self:show_gold_tips()
+                self:show_gold_tips(tostring("金币不足，无法继续游戏"))
             end
             return false
         end
 
         -- 房间下限金币检查
         local tbl_json = bind_function.get_room_data()
-        print("==============", json.encode(tbl_json), tbl_json.kind)
 
         if tbl_json == nil then return false end
 
@@ -1868,7 +1864,7 @@ function game_layer:check_gold(bool_show)
 
         if user_data.lGold < tmp_limit then 
             if bool_show then
-                self:show_gold_tips()
+                self:show_gold_tips(tostring("金币不足，无法继续游戏"))
             end
             return false
         end
@@ -1882,27 +1878,11 @@ function game_layer:check_bean()
         local table_json = bind_function.get_self_user_data()
         if table_json == nil then return false end
         if table_json.lGold < self.redpacket_limit then 
-            if self:is_module_shop() == true then
-                -- show_simple_shop("金豆不足", "确定")
-            else
-                bind_function.show_hinting(tostring("金豆不足，无法继续游戏"))
-            end
+            self:show_gold_tips(tostring("金豆不足，无法继续游戏"))
             return false
         end
     end
     return true
-end
--- 小游戏
-function game_layer:bool_guess_game()
-    if bit_tools._and(ROOM_KIND, GF.ROOM_KIND_MINI_GAME) <= 0 then
-        return false
-    end
-
-    -- if start_mini_guess then
-    --     return true
-    -- end
-
-    return false
 end
 -- 提示信息
 function game_layer:search_hint_info(cards, count)
@@ -1979,6 +1959,10 @@ function game_layer:show_hint_info()
     self.hint_info:setVisible(true) 
     self.hint_info:stopAllActions()
     self.hint_info:runAction(action_tools.CCSequence(action_tools.CCDelayTime(3), action_tools.CCFadeOut(1), action_tools.CCHide())) 
+end
+-- 是否是小游戏场
+function game_layer:bool_guess_game()
+    return bit_tools._and(ROOM_KIND, GF.ROOM_KIND_MINI_GAME) > 0 
 end
 -- 是否是防作弊场
 function game_layer:bool_cheat()

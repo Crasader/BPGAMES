@@ -2,6 +2,7 @@
 -- 结算界面
 --------------------------------------------------------------------------------
 local finish_layer = class("finish_layer", function () return ccui.Layout:create() end )
+local UIGuess = require("bpsrc/ui_guess")
 
 --------------------------------------------------------------------------------
 -- 常量
@@ -20,6 +21,14 @@ function finish_layer:ctor(visibleSize)
 end
 -- 初始化
 function finish_layer:init(visibleSize)
+    -- 事件监听
+    local l_lister= cc.EventListenerCustom:create("NOTICE_MINIGUESS", function (eventCustom)
+        print("====================================小游戏事件响应", eventCustom)
+        if eventCustom == nil then return end
+
+        self:on_open_mini_guess(eventCustom.value)
+    end)
+    cc.Director:getInstance():getEventDispatcher():addEventListenerWithFixedPriority(l_lister, 1)
     -- 半透明背景
     self.result_back = control_tools.newImg({path = g_path .. "result/finish.png", anchor = cc.p(0, 0)})
     self:addChild(self.result_back)
@@ -27,7 +36,7 @@ function finish_layer:init(visibleSize)
     self.result_back:setScaleY(AUTO_HEIGHT)
 
     -- 倒计时
-    self.player_clock = require("bpsrc/ui_clock"):create({path = "clock_bg.png", ctype = 1, scale = AUTO_SCALE, fnt = g_path .. "text_font/number_doudizhu_chupaidaojishi.fnt"})
+    self.player_clock = require("src/ui_tools/ui_clock"):create({path = "clock_bg.png", ctype = 1, scale = AUTO_SCALE, fnt = g_path .. "text_font/number_doudizhu_chupaidaojishi.fnt"})
     self:addChild(self.player_clock)
     self.player_clock:setPosition(cc.p(visibleSize.width/2, 100))
 
@@ -44,7 +53,7 @@ function finish_layer:init(visibleSize)
     -- 小游戏按钮
     self.btn_guess = control_tools.newImg({size = cc.size(100, 100)})
     self:addChild(self.btn_guess)
-    self.btn_guess:setPosition(cc.p(120, 180))
+    self.btn_guess:setPosition(cc.p(70, 130))
     self.btn_guess:setVisible(false)
     self.btn_guess:setTouchEnabled(true)
     self.btn_guess:addTouchEventListener(function(sender, eventType) self:on_btn_guess(sender, eventType) end)
@@ -123,11 +132,22 @@ function finish_layer:on_btn_guess(sender, eventType)
         return 
     end
     
+    print("=============翻翻乐小游戏点击事件===============")
     AudioEngine.playEffect(MUSIC_PATH.normal[0])
+    -- 暂停计时器
+    self.player_clock:pauseTime()
 
-    -- if start_mini_guess then
-    --     start_mini_guess()
-    -- end
+    -- 开启小游戏
+    bind_function.send_open_mini_game()
+end
+-- 翻翻乐小游戏响应
+function finish_layer:on_open_mini_guess(value)
+    local function callback()
+        -- 恢复计时器
+        self.player_clock:resumeTime()
+    end
+
+    UIGuess.ShowGuessLayer(json.decode(value), callback)
 end
 -- 创建相关按钮
 function finish_layer:create_about_btn()
@@ -197,7 +217,6 @@ function finish_layer:show_wait_time()
     if time > 1 then
         self.game_layer.player_clock:setPosition(cc.p(self.game_layer:getContentSize().width/2, self.game_layer.btn_change:getPositionY()))
         self.game_layer.player_clock:setVisible(false)
-        -- self.game_layer.player_clock:setTime(time, true)
 
         self.player_clock:setTime(time, true)
 
@@ -478,6 +497,7 @@ function finish_layer:show_guess_armature(result)
         if self.guess_armature == nil then             
             self.guess_armature = ccs.Armature:create("dh_fanfanle")
             self.btn_guess:addChild(self.guess_armature)
+            self.guess_armature:setPosition(cc.p(self.btn_guess:getContentSize().width/2, self.btn_guess:getContentSize().height/2))
         end
 
         if result == GameResult.win then
@@ -486,6 +506,7 @@ function finish_layer:show_guess_armature(result)
             self.guess_armature:getAnimation():playWithIndex(1)
         end
         self.btn_guess:setVisible(true)
+        self.btn_guess:setTouchEnabled(true)
     end
 end
 -- 显示台费
@@ -569,7 +590,7 @@ function finish_layer:DY_test(visibleSize)
 end
 
 function finish_layer:destory()
-    self.player_clock.clock_num:unscheduleUpdate()
+    self.player_clock:hide()
 end
 
 return finish_layer

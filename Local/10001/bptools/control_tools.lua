@@ -178,4 +178,3 @@ function control_tools.newScrollView(config_data)
 	end
 	return scroll
 end
-

@@ -4,6 +4,7 @@ require "cocos.init"
 require "bptools/control_tools"
 require "bptools/action_tools"
 require "bptools/bit_tools"
+require "bptools/ui_tools"
 require "bptools/audio_engine"
 
 local class_game_room_impl = require "bpframe/class_game_room_impl"

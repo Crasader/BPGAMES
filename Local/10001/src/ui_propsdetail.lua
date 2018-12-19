@@ -1,6 +1,7 @@
 local UIControl=require("src/ui_control")
 local UIPropsDetail=class("UIPropsDetail",UIControl)
 local g_path=BPRESOURCE("res/props/")
+local g_path_common=BPRESOURCE("res/common/",10000)
 
 
 local Type_Buy_Item = 1
@@ -16,6 +17,7 @@ function UIPropsDetail:ctor(...)
     self.m_curr_id=0;
     self.ptr_fun=nil;
     self.m_int_prop_id=0;
+    self.m_int_price=0;
     self:init();
 end
 function UIPropsDetail:destory()
@@ -92,7 +94,7 @@ function UIPropsDetail:set_product_data(param_id,param_count,parma_value,param_t
     self.ptr_fun=param_fun;
     self.m_int_prop_id=parma_value.id;
 
-    self.ptr_img_icon:loadTexture(g_path.."prop_"..the_prop_data.id..".png")
+    self.ptr_img_icon:loadTexture(g_path_common.."prop_"..the_prop_data.id..".png")
     self.ptr_label_name:setString(the_prop_data.name)
     self.ptr_label_desc:setTextEx(the_prop_data.caption,485,3)
 
@@ -103,12 +105,14 @@ function UIPropsDetail:set_product_data(param_id,param_count,parma_value,param_t
     self.ptr_btn_exchange:setVisible(false)
     if  param_type== Type_Buy_Item then 
         self.ptr_label_num:setString("数量："..param_count)
-        self.ptr_label_price:setString("价格："..parma_value)
+        self.ptr_label_price:setString("价格："..parma_value.price.."元宝")
+        self.m_int_price=parma_value.price
         self.ptr_label_price:setVisible(true)
         self.ptr_btn_buy:setVisible(true)
     elseif param_type==Type_Change_Item then 
         self.ptr_label_num:setString("库存："..param_count)
         self.ptr_label_price:setString("价格："..parma_value.price)
+        self.m_int_price=parma_value.price
         self.ptr_label_price:setVisible(true)
         self.ptr_btn_exchange:setVisible(true)
     elseif param_type==Type_Self_Item then 
@@ -135,7 +139,7 @@ function UIPropsDetail:on_btn_pay(param_sender,param_touchType)
     if self.ptr_fun==nil then 
         return ;
     end
-    self.ptr_fun(self.m_int_prop_id,"")
+    self.ptr_fun(self.m_int_prop_id,self.m_int_price)
 end
 function UIPropsDetail:on_btn_use(param_sender,param_touchType)
     if param_touchType~=_G.TOUCH_EVENT_ENDED then
@@ -145,7 +149,7 @@ function UIPropsDetail:on_btn_use(param_sender,param_touchType)
     if self.ptr_fun==nil then 
         return ;
     end
-    self.ptr_fun(self.m_int_prop_id,"")
+    self.ptr_fun(self.m_int_prop_id,self.m_int_price)
     
 end
 function UIPropsDetail:on_btn_true(param_sender,param_touchType)
@@ -166,7 +170,7 @@ function UIPropsDetail:on_btn_exchange(param_sender,param_touchType)
     if self.ptr_fun==nil then 
         return ;
     end
-    self.ptr_fun(self.m_int_prop_id,"")
+    self.ptr_fun(self.m_int_prop_id,self.m_int_price)
 end
 
 function UIPropsDetail.ShowPropsDetail(param_id,param_count,parma_value,param_type,param_fun)

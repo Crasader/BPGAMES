@@ -26,7 +26,7 @@ function UIChangeUserName:init()
     local test_bg=control_tools.newImg({path=TESTCOLOR.g,size=self.the_size})
     test_bg:setPosition(cc.p(self.the_size.width/2,self.the_size.height/2))
     self:addChild(test_bg);
-
+    
     local l_user_data=json.decode(bp_get_self_user_data());
     self.user_data=l_user_data;
 
@@ -154,7 +154,7 @@ function UIChangeUserName:on_btn_change(param_sender,param_touchType)
     if param_touchType~=_G.TOUCH_EVENT_ENDED then
         return 
     end
-
+    
     local l_user_data=json.decode(bp_get_self_user_data())
 
     local l_str_old_nickname=l_user_data.nickname

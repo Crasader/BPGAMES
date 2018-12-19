@@ -103,8 +103,9 @@ PUSH={
         SUB_FRIEND_STATUS_RET		=233					,      --好友状态
         SUB_FRIEND_STATUS_FINISH	=234					,      --好友状态下发结束
 }
-
-
+RELIEF_GAME={107,208,111,116,217,118,119,120,123,124,125,126,127,128,138,136,139,133}
+RELIEF_GOLD=500;
+RELIEF_BEANS=200
 TESTCOLOR={
     r=BPRESOURCE("res/test_red.png"),
     g=BPRESOURCE("res/test_green.png"),
@@ -134,26 +135,31 @@ VIPDATA=
 }
 
 URL={
-    HTTP_USE_PROP="https://open.bookse.cn/api.svc/api?{&quot;head&quot;:{&quot;FunctionCode&quot;:&quot;PropUse&quot;,&quot;session&quot;:&quot;{SESSION}&quot;},&quot;reqdata&quot;:{&quot;userid&quot;:{USERID},&quot;password&quot;:&quot;{PASSWORDMD5}&quot;,&quot;prop_id&quot;:{PROPID},&quot;reserve&quot;:&quot;{PARAM}&quot;,&quot;areaid&quot;:{AREAID},&quot;kindid&quot;:{KINDID},&quot;channel&quot;:{CHANNELID},&quot;version&quot;:{VERSION},&quot;keyword&quot;:&quot;{KEYWORD}&quot;}}",
-    HTTP_CHANGE_NICKNAME_NEW="https://demoopen.bookse.cn/api.svc/Api?{&quot;head&quot;:{&quot;FunctionCode&quot;:&quot;ModifyAccount&quot;,&quot;session&quot;:&quot;{SESSION}&quot;},&quot;reqdata&quot;:{&quot;userid&quot;:{USERID},&quot;password&quot;:&quot;{PASSWORDMD5}&quot;,&quot;newaccounts&quot;:&quot;{NEWNICKNAME}&quot;,&quot;newgender&quot;:{NEWSEX},&quot;areaid&quot;:{AREAID},&quot;kindid&quot;:{KINDID},&quot;channel&quot;:{CHANNELID},&quot;version&quot;:{VERSION}}}",
-    HTTP_BUY_PROP="https://demoopen.bookse.cn/api.svc/Api?{&quot;head&quot;:{&quot;FunctionCode&quot;:&quot;PropBuy&quot;,&quot;session&quot;:&quot;{SESSION}&quot;},&quot;reqdata&quot;:{&quot;userid&quot;:{USERID},&quot;password&quot;:&quot;{PASSWORDMD5}&quot;,&quot;fund_id&quot;:{PROPID},&quot;fund_count&quot;:{PROPCOUNT},&quot;use_type&quot;:{USETYPE},&quot;areaid&quot;:{AREAID},&quot;kindid&quot;:{KINDID},&quot;channel&quot;:{CHANNELID},&quot;version&quot;:{VERSION},&quot;keyword&quot;:&quot;{KEYWORD}&quot;}}",
-    HTTP_CLIENT_AWARD="http://webdemo.tongquegame.com/mobile/client_award.php?userid={USERID}&session={SESSION}&type={TYPEID}&kindid={KINDID}&areaid={AREAID}&channelid={CHANNELID}&version={VERSION}&keyword={KEYWORD}",
-    HTTP_GET_NOTICE="http://webdemo.tongquegame.com/mobile/notice_query.php?areaid={AREAID}&kindid={KINDID}&channel={CHANNELID}&userid={USERID}&session={SESSION}&version={VERSION}",
-    HTTP_EXCHANGE_REDPACKET_LIST="http://webdemo.tongquegame.com/mobile/redpackfield_show.php?userid={USERID}&session={SESSION}",
-    HTTP_QUERY_GOLD="https://demoopen.bookse.cn/api.svc/api?{&quot;head&quot;:{&quot;FunctionCode&quot;:&quot;QueryUserGold&quot;,&quot;session&quot;:&quot;{SESSION}&quot;},&quot;reqdata&quot;:{&quot;userid&quot;:{USERID}}}",
-    HTTP_EXCHANGE_RECORD="https://demoopen.bookse.cn/api.svc/api?{&quot;head&quot;:{&quot;FunctionCode&quot;:&quot;QueryFundExchangeLog&quot;,&quot;session&quot;:&quot;{SESSION}&quot;},&quot;reqdata&quot;:{&quot;userid&quot;:{USERID},&quot;password&quot;:&quot;{PASSWORDMD5}&quot;,&quot;pageno&quot;:{PAGENO},&quot;pagesize&quot;:{PAGESIZE},&quot;areaid&quot;:{AREAID},&quot;kindid&quot;:{KINDID},&quot;channel&quot;:{CHANNELID},&quot;version&quot;:{VERSION},&quot;keyword&quot;:&quot;{KEYWORD}&quot;}}",
-    HTTP_EXCHANGE_OPERATION="https://demoopen.bookse.cn/api.svc/api?{&quot;head&quot;:{&quot;FunctionCode&quot;:&quot;FundExchange&quot;,&quot;session&quot;:&quot;{SESSION}&quot;},&quot;reqdata&quot;:{&quot;userid&quot;:{USERID},&quot;password&quot;:&quot;{PASSWORDMD5}&quot;,&quot;exchange_id&quot;:{EXCHANGEID},&quot;areaid&quot;:{AREAID},&quot;kindid&quot;:{KINDID},&quot;channel&quot;:{CHANNELID},&quot;version&quot;:{VERSION},&quot;keyword&quot;:&quot;{KEYWORD}&quot;}}",
-    HTTP_EXCHANGE_LIST="https://demoopen.bookse.cn/api.svc/api?{&quot;head&quot;:{&quot;FunctionCode&quot;:&quot;QueryFundExchange&quot;,&quot;session&quot;:&quot;{SESSION}&quot;},&quot;reqdata&quot;:{&quot;kind&quot;:1,&quot;userid&quot;:{USERID},&quot;password&quot;:&quot;{PASSWORDMD5}&quot;,&quot;areaid&quot;:{AREAID},&quot;kindid&quot;:{KINDID},&quot;channel&quot;:{CHANNELID},&quot;version&quot;:{VERSION},&quot;keyword&quot;:&quot;{KEYWORD}&quot;}}",
-    HTTP_ACCESS_GOLD="https://demoopen.bookse.cn/api.svc/api?{&quot;head&quot;:{&quot;FunctionCode&quot;:&quot;UserGoldAccess&quot;,&quot;session&quot;:&quot;{SESSION}&quot;},&quot;reqdata&quot;:{&quot;userid&quot;:{USERID},&quot;op_gold&quot;:{OPGOLD},&quot;op_type&quot;:{OPTYPE},&quot;areaid&quot;:{AREAID},&quot;kindid&quot;:{KINDID},&quot;channel&quot;:{CHANNELID},&quot;version&quot;:{VERSION}}}",
-    HTTP_USE_PROP="https://demoopen.bookse.cn/api.svc/api?{&quot;head&quot;:{&quot;FunctionCode&quot;:&quot;PropUse&quot;,&quot;session&quot;:&quot;{SESSION}&quot;},&quot;reqdata&quot;:{&quot;userid&quot;:{USERID},&quot;password&quot;:&quot;{PASSWORDMD5}&quot;,&quot;prop_id&quot;:{PROPID},&quot;reserve&quot;:&quot;{PARAM}&quot;,&quot;areaid&quot;:{AREAID},&quot;kindid&quot;:{KINDID},&quot;channel&quot;:{CHANNELID},&quot;version&quot;:{VERSION},&quot;keyword&quot;:&quot;{KEYWORD}&quot;}}",
-    HTTP_TASK_REWARD="http://webdemo.tongquegame.com/mobile/user_daytask_receive.php?userid={USERID}&task_id={TASKID}&session={SESSION}",
-    HTTP_TASK_DATA="http://webdemo.tongquegame.com/mobile/user_daytask_query.php?userid={USERID}&kindid={KINDID}&session={SESSION}",
-    HTTP_GET_PHONE_CODE="http://demoopen.bookse.cn/api.svc/Api?{&quot;head&quot;:{&quot;FunctionCode&quot;:&quot;GetSmsCode&quot;},&quot;reqdata&quot;:{&quot;phonenum&quot;:&quot;{PHONE}&quot;,&quot;type&quot;:{PHONE_TYPE}}}",
-    HTTP_REG_REAL_NAME="https://demoopen.bookse.cn/api.svc/api?{&quot;head&quot;:{&quot;FunctionCode&quot;:&quot;UpdateIdCard&quot;,&quot;session&quot;:&quot;{SESSION}&quot;},&quot;reqdata&quot;:{&quot;userid&quot;:{USERID},&quot;password&quot;:&quot;{PASSWORDMD5}&quot;,&quot;idcard&quot;:&quot;{NEWIDCARD}&quot;,&quot;realname&quot;:&quot;{REALNAME}&quot;,&quot;areaid&quot;:{AREAID},&quot;kindid&quot;:{KINDID},&quot;channel&quot;:{CHANNELID},&quot;version&quot;:{VERSION},&quot;keyword&quot;:&quot;{KEYWORD}&quot;}}",
-    HTTP_CHANGE_PASSWORD="https://demoopen.bookse.cn/api.svc/api?{&quot;head&quot;:{&quot;FunctionCode&quot;:&quot;UpdatePwd&quot;,&quot;session&quot;:&quot;{SESSION}&quot;},&quot;reqdata&quot;:{&quot;userid&quot;:{USERID},&quot;pwd&quot;:&quot;{PASSWORDMD5}&quot;,&quot;newpwd&quot;:&quot;{NEWPASSWORD}&quot;,&quot;areaid&quot;:{AREAID},&quot;kindid&quot;:{KINDID},&quot;channel&quot;:{CHANNELID},&quot;version&quot;:{VERSION},&quot;keyword&quot;:&quot;{KEYWORD}&quot;}}",
-    HTTP_CHANGE_ACCOUNT="https://demoopen.bookse.cn/api.svc/Api?{&quot;head&quot;:{&quot;FunctionCode&quot;:&quot;ModifyRegAccount&quot;,&quot;session&quot;:&quot;{SESSION}&quot;},&quot;reqdata&quot;:{&quot;userid&quot;:{USERID},&quot;password&quot;:&quot;{PASSWORDMD5}&quot;,&quot;newregaccounts&quot;:&quot;{NEWACCOUNTS}&quot;,&quot;newpassword&quot;:&quot;{NEWPASSWORD}&quot;,&quot;areaid&quot;:{AREAID},&quot;kindid&quot;:{KINDID},&quot;channel&quot;:{CHANNELID},&quot;version&quot;:{VERSION}}}"   
+    HTTP_GET_NOTICE              =bp_get_url(4 )    ,   --公告接口        
+    HTTP_CHANGE_HEAD             =bp_get_url(6 )    ,   --修改头像信息    
+    HTTP_CHANGE_PASSWORD         =bp_get_url(8 )    ,   --修改密码        
+    HTTP_QUERY_GOLD              =bp_get_url(12)    ,   --查询金币        
+    HTTP_TASK_DATA               =bp_get_url(20)    ,   --查询任务        
+    HTTP_TASK_REWARD             =bp_get_url(21)    ,   --领取任务奖励    
+    HTTP_EXCHANGE_LIST           =bp_get_url(24)    ,   --查询兑换清单    
+    HTTP_EXCHANGE_OPERATION      =bp_get_url(25)    ,   --兑换操作        
+    HTTP_EXCHANGE_RECORD         =bp_get_url(26)    ,   --查询兑换记录    
+    HTTP_CLIENT_AWARD            =bp_get_url(27)    ,   --客户端行为奖励  
+    HTTP_UPDATE_USER_DATA        =bp_get_url(30)    ,   --刷新用户数据    
+    HTTP_USE_PROP                =bp_get_url(31)    ,   --道具使用接口    
+    HTTP_BUY_PROP                =bp_get_url(32)    ,   --道具购买接口    
+    HTTP_REG_REAL_NAME           =bp_get_url(37)    ,   --实名认证        
+    HTTP_DOWNLOAD_FAILE          =bp_get_url(44)    ,   --下载失败统计    
+    HTTP_PROP_SHOP               =bp_get_url(46)    ,   --道具商城道具购买
+    HTTP_ACCESS_GOLD             =bp_get_url(47)    ,   --玩家转账        
+    HTTP_GET_PHONE_CODE          =bp_get_url(52)    ,   --获取手机验证码  
+    HTTP_CHANGE_ACCOUNT          =bp_get_url(53)    ,   --修改个人信息    
+    HTTPS_BIND_WECHAT            =bp_get_url(56)    ,   --绑定微信        
+    HTTP_CHANGE_NICKNAME_NEW     =bp_get_url(57)    ,   --修改昵称性别    
+    HTTP_EXCHANGE_REDPACKET_LIST =bp_get_url(58)    ,   --红包兑换清单    
+    HTTP_EXCHANGE_REDPACKET      =bp_get_url(59)    ,   --红包兑换        
+    HTTP_GET_RELIEF              =bp_get_url(60)    ,   --领取救济金      
 }
-
 PROP={
         ID_PROP_OXHEAD		=1001, 	-- 牛头
         ID_PROP_LOTTER		=1002, 	-- 奖券

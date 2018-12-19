@@ -30,7 +30,7 @@ function UIShopItem:init()
     self:addChild(self.ptr_img_type)
     self.ptr_img_type:setPosition(cc.p(30,150))
 
-    self.ptr_img_icon=control_tools.newImg({path=g_path.."shop_icon.png"})
+    self.ptr_img_icon=control_tools.newImg({path=g_path.."img_gold_1.png"})
     self:addChild(self.ptr_img_icon)
     self.ptr_img_icon:setPosition(cc.p(100,100))
 
@@ -73,10 +73,10 @@ function UIShopItem:set_item_data(param_data)
     if param_data.type==1 then 
         self.ptr_img_icon:loadTexture(g_path.."img_gold_6.png")
         self.ptr_img_icon:loadTexture(g_path.."img_gold_"..param_data.icon..".png")
-    elseif param_data.type==2 then 
+    elseif param_data.type==6 then 
         self.ptr_img_icon:loadTexture(g_path.."img_beans_6.png")
         self.ptr_img_icon:loadTexture(g_path.."img_beans_"..param_data.icon..".png")
-    elseif param_data.type==3 then 
+    elseif param_data.type==2 then 
         self.ptr_img_icon:loadTexture(g_path.."img_ingot_6.png")
         self.ptr_img_icon:loadTexture(g_path.."img_ingot_"..param_data.icon..".png")
     end

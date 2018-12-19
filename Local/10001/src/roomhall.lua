@@ -46,7 +46,7 @@ function RoomHall:init()
     self.ptr_page_site:setPosition(cc.p(l_float+254+l_float,110));
     
     local l_config_game=json.decode(bp_get_game_list())
-    local l_count=3
+    local l_count=6
     local l_site_begin_width=130;
     local l_site_begin_height=334;
     local l_float_space_x=l_float+260
@@ -56,7 +56,7 @@ function RoomHall:init()
 
     local l_layout_page=nil;
     for k,v in pairs(l_config_game) do 
-        if l_count==3 then 
+        if l_count==6 then 
             l_layout_page=ccui.Layout:create();
             l_layout_page:setContentSize(cc.size(l_float+260*2,400))
             self.ptr_page_site:addPage(l_layout_page)
@@ -83,7 +83,7 @@ function RoomHall:init()
         l_count=l_count+1;
     end
 
-    if #l_config_game >3 then
+    if #l_config_game >6 then
         local l_btn_next=control_tools.newBtn({normal=BPRESOURCE("res/scene_room/btn_next.png"),pressed=BPRESOURCE("res/scene_room/btn_next.png")}) 
         self:addChild(l_btn_next)
         l_btn_next:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_next(param_sender,param_touchType) end)
@@ -123,36 +123,85 @@ function RoomHall:on_btn_notice(param_sender,param_touchType)
     end
     print("hjjlog>>on_btn_notice")
 end
-function RoomHall:back_to_hall()
-    self:hide_game_site()
-    self:show_game_hall()
+function RoomHall:back_to_hall(param_bool_action)
+ 
+    self:hide_game_site(param_bool_action)
+    self:show_game_hall(param_bool_action)
 end
+function RoomHall:back_to_site(param_game_id,param_site_id,param_bool_action)
+    self:hide_game_hall(param_bool_action);
+    self:show_game_site(param_game_id,param_site_id,param_bool_action)
+end
+
 
 function RoomHall:on_btn_game_site(param_sender,param_touchType)
     if param_touchType~=_G.TOUCH_EVENT_ENDED then
         return 
     end
-    print("hjjlog>>on_btn_game_site")
     local l_site=param_sender.list_data;
-    --hjj_for_wait
-    self:hide_game_hall();
-    self:show_game_site(l_site.id)
-end
-function RoomHall:show_game_site(param_game_id,param_site_id)
-    self.ptr_room_site:setVisible(true)
-    self.ptr_room_site:show_game_site(param_game_id,param_site_id);
-end
-function RoomHall:hide_game_site()
-    self.ptr_room_site:setVisible(false)
-end
-function RoomHall:show_game_hall()
-    self.ptr_page_notice:setVisible(true)
-    self.ptr_page_site:setVisible(true)
-end
-function RoomHall:hide_game_hall()
-    self.ptr_page_notice:setVisible(false)
-    self.ptr_page_site:setVisible(false)
+    local event = cc.EventCustom:new("BTN_GAME");
+    event.value = l_site.id
+    cc.Director:getInstance():getEventDispatcher():dispatchEvent(event)
 
+end
+function RoomHall:show_game_site(param_game_id,param_site_id,param_bool_action)
+
+    self.ptr_room_site:show_game_site(param_game_id,param_site_id);
+    if param_bool_action then 
+        self.ptr_room_site:setVisible(true)
+        self.ptr_room_site:setOpacity(0)
+        local l_ac_delay_1=cc.DelayTime:create(0.2)
+        local l_ac_fadein_1=cc.FadeIn:create(0.2)
+        self.ptr_room_site:runAction(cc.Sequence:create(l_ac_delay_1,l_ac_fadein_1))
+    else
+        self.ptr_room_site:setOpacity(255)
+        self.ptr_room_site:setVisible(true)
+
+    end
+end
+function RoomHall:hide_game_site(param_bool_action)
+    if param_bool_action==true then 
+        local l_ac_fade_out=cc.FadeOut:create(0.2)
+        local l_ac_fun=cc.CallFunc:create(function(param_sender) self.ptr_room_site:setVisible(false) end )
+        self.ptr_room_site:runAction(cc.Sequence:create(l_ac_fade_out,l_ac_fun));
+    else 
+        self.ptr_room_site:setVisible(false)
+    end
+end
+
+function RoomHall:show_game_hall(param_bool_action)
+    if  param_bool_action==true  then 
+        self.ptr_page_notice:setVisible(true)
+        self.ptr_page_site:setVisible(true)
+        self.ptr_page_notice:setOpacity(0)
+        self.ptr_page_site:setOpacity(0)
+        local l_ac_delay_1=cc.DelayTime:create(0.2)
+        local l_ac_fade_in_1=cc.FadeIn:create(0.2)
+        self.ptr_page_notice:runAction(cc.Sequence:create(l_ac_delay_1,l_ac_fade_in_1))
+
+        local l_ac_delay_2=cc.DelayTime:create(0.2)
+        local l_ac_fade_in_2=cc.FadeIn:create(0.2)
+        self.ptr_page_site:runAction(cc.Sequence:create(l_ac_delay_2,l_ac_fade_in_2))
+    else
+        self.ptr_page_notice:setVisible(true)
+        self.ptr_page_site:setVisible(true)
+        self.ptr_page_notice:setOpacity(255)
+        self.ptr_page_site:setOpacity(255)
+    end
+end
+function RoomHall:hide_game_hall(param_bool_action)
+    if param_bool_action==true then 
+        local l_ac_fade_out=cc.FadeOut:create(0.2)
+        local l_ac_fun=cc.CallFunc:create(function(param_sender) self.ptr_page_notice:setVisible(false) end )
+        self.ptr_page_notice:runAction(cc.Sequence:create(l_ac_fade_out,l_ac_fun));
+
+        local l_ac_fade_out_2=cc.FadeOut:create(0.2)
+        local l_ac_fun_2=cc.CallFunc:create(function(param_sender) self.ptr_page_site:setVisible(false) end )
+        self.ptr_page_site:runAction(cc.Sequence:create(l_ac_fade_out_2,l_ac_fun_2));
+    else
+        self.ptr_page_notice:setVisible(false)
+        self.ptr_page_site:setVisible(false)
+    end
 end
 
 

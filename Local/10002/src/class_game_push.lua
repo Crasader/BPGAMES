@@ -17,7 +17,7 @@ end
 
 function class_game_push:init_game_push()
     self:reset_right();
-    local l_user_data=json.decode(bp_get_self_user_data());
+    local l_user_data=json.decode(bp_get_self_user_data(33));
     self:add_right(l_user_data.right)
     if self._the_push_socket ~=nil then
         bp_socket_release(self._the_push_socket)

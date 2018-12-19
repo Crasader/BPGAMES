@@ -137,3 +137,26 @@ function action_tools.getShakeAct(param_time,param_speed,param_range,param_loop)
 
     return action
 end
+
+-- -----------------
+-- DY ADD
+-- -----------------
+function action_tools.CCBezierTo( param_time, param_bezier )
+    return cc.BezierTo:create(param_time, param_bezier)
+end
+
+function action_tools.CCScaleToXY(param_time, param_scaleX, param_scaleY)
+    return cc.ScaleTo:create(param_time, param_scaleX, param_scaleY)
+end
+
+function action_tools.CCHide()
+    return cc.Hide:create()
+end
+
+function action_tools.CCShow()
+    return cc.Show:create()
+end
+
+function action_tools.CCEaseElasticOut(param_action)
+    return cc.EaseElasticOut:create(param_action)
+end

@@ -2,6 +2,7 @@
 -- 玩家头像
 --------------------------------------------------------------------------------
 local game_user = class("game_user", function() return ccui.Layout:create() end)
+local UserInfo = require("bpsrc/ui_gameuserinfo")
 
 --------------------------------------------------------------------------------
 -- 常量
@@ -150,20 +151,7 @@ function game_user:game_user_info( viewid, visibleSize )
         --  充值按钮
         local function touch_event(sender, touchType)
             if touchType == _G.TOUCH_EVENT_ENDED then
-                -- if show_gift_shop then
-                --     local tbl_json = bind_function.get_room_data()
-                --     if tbl_json == nil then
-                --         return
-                --     end
-
-                --     if bit._and(tbl_json.room_mode, GF.ROOM_MODE_REDPACKET) ~= 0 then
-                --         show_gift_shop(5,6)
-                --     else
-                --         show_gift_shop(1,6)
-                --     end
-                -- else
-                --     show_simple_shop("充值礼包", "获取礼包")
-                -- end
+                bind_function.show_gift_shop()
             end
         end
 
@@ -175,18 +163,6 @@ function game_user:game_user_info( viewid, visibleSize )
         
     return head_back
 end
-
-function game_user:update_head_img(viewid)
-    if not viewid or viewid < 0 or viewid > GAME_PLAYER then
-        return 
-    end
-    print("---------------------zctgs vy se---------------------1")
-    if UICustomImage.updata_head then
-        print("---------------------zctgs vy se---------------------2")
-        self.player_heads[viewid]:updata_head()    
-    end
-end
-
 -- 设置vip
 function game_user:setVip(viewid, vip_level)
     if not viewid or viewid < 0 or viewid > GAME_PLAYER then
@@ -512,10 +488,8 @@ function game_user:set_gold(viewid, gold)
 end
 -- 显示玩家 
 function game_user:show_user(viewid, isShow, isAction, isNocheat)
-    print("-----isAction = ", isAction)
     isAction = isAction ~= nil and isAction or false
     isNocheat = isNocheat ~= nil and isNocheat or false
-    print("-----isAction = ", isAction, isShow)
     if not viewid or viewid < 0 or viewid > GAME_PLAYER then
         return 
     end

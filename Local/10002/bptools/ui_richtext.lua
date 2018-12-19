@@ -120,8 +120,6 @@ function UIRichTextEx:setTextEx(text)
 	-- 更新文本框实际大小
 	self:formatText()
     self._textSize = self:getVirtualRendererSize()
-    print("hjjlog>>_textSize111111:",self._textSize.width,self._textSize.height);
-
 	self:setContentSize(self._textSize)
 end
 

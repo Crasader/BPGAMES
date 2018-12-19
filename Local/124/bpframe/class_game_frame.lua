@@ -217,11 +217,39 @@ function class_game_frame:on_frame_message(int_sub_id,data)
     elseif int_sub_id==V10.SUB_FRAME_PRAISE_RET then 
         local l_table=CMD_FRAME_PRAISE_RET.fromBuffer(data)
         if l_table.flag==0 then 
+            bp_update_user_data(1)
             bp_show_hinting("点赞成功，每局游戏限对同个玩家点赞一次")
         end
     elseif int_sub_id==V10.SUB_FRAME_READY_ERROR then 
         local l_table=CMD_FRAME_READY_ERROR.fromBuffer(data)
         self:on_game_ready_error(l_table.flag,bp_gbk2utf(l_table.error))
+    elseif int_sub_id==V10.SUB_FRAME_OPEN_MINI_GAME_RET then 
+        print("DY Log >> 打开翻翻乐小游戏回调 >> ")
+        local l_table=CMD_MINI_GAME_INFO.fromBuffer(data)
+        --hjj_for_dd;
+        local event = cc.EventCustom:new("NOTICE_MINIGUESS");
+        event.value =json.encode(l_table)
+        print("------------------l_table = ", l_table, "value = ", event.value)
+        cc.Director:getInstance():getEventDispatcher():dispatchEvent(event)
+    elseif int_sub_id==V10.SUB_FRAME_MINI_GAME_ERR then 
+        local l_table={}
+        bp_unpack_start(data);
+        l_table.flag=bp_unpack(4,false)
+        l_table.error=bp_unpack(0,1024)
+        bp_unpack_end()
+        print("DY Log >> 翻翻乐小游戏回调ERROR >> ", l_table.flag, bp_gbk2utf(l_table.error))
+        if l_table.flag ~= 0 then
+            bp_show_hinting(bp_gbk2utf(l_table.error))
+        end
+    elseif int_sub_id==V10.SUB_FRAME_MINI_GAME_RESULT then 
+        print("DY Log >> 翻翻乐小游戏回调RESULT >> ")
+        local l_table=CMD_MINI_GAME_RESULT.fromBuffer(data)
+        --hjj_for_dd;
+        local event = cc.EventCustom:new("NOTICE_MINIGUESS_RESULT");
+        event.value =json.encode(l_table)
+        print("------------------l_table = ", l_table, "value = ", event.value)
+        cc.Director:getInstance():getEventDispatcher():dispatchEvent(event)
+
     else 
         print("hjjlog>>need:on_frame_message other:",int_sub_id)
     end 
@@ -318,6 +346,18 @@ function class_game_frame:send_user_kick(param_user_id,param_to_user_id)
     local l_buffer=CMD_FRAME_KICKOUT.toBuffer(l_table)
     return self:send_data(V10.MDM_FRAME,V10.SUB_FRAME_KICKOUT,l_buffer)
 end
+function class_game_frame:send_open_mini_game(param_game_id)
+    bp_pack_start()
+    bp_pack(4,param_game_id)
+    local l_buffer=bp_pack_end();
+    return self:send_data(V10.MDM_FRAME,V10.SUB_FRAME_OPEN_MINI_GAME,l_buffer)
+end
+function class_game_frame:send_mini_guess_checkid(param_check_id)
+    bp_pack_start()
+    bp_pack(4,param_check_id)
+    local l_buffer=bp_pack_end();
+    return self:send_data(V10.MDM_FRAME,V10.SUB_FRAME_PLAY_MINI_GAME,l_buffer)
+end
 
 function class_game_frame:on_game_resp_kickedout(param_user_id,param_to_user_id,param_flag)
     if self:get_self_user_data()==nil then 
@@ -361,14 +401,9 @@ function class_game_frame:on_game_resp_kickedout(param_user_id,param_to_user_id,
 
 end
 function class_game_frame:show_shop(param_id)
-    -- local event = cc.EventCustom:new("MSG_DO_TASK");
-    -- event.command = "open:" .. param_id
-    -- print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", event.command)
-    -- cc.Director:getInstance():getEventDispatcher():dispatchEvent(event)
-
-    local l_table = {}
-    l_table.command = "open:" .. param_id
-    bp_application_signal(10001, "MSG_DO_TASK", json.encode(l_table))
+    local event = cc.EventCustom:new("MSG_DO_TASK");
+    event.command = "open:"..param_id
+    cc.Director:getInstance():getEventDispatcher():dispatchEvent(event)
 end
 function class_game_frame:on_game_notice_kickout(param_user_id,param_to_user_id)
     if param_user_id==self._int_user_id then 

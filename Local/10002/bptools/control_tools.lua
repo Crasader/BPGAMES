@@ -149,3 +149,32 @@ function control_tools.XMLHttpRequest(param_url,param_fun)
     return xhr
 end
 
+-- -----------------
+-- DY ADD
+-- -----------------
+function control_tools.newLayout(config_data)
+    local layout = ccui.Layout:create()
+    if config_data.clip ~= nil then
+    	layout:setClippingEnabled(config_data.clip)
+    end
+    if config_data.size then
+    	layout:setContentSize(config_data.size)
+    end
+    return layout
+end
+
+function control_tools.newScrollView(config_data)
+	local scroll = ccui.ScrollView:create() 
+	if config_data.direction then
+		scroll:setDirection(config_data.direction)
+	else
+		scroll:setDirection(_G.SCROLLVIEW_DIR_VERTICAL)
+	end
+	if config_data.size then
+		scroll:setContentSize(config_data.size)
+	end
+	if config_data.csize then
+		scroll:setInnerContainerSize(config_data.csize)
+	end
+	return scroll
+end

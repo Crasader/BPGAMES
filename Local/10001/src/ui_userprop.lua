@@ -3,6 +3,8 @@ local UIControl=require("src/ui_control")
 local UIUserProp=class("UIUserProp",function() return ccui.Layout:create() end)
 local UIPropsDetail=require("src/ui_propsdetail")
 local g_path=BPRESOURCE("res/props/")
+local g_path_common=BPRESOURCE("res/common/",10000)
+
 function UIUserProp:ctor()
     print("UIUserProp 2222"); 
     --self.super:ctor(self);
@@ -41,7 +43,9 @@ function UIUserProp:on_btn_show_shop(param_sender,param_touchType)
     if param_touchType~=_G.TOUCH_EVENT_ENDED then
         return;
     end
-    print("hjjlog>>wait!!!!uiuserinfo  on_btn_bind_wechat");  
+    local event = cc.EventCustom:new("MSG_DO_TASK");
+    event.command = "open:2"
+    cc.Director:getInstance():getEventDispatcher():dispatchEvent(event)
  end 
  function UIUserProp:on_btn_props(param_sender,param_touchType)
     if param_touchType~=_G.TOUCH_EVENT_ENDED then
@@ -135,7 +139,7 @@ function UIUserProp:on_update_user_data()
                 l_item.name:setString(t_status_data.name)
                 l_item.prop.id=v.id
                 l_item.prop.cnt=v.cnt
-                l_item.prop:loadTextures(g_path.."prop_"..v.id..".png",g_path.."prop_"..v.id..".png")
+                l_item.prop:loadTextures(g_path_common.."prop_"..v.id..".png",g_path_common.."prop_"..v.id..".png")
                 l_item.bg:setVisible(true) 
                 l_item.cnt:setString(v.cnt.."个")
             end
@@ -149,7 +153,7 @@ function UIUserProp:on_update_user_data()
                 l_item.name:setString(t_status_data.name)
                 l_item.prop.id=v.id
                 l_item.prop.cnt=v.cnt
-                l_item.prop:loadTextures(g_path.."prop_"..v.id..".png",g_path.."prop_"..v.id..".png")
+                l_item.prop:loadTextures(g_path_common.."prop_"..v.id..".png",g_path_common.."prop_"..v.id..".png")
                 l_item.bg:setVisible(true) 
                 l_item.cnt:setString(v.cnt.."个")
             end
@@ -194,6 +198,7 @@ function UIUserProp:on_btn_use_props(param_id,param_value)
     elseif param_id==PROP.ID_PROP_PACKAGE then 
         self:request_use_prop(param_id, 1);
     elseif param_id==PROP.ID_PROP_CHARMCLEAR then 
+        
         local l_user_data=json.decode(bp_get_self_user_data());
         if l_user_data.charm>=0 then 
             bp_show_hinting("您的魅力大于零，无需清零")

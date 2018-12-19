@@ -438,6 +438,9 @@ function UIChatSend:update_voice_time(param_dt)
 end
 
 function UIChatSend:on_event_user_chat(eventCustom)
+    if eventCustom==nil then 
+        return ;
+    end
     local l_table={}
     l_table.chat=eventCustom.chat;
     l_table.userid=eventCustom.userid;

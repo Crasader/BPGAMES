@@ -42,7 +42,9 @@ function UIUserRight:on_btn_show_shop(param_sender,param_touchType)
     if param_touchType~=_G.TOUCH_EVENT_ENDED then
         return;
     end
-    print("hjjlog>>wait!!!!uiuserinfo  on_btn_bind_wechat");  
+    local event = cc.EventCustom:new("MSG_DO_TASK");
+    event.command = "open:8"
+    cc.Director:getInstance():getEventDispatcher():dispatchEvent(event)
  end 
 
  function UIUserRight:clear_item()

@@ -8,10 +8,10 @@ local UIHead = require("bpsrc/ui_head")
 local UIReport = require("bpsrc/ui_report")
 
 local g_path = BPRESOURCE("bpres/userinfo/")
+local prop_path = BPRESOURCE("res/props/", 10001)
 local req = "https://demoopen.bookse.cn/api.svc/api?{&quot;head&quot;:{&quot;FunctionCode&quot;:&quot;PropUse&quot;,&quot;session&quot;:&quot;{SESSION}&quot;},&quot;reqdata&quot;:{&quot;userid&quot;:{USERID},&quot;password&quot;:&quot;{PASSWORDMD5}&quot;,&quot;prop_id&quot;:{PROPID},&quot;reserve&quot;:&quot;{PARAM}&quot;,&quot;areaid&quot;:{AREAID},&quot;kindid&quot;:{KINDID},&quot;channel&quot;:{CHANNELID},&quot;version&quot;:{VERSION},&quot;keyword&quot;:&quot;{KEYWORD}&quot;}}"
 
 require "bptools/class_tools"
-require "bpframe/prop_define"
 
 ptr_user_info = nil
 --------------------------------------------------------------------------------
@@ -34,20 +34,21 @@ end
 -- 初始化
 function UIGameUserInfo:init()
     local   l_lister= cc.EventListenerCustom:create("NOTICE_UPDATE_USER_DATA", function (eventCustom)
+        print("----------------UIGameUserInfo-----------NOTICE_UPDATE_USER_DATA------------")
+        if eventCustom==nil then return end
         self:on_update_user_data();
     end)
     cc.Director:getInstance():getEventDispatcher():addEventListenerWithFixedPriority(l_lister, 1)
 
     local l_lister= cc.EventListenerCustom:create("NOTICE_GMAE_START", function (eventCustom)
-        print("====================================游戏开始事件响应")
+        if eventCustom==nil then return end
         self:on_game_start()
     end)
     cc.Director:getInstance():getEventDispatcher():addEventListenerWithFixedPriority(l_lister, 1)
 
     -- 背景框
     self:set_bg(g_path .. "gui.png")
-    self:hide_title()
-    self:hide_choose()
+    self:update_layout()
 
     self.info_bg = self:get_gui()
     self.the_size = self.info_bg:getContentSize()
@@ -56,6 +57,11 @@ function UIGameUserInfo:init()
     self.user_head = UIHead:create({csize = cc.size(150, 150), path = g_path .. "head_back.png"})
     self.info_bg:addChild(self.user_head)
     self.user_head:setPosition(cc.p(self.user_head:getContentSize().width/2 + 40, self.the_size.height - self.user_head:getContentSize().height/2 - 35))
+
+    local scale = 0.7
+    self.other_praise_bg, self.other_praise_count = self:create_praise_part(self.user_head)
+    self.other_praise_bg:setPosition(cc.p(self.user_head:getContentSize().width - self.other_praise_bg:getContentSize().width/2*scale, self.user_head:getContentSize().height - self.other_praise_bg:getContentSize().height/2*scale - 2))
+    self.other_praise_bg:setScale(scale)
 
     -- vip标识
     self.vip_img = control_tools.newImg({})
@@ -100,26 +106,9 @@ function UIGameUserInfo:init()
     self.info_bg:addChild(self.gold_label)
     self.gold_label:setPosition(cc.p(self.img_gold:getPositionX() + 20, self.img_gold:getPositionY() - 5))
 
-    -- 点赞
-    self.praise_bg = control_tools.newImg({path = g_path .. "praise_bg.png"})
-    self.info_bg:addChild(self.praise_bg)
+    self.praise_bg, self.praise_count = self:create_praise_part(self.info_bg)
     self.praise_bg:setPosition(cc.p(self.info_bg:getContentSize().width - self.praise_bg:getContentSize().width + 25, self.info_bg:getContentSize().height - 70))
     self.praise_bg:setVisible(false)
-
-    -- 赞手势
-    local img_praise = control_tools.newImg({path = g_path .. "img_praise.png"})
-    self.praise_bg:addChild(img_praise)
-    img_praise:setPosition(cc.p(25, self.praise_bg:getContentSize().height/2))
-
-    -- 赞文字
-    local praise_label = control_tools.newLabel({color = cc.c3b(255, 212, 19), str = "赞", font = 22})
-    self.praise_bg:addChild(praise_label)
-    praise_label:setPosition(cc.p( 55, img_praise:getPositionY() ))
-
-    -- 赞数量
-    self.praise_count = control_tools.newLabel({color = cc.c3b(255, 212, 19), str = "(999)", font = 22, anchor = cc.p(0, 0.5)})
-    self.praise_bg:addChild(self.praise_count)
-    self.praise_count:setPosition(cc.p( 75, img_praise:getPositionY() ))
 
     -- 亲密度
     self.intimacy_bg = control_tools.newImg({path = g_path .. "praise_bg.png"})
@@ -179,7 +168,7 @@ function UIGameUserInfo:init()
     self.result_label:setPosition(cc.p(result_img:getPositionX() + result_img:getContentSize().width + 5, result_img:getPositionY()))
 
     -- 举报
-    self.btn_add = control_tools.newBtn({normal = g_path .. "btn_add1.png", press = g_path .. "btn_add2.png"})
+    self.btn_add = control_tools.newBtn({normal = g_path .. "btn_add1.png", pressed = g_path .. "btn_add2.png"})
     self.info_bg:addChild(self.btn_add)
     self.btn_add:setPosition(cc.p(self.info_bg:getContentSize().width - self.praise_bg:getContentSize().width + 25, self.info_bg:getContentSize().height - 69))
     self.btn_add:addTouchEventListener( function (sender, eventType) self:on_btn_add(sender, eventType) end )
@@ -262,8 +251,32 @@ function UIGameUserInfo:init()
     self.check_img:setPosition(cc.p(self.check_img:getContentSize().width/2, self.btn_ten:getContentSize().height/2))
     self.check_img:setVisible(false)
 
-    self:back_ground_activate(true)
+    self:set_touch_bg(true)
 end
+-- 创建赞控件
+function UIGameUserInfo:create_praise_part(father)
+    -- 点赞
+    local praise_bg = control_tools.newImg({path = g_path .. "praise_bg.png"})
+    father:addChild(praise_bg)
+
+    -- 赞手势
+    local img_praise = control_tools.newImg({path = g_path .. "img_praise.png"})
+    praise_bg:addChild(img_praise)
+    img_praise:setPosition(cc.p(25, praise_bg:getContentSize().height/2))
+
+    -- 赞文字
+    local praise_label = control_tools.newLabel({color = cc.c3b(255, 212, 19), str = "赞", font = 22})
+    praise_bg:addChild(praise_label)
+    praise_label:setPosition(cc.p( 55, img_praise:getPositionY() ))
+
+    -- 赞数量
+    local praise_count = control_tools.newLabel({color = cc.c3b(255, 212, 19), str = "(999)", font = 22, anchor = cc.p(0, 0.5)})
+    praise_bg:addChild(praise_count)
+    praise_count:setPosition(cc.p( 75, img_praise:getPositionY() ))
+
+    return praise_bg, praise_count
+end
+
 -- 点赞按钮点击事件
 function UIGameUserInfo:on_btn_praise(sender, eventType)
     if eventType ~= _G.TOUCH_EVENT_ENDED then
@@ -453,7 +466,7 @@ function UIGameUserInfo:on_btn_buy_prop(sender, eventType)
     end
 
     --dd_wait:商城接口
-    bind_function.show_shop(2)
+    bind_function.send_command("open:2")
 end
 -- 创建道具图标
 function UIGameUserInfo:create_prop_item(id, count, index)
@@ -463,7 +476,7 @@ function UIGameUserInfo:create_prop_item(id, count, index)
     prop_item:setPosition(cc.p((index-1/2)*prop_item:getContentSize().width, prop_item:getContentSize().height/2))
 
     -- 道具标识
-    local item_img = control_tools.newImg({path = BPRESOURCE("bpres/props/prop_") .. id .. ".png"})
+    local item_img = control_tools.newImg({path = prop_path .. "prop_" .. id .. ".png"})
     prop_item:addChild(item_img)
     item_img:setPosition(cc.p(prop_item:getContentSize().width/2, prop_item:getContentSize().height/2 + 25))
 
@@ -486,6 +499,10 @@ end
 -- 更新用户信息
 function UIGameUserInfo:on_update_user_data()
     if self.ptr_user_data == nil then return end
+
+    local user_id = self.ptr_user_data.dwUserID
+    self.ptr_user_data = bind_function.get_user_data_by_user_id(user_id)
+    local self_userid = bind_function.get_self_user_data().dwUserID
 
     -- 显示头像
     self.user_head:set_head(142, 142, self.ptr_user_data)
@@ -512,6 +529,10 @@ function UIGameUserInfo:on_update_user_data()
     -- 战绩
     self.result_label:setString(tostring(self.ptr_user_data.lWinCount) .. "胜" .. tostring(self.ptr_user_data.lLostCount) .. "负" .. tostring(self.ptr_user_data.lDrawCount) .. "平" )
     -- 点赞数
+    self.praise_bg:setVisible(user_id == self_userid)  
+    self.praise_count:setString("(" .. tostring(self.ptr_user_data.lPraise) .. ")")
+    self.other_praise_bg:setVisible(user_id ~= self_userid)
+    self.other_praise_count:setString("(" .. tostring(self.ptr_user_data.lPraise) .. ")")
     
     -- 道具
     for i,v in ipairs(self.prop_item_tbl) do
@@ -567,6 +588,8 @@ function UIGameUserInfo:show_user_info(bool_report, user_data, callfunc, int_par
         -- 显示点赞信息    
         self.praise_bg:setVisible(true)  
         self.praise_count:setString("(" .. tostring(self.ptr_user_data.lPraise) .. ")")
+        self.other_praise_bg:setVisible(false)
+        self.other_praise_count:setString("(" .. tostring(self.ptr_user_data.lPraise) .. ")")
 
         self.my_prop_img:setVisible(true)
         self.other_gift_img:setVisible(false)
@@ -610,6 +633,9 @@ function UIGameUserInfo:show_user_info(bool_report, user_data, callfunc, int_par
         self.btn_add:setTouchEnabled(true)
         -- 显示点赞信息    
         self.praise_bg:setVisible(false)  
+        self.praise_count:setString("(" .. tostring(self.ptr_user_data.lPraise) .. ")")
+        self.other_praise_bg:setVisible(true)
+        self.other_praise_count:setString("(" .. tostring(self.ptr_user_data.lPraise) .. ")")
 
         self.my_prop_img:setVisible(false)
         self.other_gift_img:setVisible(true)
@@ -632,10 +658,12 @@ end
 -- 显示用户详情界面
 function UIGameUserInfo.ShowUserInfo(bool_report, user_data, callfunc, int_param)
     if ptr_user_info == nil  then 
+        print("------------ShowUserInfo-----------1")
         local main_layout = bp_get_main_layout()
         ptr_user_info = UIGameUserInfo:create()
         main_layout:addChild(ptr_user_info)
     end
+    print("-------------ShowUserInfo----------2")
 
     ptr_user_info:show_user_info(bool_report, user_data, callfunc, int_param)
     return ptr_user_info

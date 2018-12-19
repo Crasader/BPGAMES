@@ -10,6 +10,7 @@ function UITaskDay:ctor(...)
     self.list_task_day_item={}
     self.list_task_day_item_sleep={}
     self.int_item_id=0;
+    self.ptr_animation_point=nil;
     self:init();
 end
 function UITaskDay:destory()
@@ -94,7 +95,7 @@ function UITaskDay:request_task_data()
 
 end
 function UITaskDay:on_http_task_data(param_identifier,param_success,param_code,param_header,context)
-    print("hjjlog>>00000000000",param_header,context);
+   -- print("hjjlog>>00000000000",param_header,context);
     if param_success~=true or param_code~=200 then 
         print("hjjlog>>request_task_data   fail");
         bp_show_hinting("任务请求失败。")
@@ -121,7 +122,7 @@ function UITaskDay:on_http_task_data(param_identifier,param_success,param_code,p
             table.insert( the_list_task_data, the_task_value )
             int_count=int_count+1;
         end
-        if bp_have_mask_module(LC.MASK_MODULE_BIND_PHONE)==0 then 
+        if bp_have_mask_module(LC.MASK_MODULE_BIND_PHONE)==false then 
             local int_app_id=bp_get_appid();
             if int_app_id==int_kind_id then 
                 int_count=int_count+1;
@@ -163,8 +164,8 @@ function UITaskDay:on_http_task_data(param_identifier,param_success,param_code,p
         v:setPosition(cc.p(float_pos_x,float_pos_y));
         float_pos_y=float_pos_y-110;
     end
-
 end
+
 function UITaskDay:is_real_game(param_kind_id)
     local l_game_list=json.decode(bp_get_game_list());
     for i=1,#l_game_list do 
@@ -201,10 +202,9 @@ function UITaskDay.ShowTask(param_show)
         param_show=true;
     end
     sptr_task:ShowGui(param_show)
-    if param_id~=nil then 
-        sptr_task:switch_item(param_id)
-    end
     return sptr_task;
 end
+
+
 
 return UITaskDay

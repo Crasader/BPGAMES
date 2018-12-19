@@ -41,14 +41,11 @@ function Layout_room:ctor()
 end
 
 function Layout_room:destory()
-
+    ccs.ArmatureDataManager:getInstance():removeArmatureFileInfo(g_path .. "dh_dt_sctx.ExportJson")
 end
 
 function Layout_room:init()
-
-    -- bp_set_common_value("test","2")
-    -- bp_set_local_value("test_local","2")
-
+    ccs.ArmatureDataManager:getInstance():addArmatureFileInfo(g_path .. "dh_dt_sctx.ExportJson")
 
     local  the_size=CCDirector:getInstance():getVisibleSize();
     self.the_size=the_size;
@@ -61,10 +58,13 @@ function Layout_room:init()
         self:on_do_task(eventCustom);
     end)
     cc.Director:getInstance():getEventDispatcher():addEventListenerWithFixedPriority(l_lister, 1)
+    
+    --点击大厅游戏相应事件
+    local   l_lister= cc.EventListenerCustom:create("BTN_GAME", function (eventCustom)
+          self:on_back_btn_game(eventCustom);
+    end)
+    cc.Director:getInstance():getEventDispatcher():addEventListenerWithFixedPriority(l_lister, 1)
 
-    -- local tt={}
-    -- tt.command="frend:sendsms"
-    -- self:on_do_task(tt)
     
     
     local l_bg=control_tools.newImg({path=g_path.."bg.png"})
@@ -78,10 +78,10 @@ function Layout_room:init()
     self.ptr_layout_top:setContentSize(cc.p(self.the_size.width,80))
     self.ptr_layout_top:setPosition(cc.p(0,self.the_size.height-80));
 
-    local l_btn_out=control_tools.newBtn({normal=g_path.."btn_return_1.png",small=true})
-    l_btn_out:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_return(param_sender,param_touchType) end)
-    self.ptr_layout_top:addChild(l_btn_out);
-    l_btn_out:setPosition(cc.p(30,40))
+    self.ptr_btn_return=control_tools.newBtn({normal=g_path.."btn_return_1.png",small=true})
+    self.ptr_btn_return:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_return(param_sender,param_touchType) end)
+    self.ptr_layout_top:addChild(self.ptr_btn_return);
+    self.ptr_btn_return:setPosition(cc.p(30,40))
 
     local l_layout_head=ccui.Layout:create();
     self.ptr_layout_top:addChild(l_layout_head);
@@ -94,7 +94,7 @@ function Layout_room:init()
     l_name_bg:addTouchEventListener(function(param_sender,param_touchType) 
                     UIVipShop.ShowVipShop(true)
                 end)
-
+                
     local l_user_data=json.decode(bp_get_self_user_data());
     
     self.ptr_nickname=UILabelEx2:create();
@@ -131,17 +131,30 @@ function Layout_room:init()
     self.ptr_layout_top:addChild(l_img_gold_bg)
     l_img_gold_bg:setPosition(cc.p(400,40))
     l_img_gold_bg:setTouchEnabled(true)
-    l_img_gold_bg:addTouchEventListener(function(param_sender,param_touchType)  UIShopCenter.ShowShopCenter(true,0) end)
+    l_img_gold_bg.id=0;
+    l_img_gold_bg:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_add(param_sender,param_touchType)  end)
 
-    local l_img_gold_icon=control_tools.newImg({path=g_path.."img_gold.png"})
-    l_img_gold_bg:addChild(l_img_gold_icon)
-    l_img_gold_icon:setPosition(cc.p(30,52/2-5))
+    local l_img_gold_icon = cc.Sprite:create(g_path.."kong.png")
+    l_img_gold_bg:addChild( l_img_gold_icon)
+    l_img_gold_icon:setPosition(cc.p(30,52/2))
 
-    local l_btn_gold_add=control_tools.newBtn({normal=g_path.."btn_add.png",pressed=g_path.."btn_add.png"})
+    local l_animation= cc.Animation:create()
+    local l_name="";
+    for i=1,15 do
+         l_name=g_path.."animation_gold/"..i..".png";
+         l_animation:addSpriteFrameWithFile(l_name)
+    end
+    l_animation:setDelayPerUnit(0.1)
+    l_animation:setRestoreOriginalFrame(true)
+    l_animation:setLoops(-1)
+    local l_action = cc.Animate:create(l_animation)
+    l_img_gold_icon:runAction(l_action);
+
+
+    local l_btn_gold_add=control_tools.newImg({path=g_path.."btn_add.png"})
     l_img_gold_bg:addChild(l_btn_gold_add)
     l_btn_gold_add:setPosition(cc.p(150,52/2-3))
-    l_btn_gold_add:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_add(param_sender,param_touchType)  end)
-    if bp_have_mask_module(LC.MASK_MODULE_SHOP) ==0 then 
+    if bp_have_mask_module(LC.MASK_MODULE_SHOP) ==false then 
         l_btn_gold_add:setVisible(false)
     end
 
@@ -159,16 +172,29 @@ function Layout_room:init()
     self.ptr_layout_top:addChild(l_img_ingot_bg)
     l_img_ingot_bg:setPosition(cc.p(570,40))
     l_img_ingot_bg:setTouchEnabled(true)
-    l_img_ingot_bg:addTouchEventListener(function(param_sender,param_touchType)  UIShopCenter.ShowShopCenter(true,1) end)
+    l_img_ingot_bg.id=1;
+    l_img_ingot_bg:addTouchEventListener(function(param_sender,param_touchType)  self:on_btn_add(param_sender,param_touchType) end)
 
-    local l_img_ingot_icon=control_tools.newImg({path=g_path.."img_ingot.png"})
-    l_img_ingot_bg:addChild(l_img_ingot_icon)
-    l_img_ingot_icon:setPosition(cc.p(30,52/2-3))
+    local l_img_ingot_icon = cc.Sprite:create(g_path.."kong.png")
+    l_img_ingot_bg:addChild( l_img_ingot_icon)
+    l_img_ingot_icon:setPosition(cc.p(30,52/2))
 
-    local l_btn_ingot_add=control_tools.newBtn({normal=g_path.."btn_add.png",pressed=g_path.."btn_add.png"})
+    local l_animation_ingot= cc.Animation:create()
+    for i=1,15 do
+        local l_name=g_path.."animation_ingot/"..i..".png";
+        l_animation_ingot:addSpriteFrameWithFile(l_name)
+    end
+    l_animation_ingot:setDelayPerUnit(0.1)
+    l_animation_ingot:setRestoreOriginalFrame(true)
+    l_animation_ingot:setLoops(-1)
+    local l_action_ingot = cc.Animate:create(l_animation_ingot)
+    l_img_ingot_icon:runAction(l_action_ingot);
+
+
+    local l_btn_ingot_add=control_tools.newImg({path=g_path.."btn_add.png"})
     l_img_ingot_bg:addChild(l_btn_ingot_add)
     l_btn_ingot_add:setPosition(cc.p(150,52/2-2))
-    l_btn_ingot_add:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_add(param_sender,param_touchType)  end)
+    --l_btn_ingot_add:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_add(param_sender,param_touchType)  end)
 
     self.ptr_label_ingot=control_tools.newLabel({fnt=g_path.."num_dt_jbyb.fnt",anchor=cc.p(0,0.5)});
     l_img_ingot_bg:addChild(self.ptr_label_ingot)
@@ -184,10 +210,10 @@ function Layout_room:init()
     self.ptr_layout_top:addChild(l_btn_bank)
     l_btn_bank:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_bank(param_sender,param_touchType) end )
     l_btn_bank:setPosition(cc.p(680,40))
-    if bp_have_mask_module(LC.MASK_MODULE_BANK) ==0 then 
+    if bp_have_mask_module(LC.MASK_MODULE_BANK) ==false then 
         l_btn_bank:setVisible(false)
     end
-    if bp_have_mask_module(LC.MASK_MODULE_SHOP) ==0 then 
+    if bp_have_mask_module(LC.MASK_MODULE_SHOP) ==false then 
         l_img_ingot_bg:setVisible(false)
         l_btn_bank:setPosition(cc.p(510,40))
     end
@@ -218,7 +244,7 @@ function Layout_room:init()
     --布局中间
     self.ptr_bugle=UIBugle:create();
     self:addChild(self.ptr_bugle)
-    self.ptr_bugle:setPosition(cc.p(self.the_size.width/2-330,510))
+    self.ptr_bugle:setPosition(cc.p(self.the_size.width/2-330,525))
 
     self.ptr_room_site=RoomHall:create();
     self:addChild(self.ptr_room_site)
@@ -239,60 +265,137 @@ function Layout_room:init()
     end
     local l_list_bottom_btn={}
 
-    local l_btn_shop=control_tools.newBtn({normal=g_path.."btn_setting.png",small=true})
-    self.ptr_layout_bottom:addChild(l_btn_shop);
+    local l_btn_shop=control_tools.newBtn({normal=g_path.."kong.png",size=cc.size(70,90),small=true})
+    --self.ptr_layout_bottom:addChild(l_btn_shop);
     l_btn_shop:addTouchEventListener(function(param_sender,param_touchType)  self:on_btn_shop(param_sender,param_touchType)  end)
-    table.insert( l_list_bottom_btn, l_btn_shop );
+    if bp_have_mask_module(LC.MASK_MODULE_SHOP)==true then 
+        table.insert( l_list_bottom_btn, l_btn_shop );    
+        self.armature = ccs.Armature:create("dh_dt_sctx")
+        l_btn_shop:addChild(self.armature)
+        self.armature:setPosition(cc.p(70/2,90/2))
+        self.armature:getAnimation():play("Animation1", -1, -1)
+    else
+        l_btn_shop:setVisible(false)
+    end
 
     local l_btn_activity=control_tools.newBtn({normal=g_path.."btn_activity.png",small=true})
-    self.ptr_layout_bottom:addChild(l_btn_activity)
+   -- self.ptr_layout_bottom:addChild(l_btn_activity)
     l_btn_activity:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_activity(param_sender,param_touchType) end)
-    table.insert( l_list_bottom_btn,l_btn_activity )
+    if bp_have_mask_module(LC.MASK_MODULE_ACTIVITY)==true then 
+        table.insert( l_list_bottom_btn,l_btn_activity )
+    else
+        l_btn_activity:setVisible(false)
+    end
 
-    local l_btn_noble=control_tools.newBtn({normal=g_path.."noble.png",small=true})
-    self.ptr_layout_bottom:addChild(l_btn_noble)
-    l_btn_noble:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_noble(param_sender,param_touchType) end)
-    table.insert(l_list_bottom_btn,l_btn_noble)
+    -- local l_btn_noble=control_tools.newBtn({normal=g_path.."btn_noble.png",small=true})
+    -- --self.ptr_layout_bottom:addChild(l_btn_noble)
+    -- l_btn_noble:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_noble(param_sender,param_touchType) end)
+    -- if bp_have_mask_module(LC.MASK_MODULE_SHOP)==true then 
+    --     table.insert(l_list_bottom_btn,l_btn_noble)
+    -- else
+    --     l_btn_noble:setVisible(false)
+    -- end
 
 
-    local l_btn_exchange=control_tools.newBtn({normal=g_path.."exchange.png",small=true})
-    self.ptr_layout_bottom:addChild(l_btn_exchange)
+    local l_btn_exchange=control_tools.newBtn({normal=g_path.."btn_exchange.png",small=true})
+    --self.ptr_layout_bottom:addChild(l_btn_exchange)
     l_btn_exchange:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_exchange(param_sender,param_touchType) end)
-    table.insert( l_list_bottom_btn,l_btn_exchange )
+    if bp_have_mask_module(LC.MASK_MODULE_EXCHANGE)==true then 
+        table.insert( l_list_bottom_btn,l_btn_exchange )
+    else
+        l_btn_exchange:setVisible(false)
+    end
 
     local l_btn_task=control_tools.newBtn({normal=g_path.."btn_task.png",small=true})
-    self.ptr_layout_bottom:addChild(l_btn_task)
+    --self.ptr_layout_bottom:addChild(l_btn_task)
     l_btn_task:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_task(param_sender,param_touchType) end )
-    table.insert( l_list_bottom_btn,l_btn_task )
+    if bp_have_mask_module(LC.MASK_MODULE_TASKS)==true then 
+        table.insert( l_list_bottom_btn,l_btn_task )
+    else
+        l_btn_task:setVisible(false)
+    end
+
 
     local l_btn_help=control_tools.newBtn({normal=g_path.."help.png",small=true})
-    self.ptr_layout_bottom:addChild(l_btn_help)
+    --self.ptr_layout_bottom:addChild(l_btn_help)
     l_btn_help:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_help(param_sender,param_touchType) end )
     table.insert( l_list_bottom_btn,l_btn_help)
 
     local l_btn_customer=control_tools.newBtn({normal=g_path.."btn_customer.png",small=true})
-    self.ptr_layout_bottom:addChild(l_btn_customer)
+    --self.ptr_layout_bottom:addChild(l_btn_customer)
     l_btn_customer:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_customer(param_sender,param_touchType) end)
-    table.insert(l_list_bottom_btn,l_btn_customer )
+    if bp_have_mask_module(LC.MASK_MODULE_CUSTOMER)==true then 
+        table.insert( l_list_bottom_btn,l_btn_customer )
+    else
+        l_btn_customer:setVisible(false)
+    end
 
     local l_btn_setting=control_tools.newBtn({normal=g_path.."btn_setting.png",small=true})
-    self.ptr_layout_bottom:addChild(l_btn_setting)
+    --self.ptr_layout_bottom:addChild(l_btn_setting)
     l_btn_setting:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_set(param_sender,param_touchType) end)
     table.insert( l_list_bottom_btn,l_btn_setting )
 
-    local l_btn_more=control_tools.newBtn({normal=g_path.."btn_more.png",small=true})
-    self.ptr_layout_bottom:addChild(l_btn_more)
-    l_btn_more:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_more(param_sender,param_touchType) end)
-    table.insert( l_list_bottom_btn,l_btn_more)
 
-    --
-    local l_width=130;
-    local l_interval_width=(self.the_size.width-130*2)/6
-    for k,v in pairs(l_list_bottom_btn) do 
-        v:setPosition(cc.p(l_width,40))
-        l_width=l_width+l_interval_width;
+
+
+    local l_int_more_count=7
+    if #l_list_bottom_btn>l_int_more_count then 
+        local l_count=1
+        local l_width=130;
+        local l_interval_width=(self.the_size.width-130*2)/(l_int_more_count-1)
+        for k,v in pairs(l_list_bottom_btn) do 
+            --print("hjjlog>>l_list_bottom_btn:",l_count);
+            if l_count==l_int_more_count then 
+                break;
+            else
+                v:setPosition(cc.p(l_width,40))
+                self.ptr_layout_bottom:addChild(v)
+                l_width=l_width+l_interval_width;
+                l_count=l_count+1;
+            end
+        end
+        local l_btn_more=control_tools.newBtn({normal=g_path.."btn_more.png",small=true})
+        self.ptr_layout_bottom:addChild(l_btn_more)
+        l_btn_more:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_more(param_sender,param_touchType) end)
+        l_btn_more:setPosition(cc.p(l_width,40))
+
+
+        self.ptr_btn_touch_more_bg=control_tools.newBtn({normal=BPRESOURCE("res/kong.png"),pressed=BPRESOURCE("res/kong.png"),size=self.the_size})
+        self:addChild(self.ptr_btn_touch_more_bg)
+        self.ptr_btn_touch_more_bg:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_more_bg(param_sender,param_touchType) end)
+        self.ptr_btn_touch_more_bg:setPosition(cc.p(self.the_size.width/2,self.the_size.height/2))
+        self.ptr_btn_touch_more_bg:setVisible(false)
+
+        if #l_list_bottom_btn-l_int_more_count==1 then 
+            self.ptr_img_more_bg=control_tools.newImg({path=g_path.."more_bg_1.png",anchor=cc.p(0.7,0)})
+            self:addChild(self.ptr_img_more_bg);
+            self.ptr_img_more_bg:setPosition(cc.p(l_width,90))
+            self.ptr_img_more_bg:setVisible(false)
+        else
+            self.ptr_img_more_bg=control_tools.newImg({path=g_path.."more_bg_2.png",anchor=cc.p(0.8,0)})
+            self:addChild(self.ptr_img_more_bg);
+            self.ptr_img_more_bg:setPosition(cc.p(l_width,90))
+            self.ptr_img_more_bg:setVisible(false)
+        end
+
+
+        local l_x=45
+        for i=l_int_more_count,#l_list_bottom_btn do 
+            self.ptr_img_more_bg:addChild(l_list_bottom_btn[i])
+            l_list_bottom_btn[i]:setPosition(cc.p(l_x,42))
+            l_x=l_x+75
+        end
+
+    else
+        local l_width=130;
+        local l_interval_width=(self.the_size.width-130*2)/(#l_list_bottom_btn-1)
+        --local l_interval_width=(self.the_size.width-130*2)/3
+        for k,v in pairs(l_list_bottom_btn) do 
+            v:setPosition(cc.p(l_width,40))
+            self.ptr_layout_bottom:addChild(v)
+            l_width=l_width+l_interval_width;
+        end
     end
-    
 
     local l_delay_time=cc.DelayTime:create(0.2)
     local l_ac_fun_1=cc.CallFunc:create(function() self:on_show_hint() end)
@@ -303,10 +406,7 @@ function Layout_room:on_show_hint()
     local l_the_message={}
     l_the_message.id=0;
     l_the_message.message="抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。"
-    --get_share_game_push():insert_message(l_the_message)
     bp_application_signal(10002,"INSERT_MESSAGE",json.encode(l_the_message))
-    bp_application_signal(10002,"INSERT_MESSAGE",json.encode(l_the_message))
-
     self.ptr_bugle:play_bugle(l_the_message.message,10)
 end
 
@@ -319,13 +419,17 @@ function Layout_room:on_update_user_data()
     local l_vip=class_tools.get_vip();
     if l_vip==0 then 
         self.ptr_nickname:setTextColor(cc.c3b(240,232,165))
-        self.ptr_img_vip:loadTexture({path=g_path.."vip0.png"})
+        self.ptr_img_vip:loadTexture(g_path.."vip0.png")
     else    
         self.ptr_nickname:setTextColor(cc.c3b(255,74,44))
-        self.ptr_img_vip:loadTexture({path=g_path.."vip"..(l_vip-1006)..".png"})
+        self.ptr_img_vip:loadTexture(g_path.."vip"..(l_vip-1006)..".png")
     end
-
+    
     local l_user_data=json.decode(bp_get_self_user_data());
+
+    print("hjjlog>> Layout_room:on_update_user_data:",bp_get_self_user_data());
+    
+
     if l_user_data.gold<1000000 then 
         self.ptr_label_gold:setString(l_user_data.gold)
     else 
@@ -343,14 +447,78 @@ function Layout_room:on_btn_more(param_sender,param_touchType)
     if param_touchType~=_G.TOUCH_EVENT_ENDED then
         return 
     end 
+    self.ptr_btn_touch_more_bg:setVisible(true)
+    self.ptr_img_more_bg:setVisible(true)
+    self.ptr_img_more_bg:setScale(0)
+    local l_ac_scale=cc.ScaleTo:create(0.1,1)
+    self.ptr_img_more_bg:runAction(l_ac_scale)
+end
+function Layout_room:on_btn_more_bg(param_sender,param_touchType)
+    if param_touchType~=_G.TOUCH_EVENT_ENDED then
+        return 
+    end 
+    self.ptr_btn_touch_more_bg:setVisible(false)
+    local l_ac_scale=cc.ScaleTo:create(0.1,0)
+    self.ptr_img_more_bg:runAction(l_ac_scale)
 end
 function Layout_room:on_btn_return(param_sender,param_touchType)
     if param_touchType~=_G.TOUCH_EVENT_ENDED then
         return 
     end
+
     print("gamelog>>on_btn_return")
-    self.ptr_room_site:back_to_hall()
+    self.ptr_room_site:back_to_hall(true)
+    if true  then 
+        self.ptr_layout_top:setPosition(cc.p(0,self.the_size.height-80));
+        local l_ac_move_1= cc.MoveTo:create(0.2, cc.p(0,self.the_size.height))
+        local l_ac_fun_1=cc.CallFunc:create(function(param_sender) self.ptr_btn_return:loadTextureNormal(g_path.."btn_return_1.png") end) 
+        local l_ac_move_2= cc.MoveTo:create(0.2, cc.p(0,self.the_size.height-80))
+        self.ptr_layout_top:runAction(cc.Sequence:create(l_ac_move_1,l_ac_fun_1,l_ac_move_2))
+    end
+    if true then 
+        self.ptr_layout_bottom:setPosition(cc.p(0,0))
+        local l_ac_move_1=cc.MoveTo:create(0.2,cc.p(0.2,-80))
+        local l_ac_move_2=cc.MoveTo:create(0.2,cc.p(0,0))
+        self.ptr_layout_bottom:runAction(cc.Sequence:create(l_ac_move_1,l_ac_move_2))
+    end
 end
+
+function Layout_room:on_back_btn_game(param_event)
+    local l_game_id=param_event.value
+    self.ptr_room_site:back_to_site(l_game_id,0,true)
+    if true  then 
+        self.ptr_layout_top:setPosition(cc.p(0,self.the_size.height-80));
+        local l_ac_move_1= cc.MoveTo:create(0.2, cc.p(0,self.the_size.height))
+        local l_ac_fun_1=cc.CallFunc:create(function(param_sender) self.ptr_btn_return:loadTextureNormal(g_path.."btn_return_2.png") end) 
+        local l_ac_move_2= cc.MoveTo:create(0.2, cc.p(0,self.the_size.height-80))
+        self.ptr_layout_top:runAction(cc.Sequence:create(l_ac_move_1,l_ac_fun_1,l_ac_move_2))
+    end
+    if true then 
+        self.ptr_layout_bottom:setPosition(cc.p(0,0))
+        local l_ac_move_1=cc.MoveTo:create(0.2,cc.p(0.2,-80))
+        local l_ac_move_2=cc.MoveTo:create(0.2,cc.p(0,0))
+        self.ptr_layout_bottom:runAction(cc.Sequence:create(l_ac_move_1,l_ac_move_2))
+    end
+end
+
+function Layout_room:show_game_list()
+
+    if true then 
+        self.ptr_layout_top:setPosition(cc.p(0,self.the_size.height-80));
+        local l_ac_move_1= cc.MoveTo:create(0.2, cc.p(0,self.the_size.height))
+        local l_ac_fun_1=cc.CallFunc:create(function(param_sender) self.ptr_btn_return:loadTextureNormal(g_path.."btn_return_1.png") end) 
+        local l_ac_move_2= cc.MoveTo:create(0.2, cc.p(0,self.the_size.height-80))
+        self.ptr_layout_top:runAction(cc.Sequence:create(l_ac_move_1,l_ac_fun_1,l_ac_move_2))
+    end
+    if true then 
+        self.ptr_layout_bottom:setPosition(cc.p(0,0))
+        local l_ac_move_1=cc.MoveTo:create(0.2,cc.p(0.2,-80))
+        local l_ac_move_2=cc.MoveTo:create(0.2,cc.p(0,0))
+        self.ptr_layout_bottom:runAction(cc.Sequence:create(l_ac_move_1,l_ac_move_2))
+    end
+
+end
+
 --头像
 function Layout_room:on_btn_head(param_sender,param_touchType)
     if param_touchType~=_G.TOUCH_EVENT_ENDED then
@@ -362,15 +530,12 @@ function Layout_room:on_btn_add(param_sender,param_touchType)
     if param_touchType~=_G.TOUCH_EVENT_ENDED then
         return 
     end
+    UIShopCenter.ShowShopCenter(true,param_sender.id)
 end
 --银行
 function Layout_room:on_btn_bank(param_sender,param_touchType)
     if param_touchType~=_G.TOUCH_EVENT_ENDED then
         return 
-    end
-    if false then 
-        print("hjjlog>>111");
-        bp_application_run(218)
     end
     UIBank.ShowBank(true)
 end
@@ -406,8 +571,8 @@ function Layout_room:on_btn_activity(param_sender,param_touchType)
     if param_touchType~=_G.TOUCH_EVENT_ENDED then
         return 
     end
-    bp_application_run(124)
-
+    local tt=bp_get_module_version(10003);
+    bp_application_run(10003)
 end
 --贵族
 function Layout_room:on_btn_noble(param_sender,param_touchType)
@@ -451,7 +616,11 @@ end
 
 
 function Layout_room:on_do_task(param_event)
-    print("----------on_do_task-----------", param_event.command)
+    print("hjjlog>>on_do_task:",param_event.command);
+    if param_event.command==nil then 
+        return ;
+    end
+    
     local l_str_command=param_event.command
     local l_start,l_end=string.find( l_str_command,":" )
     local l_key=string.sub(l_str_command,1,l_start-1)
@@ -481,9 +650,60 @@ function Layout_room:on_do_task(param_event)
         local l_site_id=l_id%1000;
         print("hjjlog>>enter_private_room:",l_game_id,l_site_id,l_code);
         self:enter_private_room(l_game_id,l_site_id,l_code)
-    elseif l_key == "open" then
-        print("DY Log >> 显示商城 index = ", l_value)
-        UIShopCenter.ShowShopCenter(true, l_value)
+    elseif l_key=="open" then 
+        local l_start_1,l_end_1=string.find( l_value,"|" )
+        local l_sub_key=0;
+        local l_sub_value=78;
+        if l_start_1~=nil then 
+            l_sub_key=string.sub(l_value,1,l_start_1-1)
+            if string.len( l_value )>l_start_1 then 
+                l_sub_value=tonumber(string.sub(l_value,l_end_1+1,string.len(l_value)))
+            end
+        else
+            l_sub_key=l_value;
+        end
+        print("hjjlog>>on_do_task:open:",l_start_1,l_end_1,l_sub_key,l_sub_value);
+        
+        if l_sub_key=="1" then 
+            --金币商城
+            UIShopCenter.ShowShopCenter(true,0)
+        elseif l_sub_key=="2" then 
+            --道具商城
+            UIShopCenter.ShowShopCenter(true,3)
+        elseif l_sub_key=="3" then 
+            --元宝商城
+            UIShopCenter.ShowShopCenter(true,1)            
+        elseif l_sub_key=="4" then 
+            --活动中心
+
+        elseif l_sub_key=="5" then 
+            --任务
+
+        elseif l_sub_key=="6" then 
+            --兑换中心
+
+        elseif l_sub_key=="7" then 
+            --个人中心
+            UIUserCenter.ShowUserCenter(true,l_sub_value)
+        elseif l_sub_key=="8" then 
+            --vip商城
+            UIVipShop.ShowVipShop(true)
+        elseif l_sub_key=="9" then 
+            --推荐  废弃
+        elseif l_sub_key=="10" or l_sub_key=="11" then
+            --忘了是啥  废弃
+        elseif  l_sub_key=="12" then 
+            --金豆商城
+            UIShopCenter.ShowShopCenter(true,2)
+        else
+            if string.len(l_sub_key>4) then 
+
+            end
+            local l_start_1,l_end_1=string.find( l_value,"|" )
+            local l_id=string.sub(l_value,1,l_start_1-1)
+            local l_code=string.sub(l_value,l_end_1+1,string.len(l_value))
+
+        end
     end
 end
 
@@ -549,6 +769,7 @@ function Layout_room:quickly_enter_game(param_game_id,param_site_id)
     end
 end
 function Layout_room:enter_site_test(param_site_data)
+    
     local l_user_data=json.decode(bp_get_self_user_data());
     if param_site_data.limit==nil then 
         return 0;
@@ -568,6 +789,7 @@ function Layout_room:enter_site_test(param_site_data)
 end
 
 function Layout_room:enter_site(parma_game_id,parma_site_data)
+    
     local l_user_data=json.decode(bp_get_self_user_data());
     for k,v in pairs(parma_site_data.limit) do 
         if v.id==8 then 

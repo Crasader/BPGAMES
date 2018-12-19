@@ -298,6 +298,30 @@ function CMD_FRAME_READY_ERROR.fromBuffer(data)
     bp_unpack_end()
     return l_table;
 end
+CMD_MINI_GAME_INFO={}
+function CMD_MINI_GAME_INFO.fromBuffer(data)
+    local l_table={}
+    bp_unpack_start(data);
+    l_table.userid=bp_unpack(4,false)
+    l_table.int_tax=bp_unpack(4,true)
+    l_table.int_count=bp_unpack(4,true)
+    l_table.int_time=bp_unpack(4,true)
+    l_table.long_gold=bp_unpack(4,true)
+    bp_unpack_end()
+    return l_table;
+end
+CMD_MINI_GAME_RESULT={}
+function CMD_MINI_GAME_RESULT.fromBuffer(data)
+    local l_table={}
+    bp_unpack_start(data);
+    l_table.int_turn=bp_unpack(4,true)
+    l_table.int_total_turn=bp_unpack(4,true)
+    l_table.long_gold=bp_unpack(8,false)
+    l_table.bool_success=bp_unpack(1,false)
+    bp_unpack_end()
+    return l_table;
+end
+
 
 
 

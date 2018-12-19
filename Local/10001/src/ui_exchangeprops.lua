@@ -1,5 +1,6 @@
 local UIExchangeProp=class("UIExchangeProp",function() return ccui.Layout:create() end)
 local g_path=BPRESOURCE("res/props/")
+local g_path_common=BPRESOURCE("res/common/",10000)
 local UIPropsDetail=require("src/ui_propsdetail")
 
 require("bptools/class_tools")
@@ -89,10 +90,9 @@ function UIExchangeProp:request_exchange_data()
     bp_http_get("hjj_task_data","",req,function(param_identifier,param_success,param_code,param_header,context) self:on_http_exchange_data(param_identifier,param_success,param_code,param_header,context) end,1)
 end
 function UIExchangeProp:on_http_exchange_data(param_identifier,param_success,param_code,param_header,context)
-    print("hjjlog>>on_http_exchange_data",context);
+    --print("hjjlog>>on_http_exchange_data",context);
     bp_show_loading(0)
     if param_success~=true or param_code~=200 then 
-        print("hjjlog>>on_http_exchange_data   fail");
         bp_show_hinting("兑换列表请求失败")
         return  ;
     end
@@ -113,7 +113,7 @@ function UIExchangeProp:on_http_exchange_data(param_identifier,param_success,par
         l_item.prop.price=v.need_fund_name;
         l_item.prop.left=v.left_num;
         l_item.name:setString(v.fund_name);
-        l_item.prop:loadTextures(g_path.."prop_"..v.logo..".png",g_path.."prop_"..v.logo..".png")
+        l_item.prop:loadTextures(g_path_common.."prop_"..v.logo..".png",g_path_common.."prop_"..v.logo..".png")
         l_item.price:setString(v.need_fund_name)
         l_item.bgdesc:setVisible(true)
         l_item.labledesc:setString("剩余"..v.left_num.."件")
@@ -163,10 +163,9 @@ function  UIExchangeProp:on_btn_exchange(param_id,param_value)
 end
 
 function UIExchangeProp:on_http_exchange(param_identifier,param_success,param_code,param_header,context)
-    print("hjjlog>>on_http_exchange_data",context);
+    --print("hjjlog>>on_http_exchange_data",context);
     bp_show_loading(0)
     if param_success~=true or param_code~=200 then 
-        print("hjjlog>>on_http_exchange_data   fail");
         bp_show_hinting("兑换列表请求失败")
         return  ;
     end

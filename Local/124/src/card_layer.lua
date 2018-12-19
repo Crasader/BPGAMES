@@ -615,7 +615,7 @@ function card_layer:touch_event(sender, eventType)
     if eventType == _G.TOUCH_EVENT_BEGAN then
         local is_touch_card = false
         for i = #self.hand_cards, 1, -1 do
-            if self:touchTest(self.hand_cards[i], sender:getTouchBeganPosition()) == true then
+            if ui_tools.hitTest(self.hand_cards[i], sender:getTouchBeganPosition()) == true then
                 AudioEngine.playEffect(MUSIC_PATH.normal[0])
                 self.hand_cards[i]:set_mask(true)
                 is_touch_card = true
@@ -658,14 +658,14 @@ function card_layer:touch_event(sender, eventType)
         end
 
         for i=#self.hand_cards, 1, -1 do
-            if self:touchTest(self.hand_cards[i], sender:getTouchBeganPosition()) == true then
+            if ui_tools.hitTest(self.hand_cards[i], sender:getTouchBeganPosition()) == true then
                 self.hand_cards[i]:set_mask(true)
                 break
             end        
         end
 
         for i=#self.hand_cards, 1, -1 do
-            if self:touchTest(self.hand_cards[i], sender:getTouchMovePosition()) == true then
+            if ui_tools.hitTest(self.hand_cards[i], sender:getTouchMovePosition()) == true then
                 self.hand_cards[i]:set_mask(true)
                 break
             end

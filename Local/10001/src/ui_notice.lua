@@ -132,7 +132,7 @@ function UINotice:on_http_notice(param_identifier,param_success,param_code,param
         l_item_btn.bg.btn_name=v.btn_name
         l_item_btn.bg.btn_action=v.btn_action
         l_item_btn.name:setString(v.title)
-        if bp_get_save_value("notice_"..v.id,"0")=="0" then 
+        if bp_get_local_value("notice_"..v.id,"0")=="0" then 
             l_item_btn.status:loadTexture(g_path.."img_status_0.png");
             l_item_btn.bg.type=0;
             self.m_int_status=self.m_int_status+1;
@@ -154,7 +154,7 @@ function UINotice:switch_btn_item(param_sender)
     param_sender:setBright(false)
     param_sender.ptr_name:setTextColor(cc.c3b(255,248,237))
     if param_sender.type==0 then 
-        bp_set_common_value("notice_"..param_sender.id,"1")
+        bp_set_local_value("notice_"..param_sender.id,"1")
         param_sender.ptr_status:loadTexture(g_path.."img_status_1.png");
         param_sender.type=1;
         self.m_int_status=self.m_int_status-1;

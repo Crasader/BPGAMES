@@ -36,7 +36,6 @@ function UIReport:init()
     -- 背景框
     self:set_bg(g_path .. "gui.png")
     self:set_title(g_path .. "title.png")
-    self:hide_choose()
 
     self.info_bg = self:get_gui()
     self.the_size = self.info_bg:getContentSize()
@@ -111,7 +110,7 @@ function UIReport:init()
 	self.btn_report:setPosition(cc.p(self.info_bg:getContentSize().width/2, self.btn_report:getContentSize().height/2 + 5))
 	self.btn_report:addTouchEventListener(function (sender, eventType) self:on_btn_report(sender, eventType) end )
 
-    self:back_ground_activate(true)
+    self:set_touch_bg(true)
 end
 -- 选择举报类型
 function UIReport:on_btn_choose_kind(sender, eventType)

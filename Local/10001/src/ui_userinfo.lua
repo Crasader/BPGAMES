@@ -67,7 +67,7 @@ function UIUserInfo:init()
     self.ptr_label_praise=control_tools.newLabel({font=20,color=cc.c3b(255,212,19)})
     self.ptr_label_praise:setPosition(cc.p(80,34/3))
     l_img_praise:addChild(self.ptr_label_praise)
-
+    
     local l_user_data=json.decode(bp_get_self_user_data());
     self.user_data=l_user_data;
     self.ptr_label_praise:setString("("..l_user_data.praise..")")
@@ -342,6 +342,7 @@ function UIUserInfo:on_btn_show_shop(param_sender,param_touchType)
         set_local_value("show_account","1");
         m_bool_show_accout=true;
         self.ptr_show_account:loadTextureNormal(g_path.."btn_hide_account.png")
+        
         local l_user_data=json.decode(bp_get_self_user_data());
         self.ptr_label_account:setString("账号:"..l_user_data.account)
 
@@ -380,6 +381,7 @@ function UIUserInfo:on_btn_show_shop(param_sender,param_touchType)
     end
  end 
  function UIUserInfo:on_call_back_bind_wechat(param_code,param_data)
+    --hjj_for_wait:
     print("hjjlog>>on_call_back_bind_wechat:",param_code,param_data);
     bp_show_loading(0)
     bp_show_hinting("微信绑定，手机测试。真机写")
@@ -400,6 +402,7 @@ function UIUserInfo:on_btn_show_shop(param_sender,param_touchType)
 
  function UIUserInfo:on_update_user_data()
     --self.user_data
+    
     self.user_data=json.decode(bp_get_self_user_data());
     self.ptr_label_praise:setString("("..self.user_data.praise..")")
 

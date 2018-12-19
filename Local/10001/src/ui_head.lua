@@ -38,8 +38,6 @@ function UIHead:on_event_user_chat(eventCustom)
 
     --[[chat：
         表情: [EM]XX  ,比如   [EM]09
-
-
     ]]--
 
     if self.m_user_id~=l_table.userid then

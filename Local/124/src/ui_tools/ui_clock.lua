@@ -23,6 +23,8 @@ function ui_clock:init(config_data)
     self._time_clock_text= control_tools.newLabel({fnt = config_data.fnt, str = "15"})
     self._time_clock_text:setPosition(cc.p(self:getContentSize().width*config_data.scale/2, self:getContentSize().height*config_data.scale/2 + 1))
     self:addChild(self._time_clock_text)
+
+    self.scheduler = CCDirector:getInstance():getScheduler()
 end
 
 -- 自动计时器
@@ -30,11 +32,11 @@ end
 function ui_clock:scheduleTimer(dt)
     self._time=self._time-dt
     self._cur_time = self._cur_time + dt
-    print("----------------self._time = ", self._time)
+
     if self._time<-0.1 then
         self:setTime(0)
         if self._time_schedule then
-            CCDirector:getInstance():getScheduler():unscheduleScriptEntry(self._time_schedule)
+            self.scheduler:unscheduleScriptEntry(self._time_schedule)
             self._time_schedule=nil
             if self._timeup_function then
                 self._timeup_function()
@@ -64,10 +66,10 @@ function ui_clock:setTime(int_num, bool_auto_count_down)
         self._time = int_num
         self._cur_time = 0
         if self._time_schedule then
-            CCDirector:getInstance():getScheduler():unscheduleScriptEntry(self._time_schedule)
-            self._time_schedule=nil
+            self.scheduler:unscheduleScriptEntry(self._time_schedule)
+            self._time_schedule = nil
         end
-        self._time_schedule=CCDirector:getInstance():getScheduler():scheduleScriptFunc(function(dt) self:scheduleTimer(dt) end , 0.1,false)
+        self._time_schedule = self.scheduler:scheduleScriptFunc(function(dt) self:scheduleTimer(dt) end , 0.1, false)
     end
 end
 
@@ -83,8 +85,8 @@ end
 function ui_clock:hide()
     self:setVisible(false)
     if self._time_schedule then
-        CCDirector:getInstance():getScheduler():unscheduleScriptEntry(self._time_schedule)
-        self._time_schedule=nil
+        self.scheduler:unscheduleScriptEntry(self._time_schedule)
+        self._time_schedule = nil
     end
     if self._timeup_function then
         self._timeup_function = nil
@@ -93,8 +95,8 @@ end
 
 function ui_clock:destroy()
     if self._time_schedule then
-        CCDirector:getInstance():getScheduler():unscheduleScriptEntry(self._time_schedule)
-        self._time_schedule=nil
+        self.scheduler:unscheduleScriptEntry(self._time_schedule)
+        self._time_schedule = nil
     end
     if self._timeup_function then
         self._timeup_function = nil
@@ -107,5 +109,18 @@ function ui_clock:getTime()
     end
     return 0
 end 
+
+function ui_clock:pauseTime()
+    if self._time_schedule then
+        self.scheduler:unscheduleScriptEntry(self._time_schedule)
+        self._time_schedule = nil
+    end
+end
+
+function ui_clock:resumeTime()
+    if self.scheduler then
+        self:setTime(self:getTime(), true)
+    end
+end
 
 return ui_clock

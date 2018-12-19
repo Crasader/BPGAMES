@@ -55,9 +55,9 @@ end
 
 function UIShopIngot:update_layout()
     local l_product_table=json.decode(bp_get_product_data())
-    print("hjjlog>>UIShopIngot：",bp_get_product_data());
+    --print("hjjlog>>UIShopIngot：",bp_get_product_data());
     for k,v in pairs(l_product_table) do
-        if v.type==3 then 
+        if v.type==2 then 
             local l_item=self:get_a_gold_item();
             l_item:setVisible(true)
             l_item:set_item_data(v);

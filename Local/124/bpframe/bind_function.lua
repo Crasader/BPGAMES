@@ -299,6 +299,154 @@ function bind_function.show_hinting(param_string)
 end
 
 -- -----------------
+-- 函数名称:  send_command
+-- 函数描述:  调用命令代码
+-- 参数说明:  命令代码。
+--[[
+    常用：
+    open: id   or open:id|value
+    1金币商城，2 道具商城 3元宝 4活动 5任务 6兑换 7 个人中心 8 vip 9 10 11废弃 12 金豆。 string： 内部网页
+    openurl:string 外部网页
+]]--
+-- -----------------
+function bind_function.send_command(param_command)
+    local l_table={}
+    l_table.command=param_command
+    bp_application_signal(10001,"MSG_DO_TASK",json.encode(l_table))
+end
+-- -- -----------------
+-- -- 函数名称:  show_shop
+-- -- 函数描述:  用于显示商城面板
+-- -- 参数说明:  param_index 1 金币商城
+--                         -- 2 道具商场
+--                         -- 3 元宝 
+--                         -- 4 活动 +可以带参数
+--                         -- 5 任务
+--                         -- 6 兑换
+--                         -- 7 个人中心
+--                         -- 8 vip
+--                         -- 9 推荐
+--                         -- 10 排行
+--                         -- 11 无  我也不知道以前是干嘛的
+--                         -- 12 金豆商城
+-- -- 返回说明:  无
+-- -- -----------------
+-- function bind_function.show_shop(param_index)
+--     if bind_function.ptr_game == nil then
+--         return -1
+--     end
+--     return bind_function.ptr_game:show_shop(param_index)    
+-- end
+
+-- -----------------
+-- 函数名称:  show_simple_shop
+-- 函数描述:  显示简易商场。含 救济金
+-- 参数说明:  无
+----------------------
+function bind_function.show_simple_shop()
+    if bind_function.ptr_game == nil then
+        return {}
+    end
+    local l_room_data=bind_function.ptr_game:get_room_data()
+    local l_product_data=nil
+    if l_room_data.mode==1 then 
+        local fun_rule=assert(loadstring(l_room_data.rule)) 
+        fun_rule()
+        print("hjjlog>>show_simple_show:",l_room_data.rule)
+        if topup==nil then
+            for k,v in pairs(json.decode(bp_get_product_data())) do
+                if v.type==1 then 
+                    l_product_data=v;
+                    break;
+                end
+            end
+        else
+            for k,v in pairs(json.decode(bp_get_product_data())) do
+                if v.type==1 and v.price==topup then 
+                    l_product_data=v;
+                    break;
+                end
+            end
+        end
+
+    elseif l_room_data.mode==8 then 
+        local fun_rule=assert(loadstring(l_room_data.rule)) 
+        fun_rule()
+        print("hjjlog>>show_simple_show:",l_room_data.rule)
+        if topup==nil then
+            for k,v in pairs(json.decode(bp_get_product_data())) do
+                if v.type==6 then 
+                    l_product_data=v;
+                    break;
+                end
+            end
+        else
+            for k,v in pairs(json.decode(bp_get_product_data())) do
+                if v.type==6 and v.price==topup then 
+                    l_product_data=v;
+                    break;
+                end
+            end
+        end
+    end
+    if l_product_data==nil then 
+        return ;
+    end
+    l_product_data.game_id=l_room_data.gameid
+    bp_application_signal(10001,"MSG_SHOW_SIMPLE_SHOP",json.encode(l_product_data))
+end
+-- -----------------
+-- 函数名称:  show_gift_shop
+-- 函数描述:  显示礼物商城
+-- 参数说明:  礼物价格，不传送为：30 
+----------------------
+function bind_function.show_gift_shop(param_price)
+    if bind_function.ptr_game == nil then
+        return {}
+    end
+    param_price=param_price or 30
+    print("hjjlog>>show_gift_show",param_price);
+    
+
+    local l_room_data=bind_function.ptr_game:get_room_data()
+    local l_product_data=nil
+    if l_room_data.mode==1 then 
+        for k,v in pairs(json.decode(bp_get_product_data())) do
+            print("hjjlog>>1111111",price);
+
+            if v.type==1 and v.price==param_price then 
+                l_product_data=v;
+                break;
+            end
+        end
+    elseif l_room_data.mode==8 then 
+        for k,v in pairs(json.decode(bp_get_product_data())) do
+            print("hjjlog>>222222222",price);
+
+            if v.type==6 and v.price==param_price then 
+                l_product_data=v;
+                break;
+            end
+        end
+    end
+    if l_product_data==nil then 
+        return ;
+    end
+    l_product_data.game_id=l_room_data.gameid
+    bp_application_signal(10001,"MSG_SHOW_GIFT_SHOP",json.encode(l_product_data))
+end
+
+
+
+
+
+
+
+
+
+
+
+-- -----------------
 -- 函数名称:  send_user_report
 -- 函数描述:  发送举报事件
 -- 参数说明:  table ={userid=[],count,kind}
@@ -332,7 +480,6 @@ function bind_function.send_user_kick(param_userid, param_to_user_id)
         return -1
     end
     return bind_function.ptr_game:send_user_kick(param_userid, param_to_user_id)    
-
 end
 -- -----------------
 -- 函数名称:  send_user_praise
@@ -348,26 +495,52 @@ function bind_function.send_user_praise(param_userid, param_to_user_id)
     return bind_function.ptr_game:send_user_praise(param_userid, param_to_user_id)    
 end
 
+
+
 -- -----------------
--- 函数名称:  show_shop
--- 函数描述:  用于显示商城面板
--- 参数说明:  param_index 1 金币商城
-                        -- 2 道具商场
-                        -- 3 元宝 
-                        -- 4 活动 +可以带参数
-                        -- 5 任务
-                        -- 6 兑换
-                        -- 7 个人中心
-                        -- 8 vip
-                        -- 9 推荐
-                        -- 10 排行
-                        -- 11 无  我也不知道以前是干嘛的
-                        -- 12 金豆商城
--- 返回说明:  无
+-- 函数名称:  send_open_mini_game
+-- 函数描述:  发送小游戏启动协议
+-- 参数说明:  param_id 小游戏id  1:翻翻乐
+-- 返回说明:  bool  是否发送成功 
+-- 操作后事件返回： NOTICE_MINIGUESS 
+--[[    
+    1:翻翻乐 c++:UIMiniGuess::ShowMiniGuess(tax,count,time,gold)
+    TABLE={
+        userid=userid,
+        int_tax=int_tax,
+        int_count=int_count,
+        int_time=int_time,
+        long_gold=long_gold
+    }
+]]--
 -- -----------------
-function bind_function.show_shop(param_index)
+function bind_function.send_open_mini_game(param_id)
     if bind_function.ptr_game == nil then
         return -1
     end
-    return bind_function.ptr_game:show_shop(param_index)    
+    param_id = param_id or 1
+    return bind_function.ptr_game:send_open_mini_game(param_id)
+end
+-- -----------------
+-- 函数名称:  send_mini_guess_checkid
+-- 函数描述:  发送翻翻乐猜牌id
+-- 参数说明:  param_id 猜牌id
+-- 返回说明:  bool  是否发送成功 
+-- 操作后事件返回:  NOTICE_MINIGUESS_RESULT
+--[[    
+    翻翻乐 c++:UIMiniGuess::GetGuessResult(success,turn,tatal_turn,gold)
+    TABLE={
+        int_turn=int_turn,
+        int_total_turn=int_total_turn,
+        int_gold=int_gold,
+        bool_success=bool_success
+    }
+]]--
+
+function bind_function.send_mini_guess_checkid(param_id)
+    if bind_function.ptr_game == nil then
+        return -1
+    end
+    param_id = param_id or 1
+    return bind_function.ptr_game:send_mini_guess_checkid(param_id)
 end

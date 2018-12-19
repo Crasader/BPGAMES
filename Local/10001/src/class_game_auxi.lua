@@ -110,6 +110,8 @@ function class_game_auxi:on_socket_connect(index, code)
     print("hjjlog>>push_socket_connect:",index,code);
     self._socket_index=index;
     if code==0 then 
+        
+        
         local self_data=json.decode(bp_get_self_user_data())
         if self._privater_room_type==PRI_ROOM_TYPE_CREATE then 
             local the_data={};

@@ -53,7 +53,7 @@ function UIExchangeRecord:init()
 
     self.ptr_img_record_hint=control_tools.newImg({path=g_path.."img_no_record.png"})
     self:addChild(self.ptr_img_record_hint)
-    self.ptr_img_record_hint:setPosition(cc.p(self.the_size.width/2,400))
+    self.ptr_img_record_hint:setPosition(cc.p(self.the_size.width/2,200))
     self.ptr_img_record_hint:setVisible(false)
 
     self:request_exchange_record(self.m_int_curr_page,self.m_int_curr_page_count);
@@ -119,11 +119,10 @@ function UIExchangeRecord:request_exchange_record(param_page,param_count)
     self.m_bool_active=true;
 end
 function UIExchangeRecord:on_http_exchange_record(param_identifier,param_success,param_code,param_header,context)
-    print("hjjlog>>on_http_exchange_record",context);
+    --print("hjjlog>>on_http_exchange_record",context);
     bp_show_loading(0)
     self.m_bool_active=false;
     if param_success~=true or param_code~=200 then 
-        print("hjjlog>>on_http_exchange_record   fail");
         bp_show_hinting("兑换列表请求失败")
         return  ;
     end
@@ -167,14 +166,14 @@ function UIExchangeRecord:on_btn_drag_event(param_obj,param_type)
         return ;
     end
     if param_type==ccui.ScrollviewEventType.bounceTop then 
-        print("hjjlog>>on_btn_drag_event1111111111111:",self.m_int_curr_page);
+        --print("hjjlog>>on_btn_drag_event1111111111111:",self.m_int_curr_page);
         if self.m_int_curr_page>1 then 
             self.m_int_curr_page=self.m_int_curr_page-1;
             self:request_exchange_record(self.m_int_curr_page,self.m_int_curr_page_count)
             self.m_int_type=param_type;
         end
     elseif param_type==ccui.ScrollviewEventType.bounceBottom then 
-        print("hjjlog>>on_btn_drag_event2222222222222:",self.m_int_curr_page);
+       -- print("hjjlog>>on_btn_drag_event2222222222222:",self.m_int_curr_page);
         if self.m_int_curr_page*self.m_int_curr_page_count<self.m_int_total_count then  
             self.m_int_curr_page=self.m_int_curr_page+1;
             self:request_exchange_record(self.m_int_curr_page,self.m_int_curr_page_count)

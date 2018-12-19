@@ -1,8 +1,5 @@
 local UIControl=class("UIControl",function() return ccui.Layout:create() end)
-require("bptools/control_tools")
-require "bptools/ui_tools"
-
-local g_path=BPRESOURCE("bpres/popup/")
+local g_path=BPRESOURCE("res/popup/",10000)
 function UIControl:ctor(param_self)
     if param_self~=nil then 
         self=param_self;
@@ -11,13 +8,14 @@ function UIControl:ctor(param_self)
     self.ptr_bg=nil;
     self.the_size=nil;
     self.ptr_gui=nil;
-    self.ptr_close=nil;
+    self.ptr_btn_close=nil;
     self.bool_action=false
     self.list_item_and_layout={}--{btn=BTN,btn.id=ID,layout=LAYOUT}
     self.ptr_img_choose=nil;
     self.ptr_img_title=nil;
     self.ptr_img_title_name=nil;
-    self.bg_activate = nil;
+    self.m_bool_is_visible=false
+    self.m_bool_touch_close=false;
 
     self:init_control();
 end
@@ -27,7 +25,6 @@ end
 
 
 function UIControl:init_control()
-    print("----------------------------------------1")
     local  the_size=CCDirector:getInstance():getVisibleSize();
     self.the_size=the_size;
     
@@ -36,18 +33,22 @@ function UIControl:init_control()
     self.ptr_bg:setPosition(cc.p(self.the_size.width/2,the_size.height/2))
     self.ptr_bg:setTouchEnabled(true)
     self.ptr_bg:setVisible(false);
+    self.ptr_bg:setTouchEnabled(true)
+    self.ptr_bg:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_bg(param_sender,param_touchType) end)
+    
     
     self.ptr_gui=control_tools.newImg({path=g_path.."gui.png"})
     self.ptr_gui:setPosition(cc.p(the_size.width/2,the_size.height/2))
     self:addChild(self.ptr_gui)
     local the_bg_size=self.ptr_gui:getContentSize()
     self.ptr_gui:setVisible(false)
+    self.ptr_gui:setTouchEnabled(true)
 
-    self.ptr_close=control_tools.newBtn({normal=g_path.."close.png",small=true})
-    self.ptr_close:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_close(param_sender,param_touchType) end)
-    self.ptr_gui:addChild(self.ptr_close);
-    self.ptr_close:setPosition(cc.p(the_bg_size.width-10,the_bg_size.height-10))
-    self.ptr_close:setLocalZOrder(100)
+    self.ptr_btn_close=control_tools.newBtn({normal=g_path.."close.png",small=true})
+    self.ptr_btn_close:addTouchEventListener(function(param_sender,param_touchType) self:on_btn_close(param_sender,param_touchType) end)
+    self.ptr_gui:addChild(self.ptr_btn_close);
+    self.ptr_btn_close:setPosition(cc.p(the_bg_size.width-10,the_bg_size.height-10))
+    self.ptr_btn_close:setLocalZOrder(100)
 
     self.ptr_img_choose=control_tools.newImg({path=g_path.."uitabtop_3.png"})
     self.ptr_gui:addChild(self.ptr_img_choose)
@@ -60,9 +61,6 @@ function UIControl:init_control()
     self.ptr_img_title_name=control_tools.newImg({})
     self.ptr_img_title:addChild(self.ptr_img_title_name)
     self.ptr_img_title_name:setPosition(cc.p(278/2,56/2))
-
-    self.ptr_bg:addTouchEventListener(function (sender, eventType) self:on_btn_layout(sender, eventType) end)
-    -- self.ptr_bg:setTouchEnabled(true)
 end
 
 function UIControl:on_btn_close(param_sender,param_touchType)
@@ -72,9 +70,22 @@ function UIControl:on_btn_close(param_sender,param_touchType)
     self:ShowGui(false)
 end
 
+function UIControl:on_btn_bg(param_sender,param_touchType)
+    if param_touchType~=_G.TOUCH_EVENT_ENDED then
+        return 
+    end
+    if self.m_bool_touch_close==true then 
+        self:ShowGui(false)
+    end
+end
+
+
 function UIControl:ShowGui(param_bool)
     if param_bool==nil then 
         param_bool=true;
+    end
+    if param_bool==self.m_bool_is_visible then 
+        return ;
     end
     if param_bool==true then 
         self:open_popups()
@@ -87,6 +98,7 @@ function UIControl:open_popups()
     if self.bool_action==true then 
         return 
     end
+    self.m_bool_is_visible=true
     self:setLocalZOrder(bp_identifier())
     self.bool_action=true;
     self.ptr_gui:setScale(0)
@@ -100,6 +112,7 @@ function UIControl:close_popus()
     if self.bool_action==true then 
         return ;
     end
+    self.m_bool_is_visible=false
     self.bool_action=true;
     local l_ac_scale_1=cc.ScaleTo:create(0.05,1.1)
     local l_ac_scale_2=cc.ScaleTo:create(0.1,0)
@@ -113,6 +126,14 @@ function UIControl:on_close_finish()
     self.bool_action=false
     self.ptr_bg:setVisible(false)
 end
+function UIControl:set_touch_bg(param_bool)
+    self.m_bool_touch_close=param_bool;
+end
+function UIControl:set_close_visible(param_bool)
+    self.ptr_btn_close:setVisible(param_bool)
+end
+
+
 --就一个的情况下 用这个
 function UIControl:set_item(param_str_file,param_layer)
     self.ptr_img_choose:setVisible(false)
@@ -159,7 +180,10 @@ function UIControl:update_layout()
     self.ptr_img_choose:setVisible(true)
     self.ptr_img_title:setVisible(false)
 
-    if #self.list_item_and_layout==1 then 
+    if #self.list_item_and_layout==0 then 
+        self.ptr_img_choose:setVisible(false);
+        self.ptr_btn_close:setVisible(false);
+    elseif #self.list_item_and_layout==1 then 
         self.ptr_img_choose:loadTexture(g_path.."uitabtop_1.png")
     elseif #self.list_item_and_layout==2 then 
         self.ptr_img_choose:loadTexture(g_path.."uitabtop_2.png")
@@ -182,7 +206,7 @@ end
 function UIControl:set_bg(param_str_file)
     self.ptr_gui:loadTexture(param_str_file)
     local the_bg_size=self.ptr_gui:getContentSize()
-    self.ptr_close:setPosition(cc.p(the_bg_size.width-10,the_bg_size.height-10))
+    self.ptr_btn_close:setPosition(cc.p(the_bg_size.width-10,the_bg_size.height-10))
     self.ptr_img_choose:setPosition(cc.p(the_bg_size.width/2,the_bg_size.height-7))
     self.ptr_img_title:setPosition(cc.p(the_bg_size.width/2,the_bg_size.height+14))
 end
@@ -197,63 +221,29 @@ function UIControl:switch_item(param_int_item)
         else
             v.btn:setBright(true)
             v.layout:setVisible(false)
-        end
+        end 
     end
     if l_bool_find==false then 
         if #self.list_item_and_layout>0 then 
-            self.list_item_and_layout.btn:setBright(false)
-            self.list_item_and_layout.layout:setVisible(true)
+            self.list_item_and_layout[1].btn:setBright(false)
+            self.list_item_and_layout[1].layout:setVisible(true)
+            self:on_back_switch_item(1)
         end
+    else        
+        self:on_back_switch_item(param_int_item)
     end
 end
 function UIControl:on_btn_item(param_sender,param_touchType)
    if param_touchType~=_G.TOUCH_EVENT_ENDED then
        return 
    end
-   self:switch_item(param_sender.id)
-   self:on_back_switch_item(param_sender.id)
-   
+
+   self:switch_item(param_sender.id)   
+
 end
 function UIControl:on_back_switch_item(param_id)
 
 end
 
--- -----------------
--- DY ADD
--- -----------------
-function UIControl:show_title()
-    self.ptr_img_title:setVisible(true)
-end
-
-function UIControl:hide_title()
-    self.ptr_img_title:setVisible(false)
-end
-
-function UIControl:show_choose()
-    self.ptr_img_choose:setVisible(true)
-end
-
-function UIControl:hide_choose()
-    self.ptr_img_choose:setVisible(false)
-end
-
-function UIControl:on_btn_layout(sender, eventType)
-    if eventType ~= _G.TOUCH_EVENT_ENDED then
-        return 
-    end
-
-    if self.bg_activate == nil then return end
-
-    if self.bg_activate == false then return end
-
-    print("===========function UIControl:===on_btn_layout===============", self.bg_activate)
-    if ui_tools.hitTest(self.ptr_gui, sender:getTouchEndPosition()) == false then
-        self:ShowGui(false)
-    end
-end
-
-function UIControl:back_ground_activate(bool_touch)
-    self.bg_activate = bool_touch
-end
 
 return UIControl

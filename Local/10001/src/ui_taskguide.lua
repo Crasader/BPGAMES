@@ -122,7 +122,8 @@ function UITaskGuide:init()
         touch=true;
     }
     local l_item_gift=self:get_a_item(l_table_gift)
-    if bp_have_mask_module(LC.MASK_MODULE_NEWPLAYER_PACK) and json.decode(bp_get_self_user_data()).paycount  <=0  then 
+    
+    if bp_have_mask_module(LC.MASK_MODULE_NEWPLAYER_PACK)==true and json.decode(bp_get_self_user_data()).paycount  <=0  then 
         self:update_item_data(l_item_gift,{visible=true})
     else
         self:update_item_data(l_item_gift,{visible=false})    
@@ -138,7 +139,7 @@ function UITaskGuide:init()
         touch=true;
     }
     local l_item_bind=self:get_a_item(l_table_bind)
-    if bp_have_mask_module(LC.MASK_MODULE_BIND_WECHAT) and bp_have_self_right(UC.UR_MASK_CHECK_WECHAT)==0 then 
+    if bp_have_mask_module(LC.MASK_MODULE_BIND_WECHAT)==true and bp_have_self_right(UC.UR_MASK_CHECK_WECHAT)==0 then 
         self:update_item_data(l_item_bind,{visible=true})
     else 
         self:update_item_data(l_item_bind,{visible=false})
@@ -155,7 +156,7 @@ function UITaskGuide:init()
     }
     local l_item_vip=self:get_a_item(l_table_vip)
 
-    if bp_have_mask_module(LC.MASK_MODULE_VIP) and bp_have_mask_module(LC.MASK_MODULE_SIGN) then 
+    if bp_have_mask_module(LC.MASK_MODULE_VIP)==true and bp_have_mask_module(LC.MASK_MODULE_SIGN)==true then 
         if class_tools.get_vip()>0 then 
             self:update_item_data(l_item_vip,{visible=true})
         else
@@ -341,13 +342,15 @@ function UITaskGuide:on_btn_item(param_sender,param_touchType)
         self.deal_update(param_item)
     elseif param_sender.id==BTN_TYPE.LUCK then 
         self:ShowGui(false)
-        --hjj_for_wait:显示幸运大转盘。
+        local UIActivityDial=  require("src/ui_activity_dial")
+        UIActivityDial.ShowActivityDial(true)
     elseif param_sender.id==BTN_TYPE.GIFT then 
         --hjj_for_wait:新手礼包。
     elseif param_sender.id==BTN_TYPE.BIND then 
         UIUserCenter.ShowUserCenter(true)
     elseif param_sender.id==BTN_TYPE.VIP then 
-        --hjj_for_wait:显示幸运大转盘。
+        local UIActivityDial=  require("src/ui_activity_dial")
+        UIActivityDial.ShowActivityDial(true)
     elseif param_sender.id==BTN_TYPE.WXLINE then 
         self:deal_share_wxline(param_item)
     elseif param_sender.id==BTN_TYPE.WXFRIEND then 
@@ -456,6 +459,7 @@ function UITaskGuide:on_http_update_award(param_identifier,param_success,param_c
 end
 
 function UITaskGuide:deal_share_wxline(param_item)
+    local share_data=nil
     local l_share_data=bp_get_local_text(1);
     l_share_data=bp_url_decode(l_share_data)
     print("hjjlog>>deal_share_wxlin:",l_share_data);
@@ -470,6 +474,7 @@ function UITaskGuide:deal_share_wxline(param_item)
     self:share_wechat(share_data,1)
 end
 function UITaskGuide:deal_share_wxfriend(param_item)
+    local share_data=nil
     local l_share_data=bp_get_local_text(1);
     l_share_data=bp_url_decode(l_share_data)
     print("hjjlog>>deal_share_wxlin:",l_share_data);
@@ -510,32 +515,29 @@ function UITaskGuide:share_wechat(param_share_data,param_type)
 
 end
 
-function UITaskGuide:request_comment_award(param_type,param_item)
-    local req = URL.HTTP_USE_PROP
-    req=bp_make_url(req)
-    req=bp_string_replace_key(req,"&quot;","\"");
-    req=bp_string_replace_key(req,"{PROPID}",param_id);
-    req=bp_string_replace_key(req,"{PARAM}","");
-    bp_http_get(""..param_id,"",req,function(param_identifier,param_success,param_code,param_header,context) self:on_http_comment_award(param_identifier,param_success,param_code,param_header,context) end,1)
-end
-function UITaskGuide:on_http_comment_award2222(param_identifier,param_success,param_code,param_header,context)
-    print("hjjlog>>on_http_comment_award",context);
+-- function UITaskGuide:request_comment_award(param_type,param_item)
+--     local req = URL.HTTP_USE_PROP
+--     req=bp_make_url(req)
+--     req=bp_string_replace_key(req,"&quot;","\"");
+--     req=bp_string_replace_key(req,"{PROPID}",param_id);
+--     req=bp_string_replace_key(req,"{PARAM}","");
+--     bp_http_get(""..param_id,"",req,function(param_identifier,param_success,param_code,param_header,context) self:on_http_comment_award(param_identifier,param_success,param_code,param_header,context) end,1)
+-- end
+-- function UITaskGuide:on_http_comment_award2222(param_identifier,param_success,param_code,param_header,context)
+--     print("hjjlog>>on_http_comment_award",context);
     
-    if param_success~=true or param_code~=200 then 
-        print("hjjlog>>on_http_comment_award   fail");
-        bp_show_hinting("请求失败！")
-        return  ;
-    end
+--     if param_success~=true or param_code~=200 then 
+--         print("hjjlog>>on_http_comment_award   fail");
+--         bp_show_hinting("请求失败！")
+--         return  ;
+--     end
 
-    local l_data=json.decode(context);
-    if l_data.rescode~=1 then 
-        bp_show_hinting(l_data.resmsg)
-        return ;
-    end
-    
-
-
-end
+--     local l_data=json.decode(context);
+--     if l_data.rescode~=1 then 
+--         bp_show_hinting(l_data.resmsg)
+--         return ;
+--     end
+-- end
 
 
 return UITaskGuide

@@ -31,7 +31,7 @@ MessageType = {config = 101, clock = 102, game_info = 103, sound = 104, chat = 1
 --     }
 GameStatus = {free = 0, landlord = 1, rob = 2, outcards = 3}
 
--- ChatType = {notice = 0, count = 1}
+ChatType = {notice = 0, count = 1}
 
 ProtocolType = {landlord = 1001, no_landlord = 1002, rob = 1003, no_rob = 1004, outcards = 1005, 
 				pass = 1006, hint = 1007, trust = 1008, no_trust = 1009, send_gift = 1010, revive = 1011}
@@ -61,21 +61,14 @@ TaskInfo = {last_single = 1, last_double = 2, last_shunzi = 3, last_three = 4, l
 
 ChatDirection = {left_top = 1, left_down = 2, right_top = 3, right_down = 4}
 
--- EventList = {update_user_info = "MSG_UPDATE_SELF_DATA", update_pay_type = "MSG_PAY_TYPE", guess_type = "MSG_GUESS_TYPE"}
-
--- PayType = {start = 0, close = 1, success = 2, fail = 3} 
-
--- ItemShop = {gold = 0, ingot = 1, prop = 2, vip = 3}
-
 BASE_CARDS_COUNT = 3
 MAX_HAND_CARDS = 20
--- ID_PROP_STATUS_RECARD = 1003
 -- ID_PROP_REVIVE_CARD = 1030
 
 
 SEND_CARD_SPEED = 0.05
 
--- GuessList = {null = 0, open = 1, start = 2, close = 3, success = 4, fail = 5}
+GuessList = {null = 0, open = 1, start = 2, close = 3, success = 4, fail = 5}
 
 MUSIC_PATH = { 
 	normal = {

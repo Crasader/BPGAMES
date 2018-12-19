@@ -6,6 +6,7 @@ local UIPrivateCenter=require("src/ui_privatecenter")
 
 function RoomSite:ctor()
     self.the_size=nil;
+    self._int_site_id=0;
     self.ptr_item_bg=nil
     self._list_site_top={}
     self._list_site_item={}
@@ -20,9 +21,13 @@ function RoomSite:init()
     self.the_size=the_size;
     self:setContentSize(the_size);
 
-    self.ptr_item_bg=control_tools.newImg({path=g_path.."roomitembg.png"})
-    self.ptr_item_bg:setPosition(cc.p(self.the_size.width/2,300))
-    self:addChild(self.ptr_item_bg)
+    local l_site_bg=control_tools.newImg({path=g_path.."roomitembg.png"})
+    l_site_bg:setPosition(cc.p(self.the_size.width/2,300))
+    self:addChild(l_site_bg)
+
+    self.ptr_item_bg=control_tools.newImg({path=g_path.."kong.png",size=cc.size(815,362)})
+    l_site_bg:addChild(self.ptr_item_bg)
+    self.ptr_item_bg:setPosition(cc.p(815/2,352/2))
 
     for i=1,3 do 
         local l_table={}
@@ -32,10 +37,11 @@ function RoomSite:init()
         l_table.name=control_tools.newLabel({fnt=g_path.."num_fjlb_biaoti.fnt"});
         l_table.name:setPosition(cc.p(220/2,60/2))
         l_table.btn:addChild(l_table.name)
-        self.ptr_item_bg:addChild(l_table.btn)
+        l_site_bg:addChild(l_table.btn)
         l_table.btn:setPosition(cc.p(110+(i-1)*220,362+30))
         table.insert( self._list_site_top, l_table)
     end
+
     for i=1,6 do 
         local l_room_item=RoomItem:create();
         self.ptr_item_bg:addChild(l_room_item);
@@ -96,10 +102,16 @@ function RoomSite:on_btn_top_site(param_sender,param_touchType)
         v.btn:setBright(true)
         v.btn:setTouchEnabled(true)   
     end
+    self._int_site_id=param_sender.id
     param_sender:setBright(false)
     param_sender:setTouchEnabled(false);
-    self:on_switch_item(param_sender.id)
+    
+    local l_ac_fadeout_1=cc.FadeOut:create(0.2)
+    local l_ac_fun_1=cc.CallFunc:create(function(param_sender) self:on_switch_item(self._int_site_id)  end)
+    local l_ac_fadein_1=cc.FadeIn:create(0.2)
+    self.ptr_item_bg:runAction(cc.Sequence:create(l_ac_fadeout_1,l_ac_fun_1,l_ac_fadein_1))
 end
+
 function RoomSite:on_btn_site_item(param_sender,param_touchType)
     if param_touchType~=_G.TOUCH_EVENT_ENDED then
         return 
@@ -143,7 +155,7 @@ function RoomSite:on_switch_item(param_id)
     for k,v in pairs(self._list_site_item) do 
         v:setVisible(false)
     end
-    print("hjjlog>>on_switch_item:",param_id,bp_get_room_data_by_gameid(param_id))
+
     local l_room_data=json.decode(bp_get_room_data_by_gameid(param_id))
     local l_list_site={}
     --遍历金豆场

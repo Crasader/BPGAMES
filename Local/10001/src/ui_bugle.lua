@@ -12,14 +12,10 @@ end
 
 function UIBugle:init()
     local   l_lister= cc.EventListenerCustom:create("NOTICE_UPDATE_USER_DATA", function (eventCustom)
-          self:on_update_user_data(eventCustom);
+          -- self:on_update_user_data(eventCustom);
     end)
     cc.Director:getInstance():getEventDispatcher():addEventListenerWithFixedPriority(l_lister, 1)
 
-    local   l_lister= cc.EventListenerCustom:create("NOTICE_UPDATE_USER_DATA", function (eventCustom)
-          self:on_update_user_data(eventCustom);
-    end)
-    cc.Director:getInstance():getEventDispatcher():addEventListenerWithFixedPriority(l_lister, 1)
     
     self.the_size=cc.size(660,40);
     self:setContentSize(self.the_size)
@@ -110,7 +106,7 @@ function UIBugle:on_btn_bugle_bg(param_sender,param_touchType)
         return 
     end
     local l_table={}
-    l_table.type=0 
+    l_table.type=1
     bp_application_signal(10002,"SHOW_ROOM_BUGLE",json.encode(l_table))
 
 end

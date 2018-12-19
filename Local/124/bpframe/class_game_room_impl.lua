@@ -79,7 +79,7 @@ end
     self._socket_index=index;
     if code ==0 then 
         local struct_logon={}
-        local self_data=json.decode(bp_get_self_user_data())
+        local self_data=json.decode(bp_get_self_user_data(123))
         struct_logon.code=self._int_code
         struct_logon.userid=self_data.userid;
         struct_logon.password=bp_md5(self_data.password);
@@ -350,7 +350,7 @@ function class_game_room_impl:on_socket_sub_score(mainCmdID, subCmdID, data)
     ptr_user_data.lExperience = ptr_user_score.data.lExperience;
     ptr_user_data.lPraise = ptr_user_score.data.nPraise;
     ptr_user_data.lCharm = ptr_user_score.data.nCharm;
-    if ptr_user_score.userid==bp_get_self_user_data().userid then 
+    if ptr_user_score.userid==bp_get_self_user_data(123).userid then 
         local bool_update=false;
         
         bp_set_self_charm(ptr_user_score.data.nCharm)
@@ -426,7 +426,7 @@ end
 function class_game_room_impl:on_socket_sub_redpacket_receive(mainCmdID, subCmdID, data)
     local ptr_user_redpacket=CMD_FRAME_REDPACK.fromBuffer(data)
     --hjj_for_wait 收到一个红包
-    bp_set_self_redpacket(bp_get_self_user_data().redpacket+ptr_user_redpacket.redpack)
+    bp_set_self_redpacket(bp_get_self_user_data(123).redpacket+ptr_user_redpacket.redpack)
 end
 function class_game_room_impl:sendData(mainCmdID,subCmdID,data)
     local bool_send=bp_socket_send_data(self._socket_index, mainCmdID, subCmdID, data);    
