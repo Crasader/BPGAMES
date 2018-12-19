@@ -1,0 +1,15 @@
+{
+  "start_width": 85,
+  "start_height": 105,
+  "start_count": 9,
+  "start_time": 1,
+  "move_width": 51,
+  "move_height": 68,
+  "move_time": 0.5,
+  "move_rotation": 1,
+  "move_turn": 2,
+  "end_width": 487,
+  "end_height": 320,
+  "end_count": 10,
+  "end_time": 1
+}

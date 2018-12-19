@@ -1,0 +1,3637 @@
+{
+   "friend" : [
+      {
+         "expire" : 600,
+         "id" : 107,
+         "items" : [
+            {
+               "desc" : "浮动底分，限时免费创建，只结算金币",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "6局(限时免费)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            },
+            {
+               "desc" : "消耗房卡创建，以1底分进行好友对战，只结算好友房临时积分",
+               "items" : [
+                  {
+                     "count" : 1,
+                     "desc" : "1局(1张房卡)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 2,
+                     "desc" : "2局(2张房卡)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 3,
+                     "desc" : "3局(3张房卡)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 6,
+                     "desc" : "6局(6张房卡)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1025
+                  }
+               ],
+               "kind" : 2,
+               "name" : "积分场"
+            }
+         ],
+         "name" : "保皇"
+      },
+      {
+         "expire" : 3600,
+         "id" : 108,
+         "items" : [
+            {
+               "desc" : "浮动底分，限时免费创建，只结算金币",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "6局(限时免费)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            },
+            {
+               "desc" : "消耗房卡创建，以1底分进行好友对战，只结算好友房临时积分",
+               "items" : [
+                  {
+                     "count" : 1,
+                     "desc" : "1局(1张房卡)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 2,
+                     "desc" : "2局(2张房卡)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 3,
+                     "desc" : "3局(3张房卡)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 6,
+                     "desc" : "6局(6张房卡)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1025
+                  }
+               ],
+               "kind" : 2,
+               "name" : "积分场"
+            }
+         ],
+         "name" : "够级"
+      },
+      {
+         "expire" : 3600,
+         "id" : 110,
+         "items" : [
+            {
+               "desc" : "浮动底分，限时免费创建，只结算金币",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "6局(限时免费)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            },
+            {
+               "desc" : "消耗房卡创建，以1底分进行好友对战，只结算好友房临时积分",
+               "items" : [
+                  {
+                     "count" : 1,
+                     "desc" : "1局(1张房卡)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 2,
+                     "desc" : "2局(2张房卡)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 3,
+                     "desc" : "3局(3张房卡)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 6,
+                     "desc" : "6局(6张房卡)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1025
+                  }
+               ],
+               "kind" : 2,
+               "name" : "积分场"
+            }
+         ],
+         "name" : "对杀"
+      },
+      {
+         "expire" : 3600,
+         "id" : 114,
+         "items" : [
+            {
+               "desc" : "浮动底分，限时免费创建，只结算金币",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "6局(限时免费)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            },
+            {
+               "desc" : "消耗房卡创建，以1底分进行好友对战，只结算好友房临时积分",
+               "items" : [
+                  {
+                     "count" : 1,
+                     "desc" : "1局(1张房卡)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 2,
+                     "desc" : "2局(2张房卡)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 3,
+                     "desc" : "3局(3张房卡)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 6,
+                     "desc" : "6局(6张房卡)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1025
+                  }
+               ],
+               "kind" : 2,
+               "name" : "积分场"
+            }
+         ],
+         "name" : "二人斗地主"
+      },
+      {
+         "expire" : 3600,
+         "id" : 121,
+         "items" : [
+            {
+               "desc" : "小盲1000，5000准入。限时免费创建，结算游戏金币。",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "4局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 4,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "8局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 8,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "16局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 16,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            }
+         ],
+         "name" : "德州扑克"
+      },
+      {
+         "expire" : 120,
+         "id" : 124,
+         "items" : [
+            {
+               "desc" : "浮动底分，限时免费创建，只结算金币",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "6局(限时免费)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            },
+            {
+               "desc" : "消耗房卡创建，以1底分进行好友对战，只结算好友房临时积分",
+               "items" : [
+                  {
+                     "count" : 1,
+                     "desc" : "1局(1张房卡)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 2,
+                     "desc" : "2局(2张房卡)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 3,
+                     "desc" : "3局(3张房卡)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 6,
+                     "desc" : "6局(6张房卡)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1025
+                  }
+               ],
+               "kind" : 2,
+               "name" : "积分场"
+            }
+         ],
+         "name" : "斗地主"
+      },
+      {
+         "expire" : 3600,
+         "id" : 133,
+         "items" : [
+            {
+               "desc" : "浮动底分，限时免费创建，只结算金币",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "6局(限时免费)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            },
+            {
+               "desc" : "消耗房卡创建，以1底分进行好友对战，只结算好友房临时积分",
+               "items" : [
+                  {
+                     "count" : 1,
+                     "desc" : "1局(1张房卡)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 2,
+                     "desc" : "2局(2张房卡)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 3,
+                     "desc" : "3局(3张房卡)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 6,
+                     "desc" : "6局(6张房卡)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1025
+                  }
+               ],
+               "kind" : 2,
+               "name" : "积分场"
+            }
+         ],
+         "name" : "癞子斗地主"
+      },
+      {
+         "expire" : 3600,
+         "id" : 134,
+         "items" : [
+            {
+               "desc" : "浮动底分，限时免费创建，只结算金币",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "6局(限时免费)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            },
+            {
+               "desc" : "消耗房卡创建，以1底分进行好友对战，只结算好友房临时积分",
+               "items" : [
+                  {
+                     "count" : 1,
+                     "desc" : "1局(1张房卡)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 2,
+                     "desc" : "2局(2张房卡)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 3,
+                     "desc" : "3局(3张房卡)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 6,
+                     "desc" : "6局(6张房卡)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1025
+                  }
+               ],
+               "kind" : 2,
+               "name" : "积分场"
+            }
+         ],
+         "name" : "经典牛牛"
+      },
+      {
+         "expire" : 3600,
+         "id" : 136,
+         "items" : [
+            {
+               "desc" : "浮动底分，限时免费创建，只结算金币",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "6局(限时免费)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            },
+            {
+               "desc" : "消耗房卡创建，以1底分进行好友对战，只结算好友房临时积分",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(1张房卡)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(2张房卡)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(3张房卡)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "6局(6张房卡)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 2,
+               "name" : "积分场"
+            }
+         ],
+         "name" : "贵阳麻将"
+      },
+      {
+         "expire" : 3600,
+         "id" : 138,
+         "items" : [
+            {
+               "desc" : "浮动底分，限时免费创建，只结算金币",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "6局(限时免费)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            },
+            {
+               "desc" : "消耗房卡创建，以1底分进行好友对战，只结算好友房临时积分",
+               "items" : [
+                  {
+                     "count" : 1,
+                     "desc" : "1局(1张房卡)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 2,
+                     "desc" : "2局(2张房卡)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 3,
+                     "desc" : "3局(3张房卡)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 6,
+                     "desc" : "6局(6张房卡)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1025
+                  }
+               ],
+               "kind" : 2,
+               "name" : "积分场"
+            }
+         ],
+         "name" : "宁波麻将LUA"
+      },
+      {
+         "expire" : 3600,
+         "id" : 139,
+         "items" : [
+            {
+               "desc" : "浮动底分，限时免费创建，只结算金币",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "6局(限时免费)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            },
+            {
+               "desc" : "消耗房卡创建，以1底分进行好友对战，只结算好友房临时积分",
+               "items" : [
+                  {
+                     "count" : 1,
+                     "desc" : "1局(1张房卡)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 2,
+                     "desc" : "2局(2张房卡)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 3,
+                     "desc" : "3局(3张房卡)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 6,
+                     "desc" : "6局(6张房卡)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1025
+                  }
+               ],
+               "kind" : 2,
+               "name" : "积分场"
+            }
+         ],
+         "name" : "济南麻将"
+      },
+      {
+         "expire" : 600,
+         "id" : 207,
+         "items" : [
+            {
+               "desc" : "浮动底分，限时免费创建，只结算金币",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "6局(限时免费)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            },
+            {
+               "desc" : "消耗房卡创建，以1底分进行好友对战，只结算好友房临时积分",
+               "items" : [
+                  {
+                     "count" : 1,
+                     "desc" : "1局(1张房卡)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 2,
+                     "desc" : "2局(2张房卡)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 3,
+                     "desc" : "3局(3张房卡)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 6,
+                     "desc" : "6局(6张房卡)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1025
+                  }
+               ],
+               "kind" : 2,
+               "name" : "积分场"
+            }
+         ],
+         "name" : "保皇lua"
+      },
+      {
+         "expire" : 3600,
+         "id" : 210,
+         "items" : [
+            {
+               "desc" : "浮动底分，限时免费创建，只结算金币",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "6局(限时免费)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            },
+            {
+               "desc" : "消耗房卡创建，以1底分进行好友对战，只结算好友房临时积分",
+               "items" : [
+                  {
+                     "count" : 1,
+                     "desc" : "1局(1张房卡)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 2,
+                     "desc" : "2局(2张房卡)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 3,
+                     "desc" : "3局(3张房卡)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 6,
+                     "desc" : "6局(6张房卡)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1025
+                  }
+               ],
+               "kind" : 2,
+               "name" : "积分场"
+            }
+         ],
+         "name" : "对杀lua"
+      },
+      {
+         "expire" : 3600,
+         "id" : 216,
+         "items" : [
+            {
+               "desc" : "浮动底分，限时免费创建，只结算金币",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "16局(限时免费)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 16,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            },
+            {
+               "desc" : "消耗房卡创建，以1底分进行好友对战，只结算好友房临时积分",
+               "items" : [
+                  {
+                     "count" : 1,
+                     "desc" : "1局(1张房卡)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 2,
+                     "desc" : "2局(2张房卡)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 3,
+                     "desc" : "3局(3张房卡)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 6,
+                     "desc" : "6局(6张房卡)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1025
+                  }
+               ],
+               "kind" : 2,
+               "name" : "积分场"
+            }
+         ],
+         "name" : "掼蛋lua"
+      },
+      {
+         "expire" : 180,
+         "id" : 225,
+         "items" : [
+            {
+               "desc" : "浮动底分，限时免费创建，只结算金币",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "6局(限时免费)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            },
+            {
+               "desc" : "消耗房卡创建，以1底分进行好友对战，只结算好友房临时积分",
+               "items" : [
+                  {
+                     "count" : 1,
+                     "desc" : "1局(1张房卡)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 2,
+                     "desc" : "2局(2张房卡)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 3,
+                     "desc" : "3局(3张房卡)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 6,
+                     "desc" : "6局(6张房卡)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1025
+                  }
+               ],
+               "kind" : 2,
+               "name" : "积分场"
+            }
+         ],
+         "name" : "金华麻将lua"
+      },
+      {
+         "expire" : 3600,
+         "id" : 226,
+         "items" : [
+            {
+               "desc" : "浮动底分，限时免费创建，只结算金币",
+               "items" : [
+                  {
+                     "count" : 0,
+                     "desc" : "1局(限时免费)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "2局(限时免费)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "3局(限时免费)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1
+                  },
+                  {
+                     "count" : 0,
+                     "desc" : "6局(限时免费)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1
+                  }
+               ],
+               "kind" : 1,
+               "name" : "金币场"
+            },
+            {
+               "desc" : "消耗房卡创建，以1底分进行好友对战，只结算好友房临时积分",
+               "items" : [
+                  {
+                     "count" : 1,
+                     "desc" : "1局(1张房卡)",
+                     "id" : 0,
+                     "kind" : 1,
+                     "kindcount" : 1,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 2,
+                     "desc" : "2局(2张房卡)",
+                     "id" : 1,
+                     "kind" : 1,
+                     "kindcount" : 2,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 3,
+                     "desc" : "3局(3张房卡)",
+                     "id" : 2,
+                     "kind" : 1,
+                     "kindcount" : 3,
+                     "prop" : 1025
+                  },
+                  {
+                     "count" : 6,
+                     "desc" : "6局(6张房卡)",
+                     "id" : 3,
+                     "kind" : 1,
+                     "kindcount" : 6,
+                     "prop" : 1025
+                  }
+               ],
+               "kind" : 2,
+               "name" : "积分场"
+            }
+         ],
+         "name" : "绍兴麻将lua"
+      }
+   ],
+   "game" : [
+      {
+         "desc" : "保皇",
+         "id" : 107,
+         "name" : "保皇"
+      },
+      {
+         "desc" : "经典普够",
+         "id" : 108,
+         "name" : "够级"
+      },
+      {
+         "desc" : "赢三张",
+         "id" : 110,
+         "name" : "对杀"
+      },
+      {
+         "desc" : "看牌抢庄",
+         "id" : 112,
+         "name" : "四人牛牛"
+      },
+      {
+         "desc" : "二人麻将",
+         "id" : 113,
+         "name" : "二人麻将"
+      },
+      {
+         "desc" : "二人斗地主",
+         "id" : 114,
+         "name" : "二人斗地主"
+      },
+      {
+         "desc" : "疯狂猎鱼",
+         "id" : 115,
+         "name" : "捕鱼达人"
+      },
+      {
+         "desc" : "火拼双扣",
+         "id" : 120,
+         "name" : "二人双扣"
+      },
+      {
+         "desc" : "德州扑克",
+         "id" : 121,
+         "name" : "德州扑克"
+      },
+      {
+         "desc" : "经典玩法",
+         "id" : 124,
+         "name" : "三人斗地主"
+      },
+      {
+         "desc" : "疯狂猎鱼",
+         "id" : 132,
+         "name" : "四人捕鱼"
+      },
+      {
+         "desc" : "癞子玩法",
+         "id" : 133,
+         "name" : "癞子斗地主"
+      },
+      {
+         "desc" : "经典抢庄",
+         "id" : 134,
+         "name" : "牛牛"
+      },
+      {
+         "desc" : "看牌抢庄",
+         "id" : 135,
+         "name" : "牛牛"
+      },
+      {
+         "desc" : "大眼捉鸡麻将",
+         "id" : 136,
+         "name" : "大眼捉鸡麻将"
+      },
+      {
+         "desc" : "宁波麻将LUA",
+         "id" : 138,
+         "name" : "宁波麻将"
+      },
+      {
+         "desc" : "大眼山东麻将",
+         "id" : 139,
+         "name" : "大眼山东麻将"
+      },
+      {
+         "desc" : "大眼干瞪眼",
+         "id" : 142,
+         "name" : "大眼干瞪眼"
+      },
+      {
+         "desc" : "疯狂动物园",
+         "id" : 143,
+         "name" : "疯狂动物园"
+      },
+      {
+         "desc" : "保皇lua",
+         "id" : 207,
+         "name" : "保皇lua"
+      },
+      {
+         "desc" : "赢三张lua",
+         "id" : 210,
+         "name" : "对杀lua"
+      },
+      {
+         "desc" : "掼蛋lua",
+         "id" : 216,
+         "name" : "掼蛋lua"
+      },
+      {
+         "desc" : "金华麻将lua",
+         "id" : 225,
+         "name" : "金华麻将lua"
+      },
+      {
+         "desc" : "绍兴麻将lua",
+         "id" : 226,
+         "name" : "绍兴麻将lua"
+      },
+      {
+         "desc" : "百人牛牛",
+         "id" : 303,
+         "name" : "百人牛牛"
+      }
+   ],
+   "pushaddress" : [
+      {
+         "ip" : "demo.bookse.cn",
+         "port" : 9004
+      },
+      {
+         "ip" : "127.0.0.1",
+         "port" : 9004
+      },
+      {
+         "ip" : "192.168.1.141",
+         "port" : 9004
+      }
+   ],
+   "red_packet" : [
+      {
+         "expire" : 600,
+         "id" : 124,
+         "items" : [
+            {
+               "base" : 20,
+               "base_desc" : "底注20",
+               "chance" : [ 40, 35, 25 ],
+               "count" : 2,
+               "desc" : "金豆200以上",
+               "kind" : 1024,
+               "limit" : 200,
+               "name" : "1元红包赛",
+               "red" : [ 30, 60, 100 ],
+               "tax" : 20,
+               "tax_desc" : "参赛费20/局",
+               "time" : 300
+            },
+            {
+               "base" : 200,
+               "base_desc" : "底注200",
+               "chance" : [ 40, 35, 25 ],
+               "count" : 2,
+               "desc" : "金豆2000以上",
+               "kind" : 2048,
+               "limit" : 2000,
+               "name" : "11元红包赛",
+               "red" : [ 300, 500, 1100 ],
+               "tax" : 200,
+               "tax_desc" : "参赛费200/局",
+               "time" : 300
+            }
+         ],
+         "name" : "斗地主"
+      }
+   ],
+   "room" : [
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 5,
+         "condition" : [],
+         "gameid" : 107,
+         "id" : 10711,
+         "limit" : 0,
+         "mode" : 1,
+         "name" : "初级场",
+         "port" : 10711,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;500-5000&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;topup=&quot;60&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 5,
+         "condition" : [],
+         "gameid" : 107,
+         "id" : 10721,
+         "limit" : 0,
+         "mode" : 1,
+         "name" : "中级场",
+         "port" : 10721,
+         "roomid" : 201,
+         "rule" : "level=2;gift=&quot;1000,2000,5000,1000,2000&quot;;topup=&quot;30&quot;;function table_info(table_id) local int_max = 0 local int_min = 0 local str_info = &quot;&quot; if table_id >= 30 then int_max = -1 int_min = 400000 str_info = (table_id+1)..&quot;.40万以上&quot; elseif table_id >= 20 then int_max = 400000 int_min = 300000 str_info = (table_id+1)..&quot;.30万到40万&quot; elseif table_id >= 10 then int_max = 300000 int_min = 200000 str_info = (table_id+1)..&quot;.20万到30万&quot; else int_max = 200000 int_min = 100000 str_info = (table_id+1)..&quot;.10万到20万&quot; end return int_max,int_min,str_info end",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 5,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 20000
+            },
+            {
+               "id" : 8,
+               "value" : 200000
+            }
+         ],
+         "gameid" : 107,
+         "id" : 10731,
+         "limit" : 12,
+         "maxgold" : 200000,
+         "mingold" : 20000,
+         "mode" : 1,
+         "name" : "高级场",
+         "port" : 10731,
+         "roomid" : 301,
+         "rule" : "level=3;caption=&quot;2万-10万&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 528,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 5,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 100000
+            }
+         ],
+         "gameid" : 107,
+         "id" : 10741,
+         "limit" : 4,
+         "mingold" : 100000,
+         "mode" : 1,
+         "name" : "大师场",
+         "port" : 10741,
+         "roomid" : 401,
+         "rule" : "level=3;caption=&quot;防作弊场 10万以上&quot;;caption_ex=&quot;大师对决场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 144,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 5,
+         "condition" : [],
+         "gameid" : 107,
+         "id" : 10751,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 10751,
+         "roomid" : 501,
+         "rule" : "level=1;caption=&quot;500-5000&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 5,
+         "condition" : [],
+         "gameid" : 107,
+         "id" : 10752,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 10752,
+         "roomid" : 502,
+         "rule" : "level=1;caption=&quot;500-5000&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 1,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 6,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            },
+            {
+               "id" : 8,
+               "value" : 5000
+            }
+         ],
+         "gameid" : 108,
+         "id" : 10811,
+         "limit" : 12,
+         "maxgold" : 5000,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "初级场",
+         "port" : 10811,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;500-5000&quot;;caption_ex=&quot;新手对决场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 4112,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 6,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 5000
+            },
+            {
+               "id" : 8,
+               "value" : 200000
+            }
+         ],
+         "gameid" : 108,
+         "id" : 10821,
+         "limit" : 12,
+         "maxgold" : 200000,
+         "mingold" : 5000,
+         "mode" : 1,
+         "name" : "中级场",
+         "port" : 10821,
+         "roomid" : 201,
+         "rule" : "level=2;caption=&quot;5000-20万&quot;;caption_ex=&quot;新手进阶场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 6,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 100000
+            }
+         ],
+         "gameid" : 108,
+         "id" : 10831,
+         "limit" : 4,
+         "mingold" : 100000,
+         "mode" : 1,
+         "name" : "高级场",
+         "port" : 10831,
+         "roomid" : 301,
+         "rule" : "level=3;caption=&quot;防作弊场 10万以上&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 48,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 6,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 100000
+            }
+         ],
+         "gameid" : 108,
+         "id" : 10841,
+         "limit" : 4,
+         "mingold" : 100000,
+         "mode" : 1,
+         "name" : "大师场",
+         "port" : 10841,
+         "roomid" : 401,
+         "rule" : "level=3;caption=&quot;防作弊场 10万以上&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 144,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 6,
+         "condition" : [],
+         "gameid" : 108,
+         "id" : 10851,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 10851,
+         "roomid" : 501,
+         "rule" : "level=3;caption=&quot;防作弊场 10万以上&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 6,
+         "condition" : [],
+         "gameid" : 108,
+         "id" : 10852,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 10852,
+         "roomid" : 502,
+         "rule" : "level=3;caption=&quot;防作弊场 10万以上&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 1,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 2,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            },
+            {
+               "id" : 8,
+               "value" : 100000
+            }
+         ],
+         "gameid" : 110,
+         "id" : 11021,
+         "limit" : 12,
+         "maxgold" : 100000,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "赢三张",
+         "port" : 11021,
+         "roomid" : 201,
+         "rule" : "level=2;caption=&quot;500-15万&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 299,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 2,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 100000
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 110,
+         "id" : 11041,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 100000,
+         "mode" : 1,
+         "name" : "赢三张",
+         "port" : 11041,
+         "roomid" : 401,
+         "rule" : "level=3;caption=&quot;15万-1000万&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 299,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 2,
+         "condition" : [],
+         "gameid" : 110,
+         "id" : 11051,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 11051,
+         "roomid" : 501,
+         "rule" : "level=3;caption=&quot;&quot;;caption_ex=&quot;金花对杀场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            },
+            {
+               "id" : 8,
+               "value" : 100000
+            }
+         ],
+         "gameid" : 112,
+         "id" : 11221,
+         "limit" : 12,
+         "maxgold" : 100000,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "四人场",
+         "port" : 11221,
+         "roomid" : 201,
+         "rule" : "level=2;caption=&quot;初级场 500-10万&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 100000
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 112,
+         "id" : 11231,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 100000,
+         "mode" : 1,
+         "name" : "四人场",
+         "port" : 11231,
+         "roomid" : 301,
+         "rule" : "level=2;caption=&quot;高级场 10万-1000万&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 2,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            }
+         ],
+         "gameid" : 113,
+         "id" : 11311,
+         "limit" : 4,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "初级场",
+         "port" : 11311,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;初级场 500-20万&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 4112,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 2,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 50000
+            }
+         ],
+         "gameid" : 113,
+         "id" : 11321,
+         "limit" : 4,
+         "mingold" : 50000,
+         "mode" : 1,
+         "name" : "中级场",
+         "port" : 11321,
+         "roomid" : 201,
+         "rule" : "level=2;caption=&quot;高级场 10万-1000万&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 300,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 2,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 200000
+            }
+         ],
+         "gameid" : 113,
+         "id" : 11331,
+         "limit" : 4,
+         "mingold" : 200000,
+         "mode" : 1,
+         "name" : "高级场",
+         "port" : 11331,
+         "roomid" : 301,
+         "rule" : "level=3;\r\ncaption=&quot;20万以上&quot;;\r\ncaption_ex=&quot;&quot;;\r\ngift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 300,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 2,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            },
+            {
+               "id" : 8,
+               "value" : 150000
+            }
+         ],
+         "gameid" : 114,
+         "id" : 11411,
+         "limit" : 12,
+         "maxgold" : 150000,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "斗地主场",
+         "port" : 11411,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;500-15万&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 2,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 100000
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 114,
+         "id" : 11441,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 100000,
+         "mode" : 1,
+         "name" : "斗地主场",
+         "port" : 11441,
+         "roomid" : 401,
+         "rule" : "level=4;caption=&quot;10万-1000万&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 250,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 2,
+         "condition" : [],
+         "gameid" : 114,
+         "id" : 11451,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "斗地主场",
+         "port" : 11451,
+         "roomid" : 501,
+         "rule" : "level=4;caption=&quot;10万-1000万&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 2,
+         "condition" : [],
+         "gameid" : 114,
+         "id" : 11452,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "斗地主场",
+         "port" : 11452,
+         "roomid" : 502,
+         "rule" : "level=4;caption=&quot;10万-1000万&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 50,
+         "type" : 1,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 1,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 0
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 115,
+         "id" : 11511,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 0,
+         "mode" : 1,
+         "name" : "初级场",
+         "port" : 11511,
+         "roomid" : 101,
+         "rule" : "level=1;\r\ncaption=&quot;1000万以下&quot;;\r\ngift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 50,
+         "type" : 528,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 1,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 100000
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 115,
+         "id" : 11531,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 100000,
+         "mode" : 1,
+         "name" : "高级场",
+         "port" : 11531,
+         "roomid" : 301,
+         "rule" : "level=3;\r\ncaption=&quot;大鱼场 10万-1000万&quot;;\r\ngift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 2,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 5000
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 120,
+         "id" : 12041,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 5000,
+         "mode" : 1,
+         "name" : "火拼场",
+         "port" : 12041,
+         "roomid" : 401,
+         "rule" : "level=4;caption=&quot;5000-1000万&quot;;caption_ex=&quot;二人火拼场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;minitax=10;",
+         "tablecount" : 250,
+         "type" : 4112,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 7,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 5000
+            }
+         ],
+         "gameid" : 121,
+         "id" : 12111,
+         "limit" : 4,
+         "mingold" : 5000,
+         "mode" : 1,
+         "name" : "初级场",
+         "port" : 12111,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;5000以上&quot;;caption_ex=&quot;盲注20/40&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 50,
+         "type" : 528,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 7,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 50000
+            }
+         ],
+         "gameid" : 121,
+         "id" : 12121,
+         "limit" : 4,
+         "mingold" : 50000,
+         "mode" : 1,
+         "name" : "中级场",
+         "port" : 12121,
+         "roomid" : 201,
+         "rule" : "level=2;caption=&quot;5万以上&quot;;caption_ex=&quot;盲注200/400&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 100,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 7,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 100000
+            }
+         ],
+         "gameid" : 121,
+         "id" : 12131,
+         "limit" : 4,
+         "mingold" : 100000,
+         "mode" : 1,
+         "name" : "高级场",
+         "port" : 12131,
+         "roomid" : 301,
+         "rule" : "level=3;caption=&quot;10万以上&quot;;caption_ex=&quot;盲注400/800&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 100,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 7,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 1000000
+            }
+         ],
+         "gameid" : 121,
+         "id" : 12141,
+         "limit" : 4,
+         "mingold" : 1000000,
+         "mode" : 1,
+         "name" : "大师场",
+         "port" : 12141,
+         "roomid" : 401,
+         "rule" : "level=4;caption=&quot;100万以上&quot;;caption_ex=&quot;盲注4000/8000&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 100,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 7,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 50000
+            }
+         ],
+         "gameid" : 121,
+         "id" : 12151,
+         "limit" : 4,
+         "mingold" : 50000,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 12151,
+         "roomid" : 501,
+         "rule" : "level=4;caption=&quot;100万以上&quot;;caption_ex=&quot;盲注4000/8000&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 100,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            }
+         ],
+         "gameid" : 124,
+         "id" : 12411,
+         "limit" : 4,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "初级场",
+         "port" : 12411,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;初级场 500-2万&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1,2,5,1,2&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 20000
+            }
+         ],
+         "gameid" : 124,
+         "id" : 12421,
+         "limit" : 4,
+         "mingold" : 20000,
+         "mode" : 1,
+         "name" : "中级场",
+         "port" : 12421,
+         "roomid" : 201,
+         "rule" : "level=2;\r\ncaption=&quot;2万以上&quot;;\r\ncaption_ex=&quot;&quot;;\r\ngift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 20000
+            }
+         ],
+         "gameid" : 124,
+         "id" : 12431,
+         "limit" : 4,
+         "mingold" : 20000,
+         "mode" : 1,
+         "name" : "高级场",
+         "port" : 12431,
+         "roomid" : 301,
+         "rule" : "level=1;caption=&quot;高级场 2万-1000万&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 144,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 20000
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 124,
+         "id" : 12441,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 20000,
+         "mode" : 1,
+         "name" : "大师场",
+         "port" : 12441,
+         "roomid" : 401,
+         "rule" : "level=1;caption=&quot;高级场 2万-1000万&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 146,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [],
+         "gameid" : 124,
+         "id" : 12451,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 12451,
+         "roomid" : 501,
+         "rule" : "level=1;caption=&quot;高级场 2万-1000万&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 18,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [],
+         "gameid" : 124,
+         "id" : 12452,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 12452,
+         "roomid" : 502,
+         "rule" : "level=1;caption=&quot;高级场 2万-1000万&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 3,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [],
+         "gameid" : 124,
+         "id" : 12471,
+         "limit" : 0,
+         "mode" : 8,
+         "name" : "金豆场",
+         "port" : 12471,
+         "roomid" : 701,
+         "rule" : "level=1;caption=&quot;高级场 2万-1000万&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 1024,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 2000
+            }
+         ],
+         "gameid" : 124,
+         "id" : 12472,
+         "limit" : 4,
+         "mingold" : 2000,
+         "mode" : 8,
+         "name" : "金豆场",
+         "port" : 12472,
+         "roomid" : 702,
+         "rule" : "level=1;caption=&quot;高级场 2万-1000万&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 2048,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 132,
+         "id" : 13211,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "四人场",
+         "port" : 13211,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;500-1千万&quot;;caption_ex=&quot;千炮捕鱼&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 50,
+         "type" : 4112,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 100000
+            },
+            {
+               "id" : 8,
+               "value" : 100000000
+            }
+         ],
+         "gameid" : 132,
+         "id" : 13221,
+         "limit" : 12,
+         "maxgold" : 100000000,
+         "mingold" : 100000,
+         "mode" : 1,
+         "name" : "四人场",
+         "port" : 13221,
+         "roomid" : 201,
+         "rule" : "level=2;caption=&quot;高倍猎鱼 50万-1000万&quot;;caption_ex=&quot;高倍猎鱼&quot;;topup=&quot;60&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 100,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 100000
+            },
+            {
+               "id" : 8,
+               "value" : 100000000
+            }
+         ],
+         "gameid" : 132,
+         "id" : 13231,
+         "limit" : 12,
+         "maxgold" : 100000000,
+         "mingold" : 100000,
+         "mode" : 1,
+         "name" : "四人场",
+         "port" : 13231,
+         "roomid" : 301,
+         "rule" : "level=2;caption=&quot;高倍猎鱼 50万-1000万&quot;;caption_ex=&quot;高倍猎鱼&quot;;topup=&quot;60&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 100,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            },
+            {
+               "id" : 8,
+               "value" : 20000
+            }
+         ],
+         "gameid" : 133,
+         "id" : 13311,
+         "limit" : 12,
+         "maxgold" : 20000,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "癞子场",
+         "port" : 13311,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;初级场 500-2万&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 4112,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            }
+         ],
+         "gameid" : 133,
+         "id" : 13331,
+         "limit" : 4,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "癞子场",
+         "port" : 13331,
+         "roomid" : 301,
+         "rule" : "level=1;\ncaption=&quot;20万-1千万&quot;;\ncaption_ex=&quot;高级场&quot;;\ngift=&quot;1000,2000,5000,1000,2000&quot;;minitax=10;",
+         "tablecount" : 200,
+         "type" : 4112,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 133,
+         "id" : 13341,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "癞子场",
+         "port" : 13341,
+         "roomid" : 401,
+         "rule" : "level=1;\ncaption=&quot;5百-1千万&quot;;\ncaption_ex=&quot;癞子场&quot;;\ngift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 144,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [],
+         "gameid" : 133,
+         "id" : 13351,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 13351,
+         "roomid" : 501,
+         "rule" : "level=3;caption=&quot;20万以上&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [],
+         "gameid" : 133,
+         "id" : 13352,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 13352,
+         "roomid" : 502,
+         "rule" : "level=3;caption=&quot;20万以上&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 1,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 2000
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 134,
+         "id" : 13411,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 2000,
+         "mode" : 1,
+         "name" : "经典场",
+         "port" : 13411,
+         "roomid" : 101,
+         "rule" : "level=1;\ncaption=&quot;5百-1千万&quot;;\ncaption_ex=&quot;初级场&quot;;\ngift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 50,
+         "type" : 8208,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 100000
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 134,
+         "id" : 13431,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 100000,
+         "mode" : 1,
+         "name" : "经典场",
+         "port" : 13431,
+         "roomid" : 301,
+         "rule" : "level=3;caption=&quot;万以上&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [],
+         "gameid" : 134,
+         "id" : 13451,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 13451,
+         "roomid" : 501,
+         "rule" : "level=3;caption=&quot;万以上&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 135,
+         "id" : 13511,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "看牌场",
+         "port" : 13511,
+         "roomid" : 101,
+         "rule" : "level=1;\ncaption=&quot;5百-1千万&quot;;\ncaption_ex=&quot;初级场&quot;;\ngift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 50,
+         "type" : 528,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 200000
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 135,
+         "id" : 13531,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 200000,
+         "mode" : 1,
+         "name" : "看牌场",
+         "port" : 13531,
+         "roomid" : 301,
+         "rule" : "level=1;\ncaption=&quot;20万-1千万&quot;;\ncaption_ex=&quot;高级场&quot;;\ngift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            }
+         ],
+         "gameid" : 136,
+         "id" : 13611,
+         "limit" : 4,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "初级场",
+         "port" : 13611,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;免费赢话费 500以上&quot;;caption_ex=&quot;免费赢话费&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            }
+         ],
+         "gameid" : 138,
+         "id" : 13811,
+         "limit" : 4,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "初级场",
+         "port" : 13811,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;500以上&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            }
+         ],
+         "gameid" : 138,
+         "id" : 13821,
+         "limit" : 4,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "中级场",
+         "port" : 13821,
+         "roomid" : 201,
+         "rule" : "level=1;caption=&quot;500以上&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            }
+         ],
+         "gameid" : 138,
+         "id" : 13831,
+         "limit" : 4,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "高级场",
+         "port" : 13831,
+         "roomid" : 301,
+         "rule" : "level=1;caption=&quot;500以上&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 48,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            }
+         ],
+         "gameid" : 138,
+         "id" : 13841,
+         "limit" : 4,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "高级场",
+         "port" : 13841,
+         "roomid" : 401,
+         "rule" : "level=1;caption=&quot;500以上&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 144,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            }
+         ],
+         "gameid" : 138,
+         "id" : 13851,
+         "limit" : 4,
+         "mingold" : 500,
+         "mode" : 4,
+         "name" : "高级场",
+         "port" : 13851,
+         "roomid" : 501,
+         "rule" : "level=1;caption=&quot;500以上&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            }
+         ],
+         "gameid" : 138,
+         "id" : 13852,
+         "limit" : 4,
+         "mingold" : 500,
+         "mode" : 4,
+         "name" : "高级场",
+         "port" : 13852,
+         "roomid" : 502,
+         "rule" : "level=1;caption=&quot;500以上&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 1,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            },
+            {
+               "id" : 8,
+               "value" : 10000
+            }
+         ],
+         "gameid" : 139,
+         "id" : 13911,
+         "limit" : 12,
+         "maxgold" : 10000,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "初级场",
+         "port" : 13911,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;500-10000&quot;;caption_ex=&quot;乱将场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;topup=&quot;60&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            },
+            {
+               "id" : 8,
+               "value" : 100000
+            }
+         ],
+         "gameid" : 139,
+         "id" : 13921,
+         "limit" : 12,
+         "maxgold" : 100000,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "中级场",
+         "port" : 13921,
+         "roomid" : 201,
+         "rule" : "level=2;caption=&quot;500-10万&quot;;caption_ex=&quot;258场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;topup=&quot;60&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 50000
+            }
+         ],
+         "gameid" : 139,
+         "id" : 13931,
+         "limit" : 4,
+         "mingold" : 50000,
+         "mode" : 1,
+         "name" : "中级场",
+         "port" : 13931,
+         "roomid" : 301,
+         "rule" : "level=3;caption=&quot;5万以上&quot;;caption_ex=&quot;258场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;topup=&quot;60&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            }
+         ],
+         "gameid" : 139,
+         "id" : 13951,
+         "limit" : 4,
+         "mingold" : 500,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 13951,
+         "roomid" : 501,
+         "rule" : "level=3;caption=&quot;5万以上&quot;;caption_ex=&quot;258场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;topup=&quot;60&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [],
+         "gameid" : 139,
+         "id" : 13952,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 13952,
+         "roomid" : 502,
+         "rule" : "",
+         "tablecount" : 50,
+         "type" : 1,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            }
+         ],
+         "gameid" : 142,
+         "id" : 14211,
+         "limit" : 4,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "初级场",
+         "port" : 14211,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;免费赢话费 500以上&quot;;caption_ex=&quot;免费赢话费&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 10000
+            }
+         ],
+         "gameid" : 142,
+         "id" : 14231,
+         "limit" : 4,
+         "mingold" : 10000,
+         "mode" : 1,
+         "name" : "高级场",
+         "port" : 14231,
+         "roomid" : 301,
+         "rule" : "level=1;caption=&quot;免费赢话费 500以上&quot;;caption_ex=&quot;免费赢话费&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 144,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 143,
+         "id" : 14311,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "疯狂动物园",
+         "port" : 14311,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;500-1千万&quot;;caption_ex=&quot;千炮捕鱼&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 143,
+         "id" : 14321,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "疯狂动物园",
+         "port" : 14321,
+         "roomid" : 201,
+         "rule" : "level=1;caption=&quot;500-1千万&quot;;caption_ex=&quot;千炮捕鱼&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 3,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            },
+            {
+               "id" : 8,
+               "value" : 100000000
+            }
+         ],
+         "gameid" : 143,
+         "id" : 14331,
+         "limit" : 12,
+         "maxgold" : 100000000,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "疯狂动物园",
+         "port" : 14331,
+         "roomid" : 301,
+         "rule" : "level=1;caption=&quot;500-1千万&quot;;caption_ex=&quot;千炮捕鱼&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 5,
+         "condition" : [],
+         "gameid" : 207,
+         "id" : 20711,
+         "limit" : 0,
+         "mode" : 1,
+         "name" : "初级场",
+         "port" : 20711,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;500-5000&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;topup=&quot;60&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 5,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            }
+         ],
+         "gameid" : 207,
+         "id" : 20721,
+         "limit" : 4,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "中级场",
+         "port" : 20721,
+         "roomid" : 201,
+         "rule" : "level=2;gift=&quot;1000,2000,5000,1000,2000&quot;;topup=&quot;30&quot;;function table_info(table_id) local int_max = 0 local int_min = 0 local str_info = &quot;&quot; if table_id >= 30 then int_max = -1 int_min = 400000 str_info = (table_id+1)..&quot;.40万以上&quot; elseif table_id >= 20 then int_max = 400000 int_min = 300000 str_info = (table_id+1)..&quot;.30万到40万&quot; elseif table_id >= 10 then int_max = 300000 int_min = 200000 str_info = (table_id+1)..&quot;.20万到30万&quot; else int_max = 200000 int_min = 100000 str_info = (table_id+1)..&quot;.10万到20万&quot; end return int_max,int_min,str_info end",
+         "tablecount" : 50,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 5,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 20000
+            },
+            {
+               "id" : 8,
+               "value" : 200000
+            }
+         ],
+         "gameid" : 207,
+         "id" : 20731,
+         "limit" : 12,
+         "maxgold" : 200000,
+         "mingold" : 20000,
+         "mode" : 1,
+         "name" : "高级场",
+         "port" : 20731,
+         "roomid" : 301,
+         "rule" : "level=3;caption=&quot;2万-10万&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 144,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 5,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 100000
+            }
+         ],
+         "gameid" : 207,
+         "id" : 20741,
+         "limit" : 4,
+         "mingold" : 100000,
+         "mode" : 1,
+         "name" : "大师场",
+         "port" : 20741,
+         "roomid" : 401,
+         "rule" : "level=3;caption=&quot;防作弊场 10万以上&quot;;caption_ex=&quot;大师对决场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 48,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 5,
+         "condition" : [],
+         "gameid" : 207,
+         "id" : 20751,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 20751,
+         "roomid" : 501,
+         "rule" : "level=1;caption=&quot;500-5000&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 5,
+         "condition" : [],
+         "gameid" : 207,
+         "id" : 20752,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 20752,
+         "roomid" : 502,
+         "rule" : "level=1;caption=&quot;500-5000&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 1,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 2,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            },
+            {
+               "id" : 8,
+               "value" : 100000
+            }
+         ],
+         "gameid" : 210,
+         "id" : 21021,
+         "limit" : 12,
+         "maxgold" : 100000,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "赢三张",
+         "port" : 21021,
+         "roomid" : 201,
+         "rule" : "level=2;caption=&quot;500-15万&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 299,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 2,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 100000
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 210,
+         "id" : 21041,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 100000,
+         "mode" : 1,
+         "name" : "赢三张",
+         "port" : 21041,
+         "roomid" : 401,
+         "rule" : "level=3;caption=&quot;15万-1000万&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 299,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 2,
+         "condition" : [],
+         "gameid" : 210,
+         "id" : 21051,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 21051,
+         "roomid" : 501,
+         "rule" : "level=3;caption=&quot;&quot;;caption_ex=&quot;金花对杀场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 200,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            },
+            {
+               "id" : 8,
+               "value" : 10000000
+            }
+         ],
+         "gameid" : 216,
+         "id" : 21611,
+         "limit" : 12,
+         "maxgold" : 10000000,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "初级场",
+         "port" : 21611,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;过八场 500-5000&quot;;caption_ex=&quot;过8场 5倍底&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 4112,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 5000
+            },
+            {
+               "id" : 8,
+               "value" : 50000
+            }
+         ],
+         "gameid" : 216,
+         "id" : 21621,
+         "limit" : 12,
+         "maxgold" : 50000,
+         "mingold" : 5000,
+         "mode" : 1,
+         "name" : "中级场",
+         "port" : 21621,
+         "roomid" : 201,
+         "rule" : "level=2;caption=&quot;过八场 5000-5万&quot;;caption_ex=&quot;过8场 5倍底&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 250,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 50000
+            }
+         ],
+         "gameid" : 216,
+         "id" : 21631,
+         "limit" : 4,
+         "mingold" : 50000,
+         "mode" : 1,
+         "name" : "高级场",
+         "port" : 21631,
+         "roomid" : 301,
+         "rule" : "level=3;caption=&quot;防作弊过A场 5万以上&quot;;caption_ex=&quot;过A场 10倍底&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 250,
+         "type" : 48,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 50000
+            }
+         ],
+         "gameid" : 216,
+         "id" : 21641,
+         "limit" : 4,
+         "mingold" : 50000,
+         "mode" : 1,
+         "name" : "大师场",
+         "port" : 21641,
+         "roomid" : 401,
+         "rule" : "level=3;caption=&quot;防作弊过A场 5万以上&quot;;caption_ex=&quot;过A场 10倍底&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 250,
+         "type" : 144,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [],
+         "gameid" : 216,
+         "id" : 21651,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 21651,
+         "roomid" : 501,
+         "rule" : "level=3;caption=&quot;防作弊过A场 5万以上&quot;;caption_ex=&quot;过A场 10倍底&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 250,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [],
+         "gameid" : 216,
+         "id" : 21652,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 21652,
+         "roomid" : 502,
+         "rule" : "level=3;caption=&quot;防作弊过A场 5万以上&quot;;caption_ex=&quot;过A场 10倍底&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 250,
+         "type" : 1,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            }
+         ],
+         "gameid" : 225,
+         "id" : 22511,
+         "limit" : 4,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "初级场",
+         "port" : 22511,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;500以上&quot;;caption_ex=&quot;新手入门场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;minitax=10;",
+         "tablecount" : 50,
+         "type" : 4112,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 50000
+            }
+         ],
+         "gameid" : 225,
+         "id" : 22521,
+         "limit" : 4,
+         "mingold" : 50000,
+         "mode" : 1,
+         "name" : "中级场",
+         "port" : 22521,
+         "roomid" : 201,
+         "rule" : "level=2;caption=&quot;5万以上&quot;;caption_ex=&quot;新手进阶场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 250,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 200000
+            }
+         ],
+         "gameid" : 225,
+         "id" : 22531,
+         "limit" : 4,
+         "mingold" : 200000,
+         "mode" : 1,
+         "name" : "高级场",
+         "port" : 22531,
+         "roomid" : 301,
+         "rule" : "level=3;caption=&quot;20万以上&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 250,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 200000
+            }
+         ],
+         "gameid" : 225,
+         "id" : 22541,
+         "limit" : 4,
+         "mingold" : 200000,
+         "mode" : 1,
+         "name" : "高级场",
+         "port" : 22541,
+         "roomid" : 401,
+         "rule" : "level=3;caption=&quot;20万以上&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 250,
+         "type" : 144,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [],
+         "gameid" : 225,
+         "id" : 22551,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 22551,
+         "roomid" : 501,
+         "rule" : "level=3;caption=&quot;20万以上&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 250,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [],
+         "gameid" : 225,
+         "id" : 22552,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 22552,
+         "roomid" : 502,
+         "rule" : "level=3;caption=&quot;20万以上&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1000,2000,5000,1000,2000&quot;;",
+         "tablecount" : 250,
+         "type" : 1,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 500
+            }
+         ],
+         "gameid" : 226,
+         "id" : 22611,
+         "limit" : 4,
+         "mingold" : 500,
+         "mode" : 1,
+         "name" : "初级场",
+         "port" : 22611,
+         "roomid" : 101,
+         "rule" : "level=1;caption=&quot;500以上&quot;;caption_ex=&quot;新手进阶场&quot;;gift=&quot;1000,2000,5000,2000,1000&quot;;",
+         "tablecount" : 50,
+         "type" : 4112,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 50000
+            }
+         ],
+         "gameid" : 226,
+         "id" : 22621,
+         "limit" : 4,
+         "mingold" : 50000,
+         "mode" : 1,
+         "name" : "中级场",
+         "port" : 22621,
+         "roomid" : 201,
+         "rule" : "level=2;caption=&quot;5万以上&quot;;caption_ex=&quot;新手进阶场&quot;;gift=&quot;1000,2000,5000,2000,1000&quot;;",
+         "tablecount" : 250,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 200000
+            }
+         ],
+         "gameid" : 226,
+         "id" : 22631,
+         "limit" : 4,
+         "mingold" : 200000,
+         "mode" : 1,
+         "name" : "高级场",
+         "port" : 22631,
+         "roomid" : 301,
+         "rule" : "level=3;caption=&quot;20万以上&quot;;caption_ex=&quot;高级场&quot;;gift=&quot;1000,2000,5000,2000,1000&quot;;",
+         "tablecount" : 250,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [
+            {
+               "id" : 4,
+               "value" : 200000
+            }
+         ],
+         "gameid" : 226,
+         "id" : 22641,
+         "limit" : 4,
+         "mingold" : 200000,
+         "mode" : 1,
+         "name" : "高级场",
+         "port" : 22641,
+         "roomid" : 401,
+         "rule" : "level=3;caption=&quot;20万以上&quot;;caption_ex=&quot;高手对战场&quot;;gift=&quot;1,1,1,1,1&quot;;",
+         "tablecount" : 250,
+         "type" : 144,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [],
+         "gameid" : 226,
+         "id" : 22651,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 22651,
+         "roomid" : 501,
+         "rule" : "level=1;caption=&quot;免费赢话费 500以上&quot;;caption_ex=&quot;免费赢话费&quot;;gift=&quot;1,1,1,1,1&quot;;",
+         "tablecount" : 250,
+         "type" : 16,
+         "wxaddress" : "demo.bookse.cn"
+      },
+      {
+         "address" : "demo.bookse.cn",
+         "chaircount" : 4,
+         "condition" : [],
+         "gameid" : 226,
+         "id" : 22652,
+         "limit" : 0,
+         "mode" : 4,
+         "name" : "好友场",
+         "port" : 22652,
+         "roomid" : 502,
+         "rule" : "level=1;caption=&quot;免费赢话费 500以上&quot;;caption_ex=&quot;免费赢话费&quot;;gift=&quot;1,1,1,1,1&quot;;",
+         "tablecount" : 250,
+         "type" : 1,
+         "wxaddress" : "demo.bookse.cn"
+      }
+   ],
+   "route" : [ "demo.bookse.cn", "127.0.0.1", "192.168.1.141" ]
+}
+

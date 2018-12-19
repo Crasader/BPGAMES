@@ -1,0 +1,17 @@
+info face="ºÚÌå" size=32 bold=0 italic=0 charset="" unicode=1 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=1,1 outline=0
+common lineHeight=33 base=28 scaleW=320 scaleH=32 pages=1 packed=1 alphaChnl=1 redChnl=0 greenChnl=0 blueChnl=0
+page id=0 file="num_gj_jssz1.png"
+chars count=13
+char id=43   x=33    y=0     width=25    height=31    xoffset=0     yoffset=0     xadvance=25    page=0  chnl=15
+char id=46   x=272   y=0     width=10    height=31    xoffset=0     yoffset=0     xadvance=10    page=0  chnl=15
+char id=48   x=59    y=0     width=21    height=31    xoffset=0     yoffset=0     xadvance=21    page=0  chnl=15
+char id=49   x=257   y=0     width=14    height=31    xoffset=0     yoffset=0     xadvance=14    page=0  chnl=15
+char id=50   x=81    y=0     width=21    height=31    xoffset=0     yoffset=0     xadvance=21    page=0  chnl=15
+char id=51   x=103   y=0     width=21    height=31    xoffset=0     yoffset=0     xadvance=21    page=0  chnl=15
+char id=52   x=125   y=0     width=21    height=31    xoffset=0     yoffset=0     xadvance=21    page=0  chnl=15
+char id=53   x=147   y=0     width=21    height=31    xoffset=0     yoffset=0     xadvance=21    page=0  chnl=15
+char id=54   x=169   y=0     width=21    height=31    xoffset=0     yoffset=0     xadvance=21    page=0  chnl=15
+char id=55   x=191   y=0     width=21    height=31    xoffset=0     yoffset=0     xadvance=21    page=0  chnl=15
+char id=56   x=213   y=0     width=21    height=31    xoffset=0     yoffset=0     xadvance=21    page=0  chnl=15
+char id=57   x=235   y=0     width=21    height=31    xoffset=0     yoffset=0     xadvance=21    page=0  chnl=15
+char id=19975 x=0     y=0     width=32    height=31    xoffset=0     yoffset=0     xadvance=32    page=0  chnl=15

@@ -1,0 +1,7 @@
+{
+"message":
+[
+	{"id":0,"name":"31.png","text":"enter:132","need_module":0},
+	{"id":1,"name":"26.png","text":"open:4","param":"show_item:InviteNew","need_module":8192}
+]
+}

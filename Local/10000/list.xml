@@ -1,0 +1,77 @@
+<dir name="dir" version="999">
+    <dir name="config">
+        <file name="resource.json.zip" md5="53c6250085349cf7a7357bcd52dabdd7" size="659" src_md5="3d8241e9411e7bfa7435f33dc7b6ccaa" src_size="3078" />
+        <file name="text.json.zip" md5="4a9d719c8a16a06ad54075c4b878326a" size="625" src_md5="a7f6627e176bc21597e64e2d02c5916e" src_size="1334" />
+    </dir>
+    <dir name="res">
+        <dir name="bpdeveloper">
+            <file name="back.png.zip" md5="60e350b26fc373b13a772c3bffbb1c4c" size="13658" src_md5="d365c7d8ad0d58c6d735c7c0c8c32d93" src_size="15432" />
+            <file name="btn_close.png.zip" md5="53c48afc281273ed00d8be33608b4c90" size="3703" src_md5="ce3adc8addae3cabab0e3eb06ffd6f9e" src_size="3574" />
+            <file name="editbox_back.png.zip" md5="11fdd0b1afeabeced704a33f23280d81" size="984" src_md5="732a7ec406616cb13a7b47896b76215c" src_size="882" />
+            <file name="title.png.zip" md5="70ee396013bd610ca71b96c1b396a7e1" size="4001" src_md5="d0e940a7cfd0fd0e3f4c0c4bc109051a" src_size="3934" />
+            <file name="title_back.png.zip" md5="4a09d634f1e40d66bb96520c9fac641a" size="6813" src_md5="ecc51a7831b29e2338adcea3c43c11be" src_size="6724" />
+        </dir>
+        <dir name="bpdownload">
+            <file name="back.png.zip" md5="fdce8c7a22aae8c03e7ae0a8843ad60d" size="6198" src_md5="3cae6a05565ff6cb4a1b101d2998838b" src_size="7050" />
+            <file name="progress1.png.zip" md5="3df0182fcb820a0d19cc46996c2e876e" size="1223" src_md5="43c1e49362606594c7461413b818a801" src_size="1094" />
+            <file name="progress2.png.zip" md5="e037d05081b248b12bf456604ea389bb" size="954" src_md5="117ca3da30cf25b12c02055ec8753fdd" src_size="833" />
+        </dir>
+        <dir name="bplogon">
+            <file name="back.png.zip" md5="d353a8fb6a8f3d0ee1f87d92f7e873fc" size="639417" src_md5="895cea80016cf514b25115d94dfa5c3f" src_size="645196" />
+            <file name="btn_account.png.zip" md5="12cc439582e9340a580b81fa96b82d96" size="6774" src_md5="11a1d4e49df942a333427a1bc0137c63" src_size="6641" />
+            <file name="btn_channel.png.zip" md5="f3617243eb317a0a8ae4962b9c665629" size="6774" src_md5="11a1d4e49df942a333427a1bc0137c63" src_size="6641" />
+            <file name="btn_check1.png.zip" md5="33f7cd994c5a47ab7ac6c041db44c27f" size="491" src_md5="3f8eac4fbf31f1e3f4e5004361acd2d9" src_size="360" />
+            <file name="btn_check2.png.zip" md5="31b120e03515b0bb687ce8286ad1eb4b" size="4084" src_md5="21a10e1abadbba14fcc80b9ba1fe35f4" src_size="3953" />
+            <file name="btn_customer.png.zip" md5="d95b095d6e7b656212840f3ef6672c31" size="4231" src_md5="937184e8792324ae80b298d911dedc34" src_size="4096" />
+            <file name="btn_phone.png.zip" md5="63e26fc81afd30b9f98fcba209748cde" size="6535" src_md5="01fd3c9b3ac9e46ee09ab64f728319d4" src_size="6406" />
+            <file name="btn_server.png.zip" md5="210af0c471599b4892a4c130d28fe029" size="2593" src_md5="b52825ff2c6ca44056c58574cc266637" src_size="2462" />
+            <file name="btn_tourist.png.zip" md5="fbf88ca3e713a4d5d0612ca0bfde7b58" size="6435" src_md5="d4a2241156167e1745295041c16b0b62" src_size="6302" />
+            <file name="btn_wechat.png.zip" md5="3daf8f3f04e847bc1676f4106ec9b514" size="7075" src_md5="02c7d9f3b3ceac9d31ab7e74356c003d" src_size="6944" />
+            <file name="hint.png.zip" md5="011e4b68d9990077e726aa4c106498bc" size="9202" src_md5="c04b215b005e5b023185215a26b5f63e" src_size="9112" />
+            <file name="logo.png.zip" md5="25e833683c1baf3a05d7a13e00e7e166" size="12682" src_md5="47062e6e03d78fc265b8bfaac2d8c14c" src_size="12563" />
+            <dir name="logon">
+                <file name="back.png.zip" md5="60e350b26fc373b13a772c3bffbb1c4c" size="13658" src_md5="d365c7d8ad0d58c6d735c7c0c8c32d93" src_size="15432" />
+                <file name="btn_close.png.zip" md5="53c48afc281273ed00d8be33608b4c90" size="3703" src_md5="ce3adc8addae3cabab0e3eb06ffd6f9e" src_size="3574" />
+                <file name="btn_forget.png.zip" md5="eb8246811f10382b2fbf46eb5f909d5f" size="2111" src_md5="c2b4fc691dd0ac325520fc11ff65fb0c" src_size="1980" />
+                <file name="btn_logon.png.zip" md5="8a06a7ae01e1c596b298c867f04256f2" size="3354" src_md5="f39ccd5b930f60230292e5821913ca4c" src_size="3225" />
+                <file name="editbox_back.png.zip" md5="11fdd0b1afeabeced704a33f23280d81" size="984" src_md5="732a7ec406616cb13a7b47896b76215c" src_size="882" />
+                <file name="icon_account.png.zip" md5="f2a0b53e27c3f53e8c729b60e3245aac" size="558" src_md5="115d8f14b8f0c390a7f59655b594a4ff" src_size="663" />
+                <file name="icon_password.png.zip" md5="147af77af1955a228c48bdb067d5f884" size="517" src_md5="15b816f9990ff90c5cc405561fc25a9c" src_size="601" />
+                <file name="label_account.png.zip" md5="a7f6b86a65d6befc0bef70b03fde0649" size="673" src_md5="ea017638fc3634c674b41e5bc491eaa6" src_size="563" />
+                <file name="label_password.png.zip" md5="965491d81c4ce87e7e5456dc91242a69" size="750" src_md5="2a5f0be19de7445a23ea8188992cd61a" src_size="634" />
+                <file name="title.png.zip" md5="70ee396013bd610ca71b96c1b396a7e1" size="4001" src_md5="d0e940a7cfd0fd0e3f4c0c4bc109051a" src_size="3934" />
+                <file name="title_back.png.zip" md5="4a09d634f1e40d66bb96520c9fac641a" size="6813" src_md5="ecc51a7831b29e2338adcea3c43c11be" src_size="6724" />
+            </dir>
+            <dir name="phone">
+                <file name="back.png.zip" md5="60e350b26fc373b13a772c3bffbb1c4c" size="13658" src_md5="d365c7d8ad0d58c6d735c7c0c8c32d93" src_size="15432" />
+                <file name="btn_close.png.zip" md5="53c48afc281273ed00d8be33608b4c90" size="3703" src_md5="ce3adc8addae3cabab0e3eb06ffd6f9e" src_size="3574" />
+                <file name="btn_code.png.zip" md5="c6301ddd17dd56e0bcda85bc1a062b25" size="3986" src_md5="485b63edc93a834d0746cc05628137b1" src_size="3859" />
+                <file name="btn_logon.png.zip" md5="8a06a7ae01e1c596b298c867f04256f2" size="3354" src_md5="f39ccd5b930f60230292e5821913ca4c" src_size="3225" />
+                <file name="editbox_back.png.zip" md5="11fdd0b1afeabeced704a33f23280d81" size="984" src_md5="732a7ec406616cb13a7b47896b76215c" src_size="882" />
+                <file name="icon_code.png.zip" md5="3fd9693af939f005e019bd23f45da6ef" size="755" src_md5="59d0397b61648de5b021391ba261f270" src_size="986" />
+                <file name="icon_phone.png.zip" md5="6676204cff3b955b6990082f0a1f5a67" size="433" src_md5="d62f69861b4475bac0c283463f9e2b22" src_size="443" />
+                <file name="label_code.png.zip" md5="6b2661879d7ded4d5253e6a148783947" size="922" src_md5="94e46f653f6e0da16e854a170c345edd" src_size="806" />
+                <file name="label_phone.png.zip" md5="aabb0e59a157c31061c15529a30cd879" size="793" src_md5="0a217f3089cd853365eed65372e8ba3a" src_size="681" />
+                <file name="title.png.zip" md5="472f7abc59217d86da4beef4e826e9cb" size="3157" src_md5="d992a34f1e611cc6dc175413ee5fe227" src_size="3096" />
+                <file name="title_back.png.zip" md5="4a09d634f1e40d66bb96520c9fac641a" size="6813" src_md5="ecc51a7831b29e2338adcea3c43c11be" src_size="6724" />
+            </dir>
+            <file name="progress1.png.zip" md5="98fc225c9e4ac16330fb4d62d70434a4" size="971" src_md5="0cf7724427c4e41fbaf4be56fda69b2c" src_size="854" />
+            <file name="progress2.png.zip" md5="9f7ef6446aef5d7308c3f50416b27dd7" size="1505" src_md5="1a9a159a458e702efffc58abe09c9645" src_size="1418" />
+            <file name="progress_back.png.zip" md5="5f016f3ab3fa873572cf271bd548510b" size="5461" src_md5="d248a36b374dea3118177498a0005a95" src_size="5574" />
+            <file name="server_back.png.zip" md5="1ed6b3fd1e70b5dc46ea19ec63712966" size="4756" src_md5="06bb6ddd41c2de16deb2d91d40895251" src_size="4679" />
+        </dir>
+        <dir name="bpmessagebox">
+            <file name="back.png.zip" md5="57b160a6f4a085c830f26ee6c70db14c" size="7937" src_md5="d66e1f50c46895269b190ed9d6f6d8e5" src_size="9066" />
+            <file name="btn_cancel.png.zip" md5="65f44a6fe2afb623e8a61dd37f0c623d" size="2508" src_md5="ce4f338d0af663c9348a40f2b53caa00" src_size="2377" />
+            <file name="btn_ok.png.zip" md5="606f547f1bd11b190ff76a6494419128" size="2631" src_md5="b87c5d1555e701c541309b8b9a7efea4" src_size="2508" />
+            <file name="char_cancel.fnt.zip" md5="bae73fe2512705910d6b13340d2e81f4" size="607" src_md5="a8b778c2b177ce1aa688d22fec75cf4b" src_size="3742" />
+            <file name="char_cancel.png.zip" md5="5762d1134f146454c1db9043378ce078" size="24224" src_md5="5ad49fd800611a02c32f3e64d41dac06" src_size="24833" />
+            <file name="char_ok.fnt.zip" md5="9e7ee058467dd2ae34b1d50bb66a6a42" size="736" src_md5="77e5b3726a6acffbdfa78f30e766088f" src_size="6153" />
+            <file name="char_ok.png.zip" md5="44115ffe3d72e892ad76af2ee9421137" size="39983" src_md5="adec76af9befc83104b3c89f2338f016" src_size="40968" />
+        </dir>
+        <file name="hinting.png.zip" md5="eb1c0cba5c8588ba8e8a1f96c1fd887d" size="7192" src_md5="3a33f1d1e73bb49fea6f11d754d4f299" src_size="7197" />
+        <file name="loading.png.zip" md5="4a205cb862194cb75d461478ca64b333" size="4672" src_md5="278ab27dc341eed7940665755d68a7df" src_size="4547" />
+        <file name="mask.png.zip" md5="4e91faf0284d5dc8c444facd34a643fb" size="201" src_md5="c4cf68a03fb42cda6db66735ee5c7dfa" src_size="111" />
+        <file name="transparent.png.zip" md5="ef2a98de5ad10365f70428b3006d4b51" size="2964" src_md5="1d314285687b0f9f6c3325a3a0cc7ead" src_size="2831" />
+    </dir>
+</dir>
